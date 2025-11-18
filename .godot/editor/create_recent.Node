@@ -1,0 +1,14 @@
+Node
+Label
+Bulletin
+CanvasLayer
+TextureRect
+RayCast3D
+CollisionShape3D
+Pickuppable
+Camera3D
+Node3D
+CollisionPolygon3D
+CharacterBody3D
+WorldEnvironment
+DirectionalLight3D

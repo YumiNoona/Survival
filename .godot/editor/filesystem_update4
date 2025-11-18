@@ -1,0 +1,7 @@
+res://Scenes/UI/InteractionPrompt.tscn
+res://Scenes/UI/InteractionPrompt.gd
+res://Scripts/Config/EventSystem.gd
+res://Scripts/Interactive/InteractionRayCast.gd
+res://Scripts/Config/BulletinConfig.gd
+res://Scenes/Core/Main.tscn
+res://Scripts/Config/BulletinController.gd
