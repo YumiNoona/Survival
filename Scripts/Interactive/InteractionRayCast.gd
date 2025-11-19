@@ -7,7 +7,7 @@ func check_interaction() -> void:
 		var collider := get_collider()
 		if not collider is Interactable:
 			return
-				
+
 
 		if Input.is_action_just_pressed("Interact"):
 			collider.start_interaction()
@@ -17,5 +17,5 @@ func check_interaction() -> void:
 			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.InteractionPrompt,collider.prompt)
 
 	elif is_hitting:
-		is_hitting = true
+		is_hitting = false
 		EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.InteractionPrompt)

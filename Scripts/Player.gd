@@ -13,7 +13,16 @@ extends CharacterBody3D
 @onready var interaction_ray_cast: RayCast3D = $Head/InteractionRayCast
 
 
+func _enter_tree() -> void:
+	EventSystem.PLA_frezze_player.connect(set_freeze.bind(true))
+	EventSystem.PLA_unfrezze_player.connect(set_freeze.bind(false))
 
+
+func set_freeze(freeze : bool) -> void:
+	set_process(!freeze)
+	set_physics_process(!freeze)
+	set_process_input(!freeze)
+	set_process_unhandled_key_input(!freeze)
 
 
 func _process(_delta: float) -> void:
@@ -67,3 +76,6 @@ func look_around(relative : Vector2) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	elif event.is_action_pressed("Inventory"):
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu, null)
