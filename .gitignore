@@ -1,0 +1,29 @@
+# Godot-specific ignores
+.import/
+export_presets.cfg
+
+# Mono (C#) specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Godot build files
+*.translation
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+
+# User-specific / temporary files
+*.tmp
+*.temp
