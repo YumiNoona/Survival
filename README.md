@@ -1,23 +1,15 @@
 🌲 Survival Game
 
-A lightweight, fast-paced survival game built in Godot, featuring resource collection, crafting, inventory management, enemies, and progression. Designed for PC and mobile export, with intuitive controls and an expandable architecture for future updates.
+🌲 Dive into a challenging survival adventure built in Godot!
+You begin alone in a dangerous open world with nothing but your hands. Gather wood, stone, plants, and rare materials to craft tools, weapons, and survival items. Explore, build, fight, and adapt as the world becomes increasingly hostile.
 
-🚀 Features
-🔨 Crafting System
+🪓 Crafting & Gathering
 
-Collect resources from the environment
+Collect resources like wood, stone, and plants
 
-Combine items to craft tools, weapons, consumables, and structures
+Unlock new crafting recipes as you progress
 
-Modular recipe system for easy expansion
-
-🌿 Resource Collection
-
-Chop trees, mine rocks, gather plants, and loot the world
-
-Objects respawn over time
-
-Rarity tiers for advanced materials
+Upgrade tools to improve gathering speed and durability
 
 🎒 Inventory & Equipment
 
@@ -25,50 +17,56 @@ Slot-based inventory with stacking
 
 Drag-and-drop item management
 
-Tools and weapons can be equipped and degrade with use
+Equip tools and weapons for combat or gathering
 
-⚔️ Combat & Survival
+Craft healing items and essential survival gear
 
-Enemies with simple AI, chase & attack logic
+⚔️ Combat & Enemies
 
-Player health, hunger, stamina systems
+Hostile creatures roam the world
 
-Manual healing and crafted survival items
+Simple but engaging enemy AI (chase + attack)
 
-🏕️ Base Building (optional if included)
+Player stats: health, hunger, stamina
 
-Place structures like campfires, walls, or workbenches
+Enemies scale over time, increasing difficulty
 
-Snap-to-grid construction
+🏕️ Explore, Build, Survive
 
-Expand your base to improve crafting and survival
+Build campfires, shelters, and workbenches
 
-🌎 Procedural/Handcrafted World
+Snap-to-grid base building
 
-(Choose one)
+Explore biomes and discover rare resources
 
-Procedurally generated terrain
+Survive day/night cycles and environmental challenges
 
-OR handcrafted level with interactive nodes
+🔥 Every minute matters. Every resource matters. How long can YOU survive?
 
-Dynamic day/night cycle
+🚀 Features
 
-Weather effects (if you added any)
+✔️ Resource collection system
 
-📱 Mobile-Friendly
+✔️ Crafting of tools, weapons, consumables, and structures
 
-Touch controls supported (virtual joystick, action buttons)
+✔️ Inventory with drag-and-drop
 
-Optimized UI for different screen sizes
+✔️ Enemy encounters and survival mechanics
 
-🎮 Controls
+✔️ Base building (optional)
+
+✔️ Day/night cycle
+
+✔️ Mobile-friendly UI and touch controls
+
+📱 Controls
 PC
 
 WASD – Move
 
-Left Click – Use tool / Attack
+Left Click – Attack / Use tool
 
-E – Open inventory
+E – Inventory
 
 F – Interact
 
@@ -76,16 +74,16 @@ Esc – Pause
 
 Mobile
 
-Virtual joystick for movement
+Virtual joystick
 
-Tap buttons for interact, attack, open inventory
+Buttons for attack, interact, and inventory
 
 🧩 Tech Stack
 
-Engine: Godot (4.x recommended)
+Engine: Godot 4.x
 
 Language: GDScript
 
-UI: Godot Control nodes
+Data: JSON (items, recipes, stats)
 
-Data: JSON for recipes, enemy stats, and item definitions
+UI: Godot Control nodes
