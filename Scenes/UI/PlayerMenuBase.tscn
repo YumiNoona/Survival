@@ -58,6 +58,7 @@ patch_margin_right = 48
 patch_margin_bottom = 32
 
 [node name="InventoryContainer" type="GridContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

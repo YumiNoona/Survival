@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Survival"
-run/main_scene="uid://crff7tqvdq"
+run/main_scene="uid://0bdg4kfeqruo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dwg4cms7uskkp"
 

@@ -1,0 +1,39 @@
+extends TextureRect
+class_name InventorySlot
+
+@onready var Icon: TextureRect = $MarginContainer/Icon
+
+var ItemKey
+
+
+func set_item_key(_item_key) -> void:
+	ItemKey = _item_key
+	update_icon()
+
+
+func update_icon() -> void:
+	if ItemKey == null:
+		Icon.texture = null
+		return
+
+	Icon.texture = ItemConfig.get_item_resource(ItemKey).icon
+
+
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	if ItemKey != null:
+		var drag_preview := TextureRect.new()
+		drag_preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		drag_preview.texture = Icon.texture
+		drag_preview.custom_minimum_size = Vector2(80,80)
+		drag_preview.modulate = Color(1,1,1,0.7)
+		set_drag_preview(drag_preview)
+		
+		return self
+		
+	return null
+
+func _can_drop_data(_at_position: Vector2, origin_slot: Variant) -> bool:
+	return origin_slot is InventorySlot
+	
+func _drop_data(_at_position: Vector2, origin_slot: Variant) -> void:
+	EventSystem.INV_switch_to_item_indexes.emit(origin_slot.get_index(), get_index())

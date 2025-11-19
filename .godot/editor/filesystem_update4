@@ -2,3 +2,9 @@ res://Scenes/Core/Main.tscn
 res://Scripts/Config/EventSystem.gd
 res://Scripts/Player.gd
 res://Scripts/Inventory/PlayerMenuBase.gd
+res://Scenes/UI/InventorySlots.tscn
+res://Scripts/Inventory/InventorySlot.gd
+res://Scenes/UI/PlayerMenuBase.tscn
+res://Scripts/Inventory/InventoryManager.gd
+res://Scripts/Config/ItemConfig.gd
+res://Scenes/Player/Player.tscn
