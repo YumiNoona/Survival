@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://lwvfq6jniyuf"]
+
+[ext_resource type="Texture2D" uid="uid://b4lcpb7eqrkeb" path="res://Assets/Textures/ItemIcons/Rope.png" id="1_f4w8u"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_f4w8u"]
+
+[resource]
+script = ExtResource("2_f4w8u")
+item_key = 14
+display_name = "Tangled Rope"
+icon = ExtResource("1_f4w8u")
+description = "Braided plant fibers used to bind logs or craft gear."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

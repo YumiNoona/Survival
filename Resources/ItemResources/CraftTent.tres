@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c53hrowb4w8w5"]
+
+[ext_resource type="Texture2D" uid="uid://cyjt0ble7olby" path="res://Assets/Textures/ItemIcons/Tent.png" id="1_l0ybr"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_l0ybr"]
+
+[resource]
+script = ExtResource("2_l0ybr")
+item_key = 17
+display_name = "No Sun Kisses"
+icon = ExtResource("1_l0ybr")
+description = ""
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

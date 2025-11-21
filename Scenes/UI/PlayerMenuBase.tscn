@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://byhnjma00ehlv"]
 
-[ext_resource type="Texture2D" uid="uid://dhyppu1wj5v77" path="res://Assets/Textures/PanelSetBeige.png" id="1_qgv4q"]
+[ext_resource type="Texture2D" uid="uid://dhyppu1wj5v77" path="res://Assets/Textures/UI/PanelSetBeige.png" id="1_qgv4q"]
 [ext_resource type="Script" uid="uid://bpni2rlt4eyb7" path="res://Scripts/Inventory/PlayerMenuBase.gd" id="1_qu4jx"]
-[ext_resource type="Texture2D" uid="uid://cit3w8ihb4nta" path="res://Assets/Textures/Cross.png" id="2_e1umh"]
+[ext_resource type="Texture2D" uid="uid://cit3w8ihb4nta" path="res://Assets/Textures/UI/Cross.png" id="2_e1umh"]
 [ext_resource type="PackedScene" uid="uid://17pfsmdbpskn" path="res://Scenes/UI/InventorySlots.tscn" id="2_kk7rf"]
-[ext_resource type="Texture2D" uid="uid://lnuglceo8dqq" path="res://Assets/Textures/PanelSetBrown.png" id="3_jvavk"]
+[ext_resource type="Texture2D" uid="uid://lnuglceo8dqq" path="res://Assets/Textures/UI/PanelSetBrown.png" id="3_jvavk"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_qu4jx"]
 device = -1
@@ -184,6 +184,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="ItemDescription" type="Label" parent="MarginContainer/HSplitContainer/VSplitContainer/Descriptiom/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -231,6 +232,7 @@ theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/VBoxContainer/Utility/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 32
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/HSplitContainer/VBoxContainer/Utility/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(256, 64)

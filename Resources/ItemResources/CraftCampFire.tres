@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cspbsbje6xry"]
+
+[ext_resource type="Texture2D" uid="uid://cxhn0e2k5ijph" path="res://Assets/Textures/ItemIcons/Campfire.png" id="1_4so44"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_4so44"]
+
+[resource]
+script = ExtResource("2_4so44")
+item_key = 12
+display_name = "Fireeeeeee"
+icon = ExtResource("1_4so44")
+description = "Basic fire pit for warmth, light, and cooking food."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

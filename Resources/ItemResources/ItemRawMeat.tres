@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ceodhjtqdt7es"]
+
+[ext_resource type="Texture2D" uid="uid://dqkd2n3wa7mm0" path="res://Assets/Textures/ItemIcons/RawMeat.png" id="1_wh32l"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_tu4ly"]
+
+[resource]
+script = ExtResource("2_tu4ly")
+item_key = 8
+display_name = "Chewwy Bone"
+icon = ExtResource("1_wh32l")
+description = "Risky to eat uncooked but great for cooking."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

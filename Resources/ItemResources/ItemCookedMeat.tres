@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bq0ugrqy68qau"]
+
+[ext_resource type="Texture2D" uid="uid://bicl3lusl8pdl" path="res://Assets/Textures/ItemIcons/CookedMeat.png" id="1_iw4n3"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_b2ta1"]
+
+[resource]
+script = ExtResource("2_b2ta1")
+item_key = 9
+display_name = "Yummy"
+icon = ExtResource("1_iw4n3")
+description = "Hearty cooked meat that restores lots of hunger."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

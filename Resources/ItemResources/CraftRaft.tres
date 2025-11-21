@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://deiknjtityin0"]
+
+[ext_resource type="Texture2D" uid="uid://ckxlarwysmuyf" path="res://Assets/Textures/ItemIcons/Raft.png" id="1_f6msj"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_f6msj"]
+
+[resource]
+script = ExtResource("2_f6msj")
+item_key = 18
+display_name = "Escape"
+icon = ExtResource("1_f6msj")
+description = "Makeshift raft for crossing water or escaping the island."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

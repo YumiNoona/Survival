@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byisrhqlg3hk8"]
 
-[ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/Circle.png" id="1_omqfp"]
+[ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="1_omqfp"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3

@@ -1,1 +1,2 @@
+CraftingResource
 ItemResource

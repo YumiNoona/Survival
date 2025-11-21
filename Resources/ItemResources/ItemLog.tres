@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cv54arfb2r7lo"]
+
+[ext_resource type="Texture2D" uid="uid://c7wwvbyk8jyiw" path="res://Assets/Textures/ItemIcons/Log.png" id="1_4acrt"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_epse5"]
+
+[resource]
+script = ExtResource("2_epse5")
+item_key = 5
+display_name = "Heavy log"
+icon = ExtResource("1_4acrt")
+description = "Fuel for fires or raw material for shelters."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

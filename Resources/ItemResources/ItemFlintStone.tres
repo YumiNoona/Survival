@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://d1a01inn473e0"]
+
+[ext_resource type="Texture2D" uid="uid://dfo5sx8e03qqe" path="res://Assets/Textures/ItemIcons/Flintstone.png" id="1_fqkwk"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_4dlyu"]
+
+[resource]
+script = ExtResource("2_4dlyu")
+item_key = 7
+display_name = "Gold Stone"
+icon = ExtResource("1_fqkwk")
+description = "Sharp-edged stone that throws sparks for fire starting."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

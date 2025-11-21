@@ -3,24 +3,24 @@ class_name InventorySlot
 
 @onready var Icon: TextureRect = $MarginContainer/Icon
 
-var ItemKey
+var item_key : Variant = null
 
 
 func set_item_key(_item_key) -> void:
-	ItemKey = _item_key
+	item_key = _item_key
 	update_icon()
 
 
 func update_icon() -> void:
-	if ItemKey == null:
+	if item_key == null:
 		Icon.texture = null
 		return
 
-	Icon.texture = ItemConfig.get_item_resource(ItemKey).icon
+	Icon.texture = ItemConfig.get_item_resource(item_key).icon
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	if ItemKey != null:
+	if item_key != null:
 		var drag_preview := TextureRect.new()
 		drag_preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		drag_preview.texture = Icon.texture

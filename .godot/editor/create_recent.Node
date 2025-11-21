@@ -1,8 +1,9 @@
+GridContainer
+CenterContainer
 Bulletin
 Label
 HBoxContainer
 MarginContainer
-GridContainer
 TextureRect
 VBoxContainer
 Button

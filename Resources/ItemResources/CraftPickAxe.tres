@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cyqke2q1ubruu"]
+
+[ext_resource type="Texture2D" uid="uid://bqen6p0etehsr" path="res://Assets/Textures/ItemIcons/Pickaxe.png" id="1_ymala"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_ymala"]
+
+[resource]
+script = ExtResource("2_ymala")
+item_key = 11
+display_name = "Another Stone On Stick"
+icon = ExtResource("1_ymala")
+description = "Stone-tipped pick for breaking rocks and mineral nodes."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"
