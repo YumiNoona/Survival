@@ -21,3 +21,7 @@ res://Scripts/Inventory/CraftingResource.gd
 res://Resources/BluePrints/Axe.tres
 res://Resources/BluePrints/Rope.tres
 res://Scripts/Config/ItemConfig.gd
+res://Scenes/UI/CraftingButton.tscn
+res://Scripts/Inventory/CraftingButton.gd
+res://Scripts/Inventory/PlayerMenuBase.gd
+res://Scripts/Inventory/CraftingMenu.gd

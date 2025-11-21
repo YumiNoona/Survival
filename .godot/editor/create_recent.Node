@@ -1,12 +1,13 @@
+PlayerMenuBase
+Button
+TextureRect
+MarginContainer
 GridContainer
 CenterContainer
 Bulletin
 Label
 HBoxContainer
-MarginContainer
-TextureRect
 VBoxContainer
-Button
 NinePatchRect
 VSplitContainer
 HSplitContainer

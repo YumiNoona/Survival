@@ -1,6 +1,5 @@
-res://Resources/BluePrints
-res://Scenes/Core
 res://Scripts/Inventory
 res://Scenes/UI
+res://Scenes/Core
 res://Resources/ItemResources
 res://Scripts/Config

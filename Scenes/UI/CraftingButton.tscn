@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://nmsxyh3omdhr"]
+
+[ext_resource type="Texture2D" uid="uid://7que4dlhqyrv" path="res://Assets/Textures/UI/PanelBlue.png" id="1_4soid"]
+[ext_resource type="Script" uid="uid://cs1wrpulhaefy" path="res://Scripts/Inventory/CraftingButton.gd" id="2_v88cf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4soid"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v88cf"]
+bg_color = Color(0.6, 0.6, 0.6, 0.08235294)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hpmh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.2509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixxd5"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 0.50980395)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CraftingButton" type="TextureRect"]
+custom_minimum_size = Vector2(160, 160)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4soid")
+script = ExtResource("2_v88cf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Icon" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4soid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v88cf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_8hpmh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ixxd5")
