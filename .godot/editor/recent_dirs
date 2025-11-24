@@ -1,4 +1,7 @@
+res://Scenes/Interactive/EquippAble
 res://Scripts/Inventory
+res://Resources/Weapons
+res://Scenes/Interactive
 res://Scenes/UI
 res://Scenes/Core
 res://Resources/ItemResources

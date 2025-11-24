@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://cy86plrgwvger"]
+
+[ext_resource type="Script" uid="uid://byes4ehwa6lci" path="res://Scripts/Inventory/WeaponResources.gd" id="1_4ih3h"]
+[ext_resource type="Texture2D" uid="uid://n3brov0cfcuy" path="res://Assets/Textures/ItemIcons/Axe.png" id="1_yia0j"]
+
+[resource]
+script = ExtResource("1_4ih3h")
+item_key = 10
+display_name = "Axe"
+icon = ExtResource("1_yia0j")
+is_equippable = true
+description = "DescriptionSturdy axe for chopping trees and defending yourself."
+metadata/_custom_type_script = "uid://byes4ehwa6lci"

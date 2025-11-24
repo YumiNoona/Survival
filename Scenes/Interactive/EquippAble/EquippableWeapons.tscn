@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dodp5f2axadhe"]
+
+[ext_resource type="PackedScene" uid="uid://clf765rhem82w" path="res://Scenes/Interactive/EquippAble/EquippableItems.tscn" id="1_csf4r"]
+[ext_resource type="Script" uid="uid://csaorlm73jsrs" path="res://Scripts/Inventory/EquippableWeapons.gd" id="2_olvp5"]
+
+[node name="EquippableWeapons" instance=ExtResource("1_csf4r")]
+script = ExtResource("2_olvp5")
+
+[node name="HitCheckMarker" type="Marker3D" parent="." index="2"]

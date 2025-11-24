@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://chvj1wn5160gv"]
+
+[ext_resource type="PackedScene" uid="uid://17pfsmdbpskn" path="res://Scenes/UI/InventorySlots.tscn" id="1_blk86"]
+[ext_resource type="Texture2D" uid="uid://7que4dlhqyrv" path="res://Assets/Textures/UI/PanelBlue.png" id="2_i4fq6"]
+[ext_resource type="Script" uid="uid://dctm7xwll82o2" path="res://Scripts/Inventory/HotBarSlot.gd" id="3_oj67f"]
+[ext_resource type="Texture2D" uid="uid://lnuglceo8dqq" path="res://Assets/Textures/UI/PanelSetBrown.png" id="3_qng84"]
+
+[node name="HotBarSlot" groups=["HotBarSlots"] instance=ExtResource("1_blk86")]
+texture = ExtResource("2_i4fq6")
+script = ExtResource("3_oj67f")
+
+[node name="Numbers" type="TextureRect" parent="." index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("3_qng84")
+expand_mode = 1
+
+[node name="NumberLabel" type="Label" parent="Numbers" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1

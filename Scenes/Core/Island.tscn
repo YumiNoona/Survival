@@ -60,11 +60,44 @@ environment = SubResource("Environment_rgh2o")
 [node name="PickAbleStone" parent="." instance=ExtResource("3_7gxn0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8331196, 4.7683716e-07, -3.0653198)
 
+[node name="PickAbleStone2" parent="." instance=ExtResource("3_7gxn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5624576, 4.7683716e-07, -3.0653198)
+
+[node name="PickAbleStone3" parent="." instance=ExtResource("3_7gxn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2187347, 4.7683716e-07, -3.0653198)
+
+[node name="PickAbleStone4" parent="." instance=ExtResource("3_7gxn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9037555, 4.7683716e-07, -3.0653198)
+
 [node name="PickAbleStick" parent="." instance=ExtResource("4_jyfx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8954043, 0, -2.3924065)
 
+[node name="PickAbleStick2" parent="." instance=ExtResource("4_jyfx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5097709, 0, -2.3924065)
+
+[node name="PickAbleStick3" parent="." instance=ExtResource("4_jyfx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1441894, 0, -2.3924065)
+
 [node name="PickAblePlant" parent="." instance=ExtResource("5_tmbkt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6884453, 0, -1.6504991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5083609, 0, -1.6504991)
+
+[node name="PickAblePlant2" parent="." instance=ExtResource("5_tmbkt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1756992, 0, -1.6504991)
+
+[node name="PickAblePlant3" parent="." instance=ExtResource("5_tmbkt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8245733, 0, -1.6504991)
+
+[node name="PickAblePlant4" parent="." instance=ExtResource("5_tmbkt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49287778, 0, -1.6504991)
 
 [node name="PickAbleMushroom" parent="." instance=ExtResource("6_eqw3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.731316, 0, -0.96273434)
+
+[node name="PickAbleMushroom2" parent="." instance=ExtResource("6_eqw3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3631675, 0, -0.96273434)
+
+[node name="PickAbleMushroom3" parent="." instance=ExtResource("6_eqw3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0188618, 0, -0.96273434)
+
+[node name="PickAbleMushroom4" parent="." instance=ExtResource("6_eqw3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6885791, 0, -0.96273434)

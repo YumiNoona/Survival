@@ -1,2 +1,3 @@
+WeaponResource
 CraftingResource
 ItemResource

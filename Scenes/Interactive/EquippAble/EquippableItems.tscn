@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://clf765rhem82w"]
+
+[ext_resource type="Script" uid="uid://dcvilq2er80s0" path="res://Scripts/Inventory/EquippableItems.gd" id="1_tknjx"]
+
+[node name="EquippableItems" type="Node3D"]
+script = ExtResource("1_tknjx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Mesh" type="Node3D" parent="."]

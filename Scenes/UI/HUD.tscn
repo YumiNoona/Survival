@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://byisrhqlg3hk8"]
+[gd_scene load_steps=4 format=3 uid="uid://byisrhqlg3hk8"]
 
 [ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="1_omqfp"]
+[ext_resource type="PackedScene" uid="uid://chvj1wn5160gv" path="res://Scenes/UI/HotBarSlot.tscn" id="2_qc5w2"]
+[ext_resource type="Script" uid="uid://myy1v1wbtquk" path="res://Scripts/Inventory/HotBarUI.gd" id="2_xaom8"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -26,3 +28,49 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_omqfp")
 expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HotBar" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 32
+alignment = 1
+script = ExtResource("2_xaom8")
+
+[node name="HotBarSlot" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot2" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot3" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot4" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot5" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot6" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot7" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot8" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2
+
+[node name="HotBarSlot9" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
+layout_mode = 2

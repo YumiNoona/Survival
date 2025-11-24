@@ -8,5 +8,6 @@ script = ExtResource("2_4l74p")
 item_key = 10
 display_name = "Stone On Stick"
 icon = ExtResource("1_4l74p")
+is_equippable = true
 description = "Sturdy axe for chopping trees and defending yourself."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

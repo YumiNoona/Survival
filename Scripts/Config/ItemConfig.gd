@@ -51,7 +51,7 @@ const ITEM_RESOURCE_PATHS := {
 	Keys.Mushroom : "res://Resources/ItemResources/ItemMushroom.tres",
 	
 	#CraftAble
-	Keys.Axe : "res://Resources/ItemResources/CraftAxe.tres",
+	Keys.Axe : "res://Resources/Weapons/AxeWeapon.tres",
 	Keys.Pickaxe : "res://Resources/ItemResources/CraftPickAxe.tres",
 	Keys.Campfire : "res://Resources/ItemResources/CraftCampFire.tres",
 	Keys.Multitool : "res://Resources/ItemResources/CraftMultitool.tres",
@@ -74,3 +74,10 @@ static func get_item_resource(key : Keys) -> ItemResource:
 
 static func get_crafting_resource(key : Keys) -> CraftingResource:
 	return load(CRAFTING_RESOURCE_PATHS.get(key))
+
+const EQUIPPABLE_ITEM_PATHS := {
+	Keys.Axe : "res://Scenes/Interactive/EquippAble/EquippableAxe.tscn"
+}
+
+static func get_equippable_item(key : Keys) -> PackedScene:
+	return load(EQUIPPABLE_ITEM_PATHS.get(key))

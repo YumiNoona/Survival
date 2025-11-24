@@ -11,6 +11,7 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = $Head/InteractionRayCast
+@onready var equippabel_item_holder: Node3D = $Head/EquippabelItemHolder
 
 
 func _enter_tree() -> void:
@@ -36,6 +37,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move()
+
+	if Input.is_action_just_pressed("Use"):
+		equippabel_item_holder.try_to_use_item()
 
 
 func move() -> void:
@@ -79,3 +83,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	elif event.is_action_pressed("Inventory"):
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu, null)
+
+	elif event.is_action_pressed("ItemHotKeys"):
+		EventSystem.EQU_hotkey_pressed.emit(int(event.as_text()))
