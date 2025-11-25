@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxs8ol1djfep1"]
 
-[ext_resource type="PackedScene" uid="uid://ccu47amu53f20" path="res://Scenes/Interactive/PickAble.tscn" id="1_d4cjq"]
+[ext_resource type="PackedScene" uid="uid://ccu47amu53f20" path="res://Scenes/Interactive/PickAble/PickAble.tscn" id="1_d4cjq"]
 [ext_resource type="PackedScene" uid="uid://dn5li5i7rw3so" path="res://Assets/Meshes/Scene/Stone.tscn" id="2_d4cjq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f7beu"]

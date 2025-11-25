@@ -1,3 +1,4 @@
+HittableObjectAttributes
 WeaponResource
 CraftingResource
 ItemResource

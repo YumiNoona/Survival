@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cne2tsj00vny3"]
 
-[ext_resource type="PackedScene" uid="uid://ccu47amu53f20" path="res://Scenes/Interactive/PickAble.tscn" id="1_jv874"]
+[ext_resource type="PackedScene" uid="uid://ccu47amu53f20" path="res://Scenes/Interactive/PickAble/PickAble.tscn" id="1_jv874"]
 [ext_resource type="PackedScene" uid="uid://31wl5xmo3r57" path="res://Assets/Meshes/Scene/Mushroom.tscn" id="2_jv874"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rkbox"]

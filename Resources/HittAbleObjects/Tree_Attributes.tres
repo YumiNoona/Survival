@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HittableObjectAttributes" load_steps=2 format=3 uid="uid://bqb163to5o34l"]
+
+[ext_resource type="Script" uid="uid://6ihsf3vavy55" path="res://Scripts/Inventory/HittableObjectAttributes.gd" id="1_qfl5g"]
+
+[resource]
+script = ExtResource("1_qfl5g")
+metadata/_custom_type_script = "uid://6ihsf3vavy55"

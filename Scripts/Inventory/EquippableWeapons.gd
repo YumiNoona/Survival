@@ -9,6 +9,11 @@ func _ready() -> void:
 	if weapon_resource:
 		hit_check_marker.position.z = -weapon_resource.attack_range
 
+	super._ready()
+
+func change_energy() -> void:
+	EventSystem.PLA_change_energy.emit(weapon_resource.energy_change_per_use)
+
 func check_hit() -> void:
 	var space_state := get_world_3d().direct_space_state
 
@@ -24,4 +29,3 @@ func check_hit() -> void:
 
 	if not result.is_empty():
 		result.collider.take_hit(weapon_resource)
-		print("Hit:", result.collider)

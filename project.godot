@@ -93,3 +93,6 @@ Use={
 3d_physics/layer_2="Actor"
 3d_physics/layer_3="Interactive"
 3d_physics/layer_4="HitBox"
+3d_physics/layer_5="BigRigidPickAble"
+3d_physics/layer_6="SmallRigidPickAble"
+3d_physics/layer_7="StaticBody"
