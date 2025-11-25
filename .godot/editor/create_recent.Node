@@ -1,3 +1,4 @@
+CenterContainer
 ProgressBar
 TextureProgressBar
 VBoxContainer
@@ -12,4 +13,3 @@ RigidBody3D
 CollisionShape3D
 Area3D
 EquippableItem
-AnimationPlayer
