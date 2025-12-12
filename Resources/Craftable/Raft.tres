@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CraftingResource" load_steps=8 format=3 uid="uid://cec6yx7be6kfa"]
+
+[ext_resource type="Script" uid="uid://dht3tg25pcuyg" path="res://Scripts/Crafting/CraftingCost.gd" id="1_ddsc4"]
+[ext_resource type="Script" uid="uid://bikteyweyi84e" path="res://Scripts/Crafting/CraftingResource.gd" id="2_pj0wx"]
+
+[sub_resource type="Resource" id="Resource_0bxv4"]
+script = ExtResource("1_ddsc4")
+amount = 10
+metadata/_custom_type_script = "uid://dht3tg25pcuyg"
+
+[sub_resource type="Resource" id="Resource_tujrg"]
+script = ExtResource("1_ddsc4")
+item_key = 5
+amount = 5
+metadata/_custom_type_script = "uid://dht3tg25pcuyg"
+
+[sub_resource type="Resource" id="Resource_dlw1a"]
+script = ExtResource("1_ddsc4")
+item_key = 14
+amount = 4
+metadata/_custom_type_script = "uid://dht3tg25pcuyg"
+
+[sub_resource type="Resource" id="Resource_ddsc4"]
+script = ExtResource("1_ddsc4")
+item_key = 2
+amount = 6
+metadata/_custom_type_script = "uid://dht3tg25pcuyg"
+
+[sub_resource type="Resource" id="Resource_pj0wx"]
+script = ExtResource("1_ddsc4")
+item_key = 9
+amount = 2
+metadata/_custom_type_script = "uid://dht3tg25pcuyg"
+
+[resource]
+script = ExtResource("2_pj0wx")
+item_item_key = 18
+costs = Array[ExtResource("1_ddsc4")]([SubResource("Resource_0bxv4"), SubResource("Resource_tujrg"), SubResource("Resource_dlw1a"), SubResource("Resource_ddsc4"), SubResource("Resource_pj0wx")])
+needs_multitool = true
+needs_tinderbox = true
+metadata/_custom_type_script = "uid://bikteyweyi84e"

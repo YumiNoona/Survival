@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableResource" load_steps=3 format=3 uid="uid://k1yd6x78g2n5"]
+
+[ext_resource type="Script" uid="uid://daoxhtf04r7s6" path="res://Scripts/Vitality/Cosumables.gd" id="1_oid8o"]
+[ext_resource type="Texture2D" uid="uid://c7lqw5r8i22qk" path="res://Assets/Textures/ItemIcons/Mushroom.png" id="1_r2cd6"]
+
+[resource]
+script = ExtResource("1_oid8o")
+health_change = -20.0
+energy_change = 10.0
+item_key = 3
+display_name = "Eatable Mushroom"
+icon = ExtResource("1_r2cd6")
+is_equippable = true
+description = "Eat me. Im tasty"
+metadata/_custom_type_script = "uid://daoxhtf04r7s6"

@@ -6,6 +6,7 @@ var hotbar: Array
 func _enter_tree() -> void:
 	EventSystem.INV_hotbar_updated.connect(hotbar_updated)
 	EventSystem.EQU_hotkey_pressed.connect(hotkey_pressed)
+	EventSystem.EQU_delete_equipped_item.connect(delete_equipped_item)
 
 func _ready() -> void:
 	EventSystem.EQU_active_hotbar_slot_updated.emit(active_hotbar_slot)
@@ -30,3 +31,8 @@ func hotkey_pressed(hotkey: int) -> void:
 		active_hotbar_slot = -1
 		EventSystem.EQU_unequip_item.emit()
 		EventSystem.EQU_active_hotbar_slot_updated.emit(active_hotbar_slot)
+
+func delete_equipped_item() -> void:
+	EventSystem.INV_delete_item_by_index.emit(active_hotbar_slot, true)
+	EventSystem.EQU_active_hotbar_slot_updated.emit(active_hotbar_slot)
+	active_hotbar_slot = -1

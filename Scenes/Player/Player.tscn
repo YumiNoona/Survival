@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://crff7tqvdq"]
 
-[ext_resource type="Script" uid="uid://pquq1gcmbrw6" path="res://Scripts/Player.gd" id="1_s0eop"]
-[ext_resource type="Script" uid="uid://5lfjtwfgpx2r" path="res://Scripts/MainCamera.gd" id="2_4wape"]
+[ext_resource type="Script" uid="uid://pquq1gcmbrw6" path="res://Scripts/Player/Player.gd" id="1_s0eop"]
+[ext_resource type="Script" uid="uid://5lfjtwfgpx2r" path="res://Scripts/Core/MainCamera.gd" id="2_4wape"]
 [ext_resource type="Script" uid="uid://dec1f4e51fh37" path="res://Scripts/Interactive/InteractionRayCast.gd" id="2_ft8w5"]
 [ext_resource type="Script" uid="uid://beqi1hxgh4y46" path="res://Scripts/Inventory/InventoryManager.gd" id="3_h54ih"]
 [ext_resource type="Script" uid="uid://bch8dcxfar324" path="res://Scripts/Inventory/EquippabelItemHolder.gd" id="3_jmcll"]

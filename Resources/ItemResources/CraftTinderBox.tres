@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dq064c3gmme1p"]
 
 [ext_resource type="Texture2D" uid="uid://c2gjgvqwr7cl5" path="res://Assets/Textures/ItemIcons/TinderBox.png" id="1_dp035"]
-[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_dp035"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Core/ItemResources.gd" id="2_dp035"]
+
 
 [resource]
 script = ExtResource("2_dp035")

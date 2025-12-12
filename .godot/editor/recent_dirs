@@ -1,11 +1,12 @@
-res://Scripts/Vitality
-res://Scripts
-res://Scripts/Inventory
 res://Scenes/Interactive/Rigid
+res://Scenes/Interactive/EquippAble
+res://Scripts
+res://Resources/Cosumables
+res://Scripts/Vitality
+res://Scripts/Inventory
 res://Scenes/Interactive/HittAble
 res://Scripts/Interactive
 res://Resources/HittAbleObjects
-res://Scenes/Interactive/EquippAble
 res://Resources/Weapons
 res://Scenes/Interactive
 res://Scenes/UI

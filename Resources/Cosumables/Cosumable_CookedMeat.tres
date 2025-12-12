@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableResource" load_steps=3 format=3 uid="uid://di3lmgirrv42h"]
+
+[ext_resource type="Texture2D" uid="uid://bicl3lusl8pdl" path="res://Assets/Textures/ItemIcons/CookedMeat.png" id="1_r5vea"]
+[ext_resource type="Script" uid="uid://daoxhtf04r7s6" path="res://Scripts/Vitality/Cosumables.gd" id="2_x403r"]
+
+[resource]
+script = ExtResource("2_x403r")
+health_change = 70.0
+energy_change = 50.0
+item_key = 9
+display_name = "Eatable Meat"
+icon = ExtResource("1_r5vea")
+is_equippable = true
+description = "Nutritious meat."
+metadata/_custom_type_script = "uid://daoxhtf04r7s6"

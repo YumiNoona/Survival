@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c0uplswih1w0e" path="res://Assets/Meshes/Scene/Log.tscn" id="2_hdyjj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ou3fo"]
-height = 1.1685791
+height = 0.95542145
 radius = 0.16845703
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ou3fo"]
@@ -18,7 +18,7 @@ item_key = 5
 prompt = "Pick Up Log"
 
 [node name="CollisionShape3D" parent="Pickuppable" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008239746, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006038666, 0)
 shape = SubResource("CylinderShape3D_ou3fo")
 
 [node name="Log" parent="." index="1" instance=ExtResource("2_hdyjj")]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://lca7x5lvg6fx"]
+
+[ext_resource type="Texture2D" uid="uid://bqen6p0etehsr" path="res://Assets/Textures/ItemIcons/Pickaxe.png" id="1_t7ak6"]
+[ext_resource type="Script" uid="uid://byes4ehwa6lci" path="res://Scripts/Weapons/WeaponResources.gd" id="2_3ypkw"]
+
+[resource]
+script = ExtResource("2_3ypkw")
+damage = 30.0
+attack_range = 1.5
+energy_change_per_use = -1.0
+item_key = 11
+display_name = "PickAxe"
+icon = ExtResource("1_t7ak6")
+is_equippable = true
+description = "A nice pickaxe. You can hit boulders with it."
+metadata/_custom_type_script = "uid://byes4ehwa6lci"

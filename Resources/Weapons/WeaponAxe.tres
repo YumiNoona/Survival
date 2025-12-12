@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://cy86plrgwvger"]
 
-[ext_resource type="Script" uid="uid://byes4ehwa6lci" path="res://Scripts/Inventory/WeaponResources.gd" id="1_4ih3h"]
+[ext_resource type="Script" uid="uid://byes4ehwa6lci" path="res://Scripts/Weapons/WeaponResources.gd" id="1_4ih3h"]
 [ext_resource type="Texture2D" uid="uid://n3brov0cfcuy" path="res://Assets/Textures/ItemIcons/Axe.png" id="1_yia0j"]
 
 [resource]
 script = ExtResource("1_4ih3h")
+attack_range = 1.5
 item_key = 10
 display_name = "Axe"
 icon = ExtResource("1_yia0j")

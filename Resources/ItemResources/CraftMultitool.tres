@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dtqpc7ljgn3gl"]
 
 [ext_resource type="Texture2D" uid="uid://bqqxmnrkqkwoo" path="res://Assets/Textures/ItemIcons/MultiTool.png" id="1_6u3c4"]
-[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Inventory/ItemResources.gd" id="2_6u3c4"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Core/ItemResources.gd" id="2_6u3c4"]
+
 
 [resource]
 script = ExtResource("2_6u3c4")

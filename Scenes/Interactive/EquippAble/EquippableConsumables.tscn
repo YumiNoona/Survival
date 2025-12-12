@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://fxj8ncnwjxoe"]
+
+[ext_resource type="PackedScene" uid="uid://clf765rhem82w" path="res://Scenes/Interactive/EquippAble/EquippableItems.tscn" id="1_l3207"]
+[ext_resource type="Script" uid="uid://rmaic5rbc0lr" path="res://Scripts/Inventory/EquippableConsumables.gd" id="2_ykjgd"]
+
+[node name="EquippableConsumables" instance=ExtResource("1_l3207")]
+script = ExtResource("2_ykjgd")

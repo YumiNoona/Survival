@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CraftingResource" load_steps=6 format=3 uid="uid://butlw3gctk1h4"]
 
-[ext_resource type="Script" uid="uid://dht3tg25pcuyg" path="res://Scripts/Inventory/CraftingCost.gd" id="1_0bxv4"]
-[ext_resource type="Script" uid="uid://bikteyweyi84e" path="res://Scripts/Inventory/CraftingResource.gd" id="2_tujrg"]
+[ext_resource type="Script" uid="uid://dht3tg25pcuyg" path="res://Scripts/Crafting/CraftingCost.gd" id="1_0bxv4"]
+[ext_resource type="Script" uid="uid://bikteyweyi84e" path="res://Scripts/Crafting/CraftingResource.gd" id="2_tujrg"]
 
 [sub_resource type="Resource" id="Resource_0bxv4"]
 script = ExtResource("1_0bxv4")

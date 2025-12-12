@@ -14,9 +14,16 @@ func _ready() -> void:
 		remove_child(residue)
 
 func register_hit(weapon_resource: WeaponResource) -> void:
-	if not attributes.weapon_filter.is_empty() \
-	and not weapon_resource.item_key in attributes.weapon_filter:
-		return
+	if not attributes.weapon_filter.is_empty():
+		var weapon_key = weapon_resource.item_key as int
+		var is_allowed = false
+		for allowed_key in attributes.weapon_filter:
+			if (allowed_key as int) == weapon_key:
+				is_allowed = true
+				break
+		
+		if not is_allowed:
+			return
 
 	current_health -= weapon_resource.damage
 

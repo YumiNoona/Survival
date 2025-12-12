@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://byhnjma00ehlv"]
 
 [ext_resource type="Texture2D" uid="uid://dhyppu1wj5v77" path="res://Assets/Textures/UI/PanelSetBeige.png" id="1_qgv4q"]
-[ext_resource type="Script" uid="uid://bpni2rlt4eyb7" path="res://Scripts/Inventory/PlayerMenuBase.gd" id="1_qu4jx"]
+[ext_resource type="Script" uid="uid://bpni2rlt4eyb7" path="res://Scripts/Player/PlayerMenuBase.gd" id="1_qu4jx"]
 [ext_resource type="Texture2D" uid="uid://cit3w8ihb4nta" path="res://Assets/Textures/UI/Cross.png" id="2_e1umh"]
 [ext_resource type="PackedScene" uid="uid://17pfsmdbpskn" path="res://Scenes/UI/InventorySlots.tscn" id="2_kk7rf"]
 [ext_resource type="Texture2D" uid="uid://lnuglceo8dqq" path="res://Assets/Textures/UI/PanelSetBrown.png" id="3_jvavk"]
+
 
 [sub_resource type="InputEventKey" id="InputEventKey_qu4jx"]
 device = -1

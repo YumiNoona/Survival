@@ -1,3 +1,4 @@
+ConsumableResource
 HittableObjectAttributes
 WeaponResource
 CraftingResource

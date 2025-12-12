@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://nmsxyh3omdhr"]
 
 [ext_resource type="Texture2D" uid="uid://7que4dlhqyrv" path="res://Assets/Textures/UI/PanelBlue.png" id="1_4soid"]
-[ext_resource type="Script" uid="uid://cs1wrpulhaefy" path="res://Scripts/Inventory/CraftingButton.gd" id="2_v88cf"]
+[ext_resource type="Script" uid="uid://cs1wrpulhaefy" path="res://Scripts/Crafting/CraftingButton.gd" id="2_v88cf"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4soid"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
