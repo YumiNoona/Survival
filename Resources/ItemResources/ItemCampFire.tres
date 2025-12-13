@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ch22uk0sd4i08"]
+
+[ext_resource type="Texture2D" uid="uid://cxhn0e2k5ijph" path="res://Assets/Textures/ItemIcons/Campfire.png" id="1_rhg8p"]
+[ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Core/ItemResources.gd" id="2_tg8fd"]
+
+[resource]
+script = ExtResource("2_tg8fd")
+item_key = 12
+display_name = "CampFire"
+icon = ExtResource("1_rhg8p")
+is_equippable = true
+description = "Burns hot and long in a campfire."
+metadata/_custom_type_script = "uid://bxgb22kriqp0u"

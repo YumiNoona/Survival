@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_3ypkw")
-damage = 30.0
+damage = 60.0
 attack_range = 1.5
 energy_change_per_use = -1.0
 item_key = 11

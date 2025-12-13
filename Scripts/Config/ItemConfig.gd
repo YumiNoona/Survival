@@ -27,43 +27,39 @@ enum Keys {
 
 const CRAFTABLE_ITEM_KEYS : Array[Keys] = [
 	Keys.Axe,
-	#Keys.Pickaxe,
-	#Keys.Campfire,
-	#Keys.Multitool,
+	Keys.Pickaxe,
+	Keys.Campfire,
+	Keys.Multitool,
 	Keys.Rope,
-	#Keys.Tinderbox,
-	#Keys.Torch,
-	#Keys.Tent,
-	#Keys.Raft
+	Keys.Tinderbox,
+	Keys.Torch,
+	Keys.Tent,
+	Keys.Raft
 ]
 
 const ITEM_RESOURCE_PATHS := {
-	#PickAble
+	#NonEqquippAble
 	Keys.Stick : "res://Resources/ItemResources/ItemStick.tres",
 	Keys.Stone : "res://Resources/ItemResources/ItemStone.tres",
 	Keys.Plant : "res://Resources/ItemResources/ItemPlant.tres",
 	Keys.Flintstone : "res://Resources/ItemResources/ItemFlintStone.tres",
 	Keys.Log : "res://Resources/ItemResources/ItemLog.tres",
 	Keys.Coal : "res://Resources/ItemResources/ItemCoal.tres",
-	
-	#Cooking
 	Keys.RawMeat : "res://Resources/ItemResources/ItemRawMeat.tres",
+	Keys.Multitool : "res://Resources/ItemResources/ItemMultitool.tres",
+	Keys.Tinderbox : "res://Resources/ItemResources/ItemTinderBox.tres",
+	Keys.Rope : "res://Resources/ItemResources/ItemRope.tres",
 	
-	#Consumables
-	Keys.Fruit : "res://Resources/Cosumables/Cosumable_Fruit.tres",
-	Keys.Mushroom : "res://Resources/Cosumables/Cosumable_Mushroom.tres",
-	Keys.CookedMeat : "res://Resources/ItemResources/ItemCookedMeat.tres",
-	
-	#CraftAble
+	#EqquippAble
 	Keys.Axe : "res://Resources/Weapons/WeaponAxe.tres",
 	Keys.Pickaxe : "res://Resources/Weapons/WeaponPickAxe.tres",
-	Keys.Rope : "res://Resources/ItemResources/CraftRope.tres",
-	Keys.Multitool : "res://Resources/ItemResources/CraftMultitool.tres",
-	Keys.Tinderbox : "res://Resources/ItemResources/CraftTinderBox.tres",
-	Keys.Torch : "res://Resources/ItemResources/CraftTorch.tres",
-	Keys.Tent : "res://Resources/ItemResources/CraftTent.tres",
-	Keys.Campfire : "res://Resources/ItemResources/CraftCampFire.tres",
-	Keys.Raft : "res://Resources/ItemResources/CraftRaft.tres"
+	Keys.Torch : "res://Resources/Weapons/WeaponTorch.tres",
+	Keys.Fruit : "res://Resources/Cosumables/Cosumable_Fruit.tres",
+	Keys.Mushroom : "res://Resources/Cosumables/Cosumable_Mushroom.tres",
+	Keys.CookedMeat :"res://Resources/Cosumables/Cosumable_CookedMeat.tres" ,
+	Keys.Tent : "res://Resources/ItemResources/ItemTent.tres",
+	Keys.Campfire : "res://Resources/ItemResources/ItemCampFire.tres",
+	Keys.Raft : "res://Resources/ItemResources/ItemRaft.tres"
 }
 
 const CRAFTING_RESOURCE_PATHS := {
@@ -80,10 +76,19 @@ const CRAFTING_RESOURCE_PATHS := {
 }
 
 const EQUIPPABLE_ITEM_PATHS := {
-	Keys.Axe : "res://Scenes/Interactive/EquippAble/EquippableAxe.tscn",
-	Keys.Mushroom : "res://Scenes/Interactive/EquippAble/EquippableMushroom.tscn",
-	Keys.Pickaxe : "res://Scenes/Interactive/EquippAble/EquippablePickAxe.tscn"
+	Keys.Axe : "res://Scenes/Interactive/EquippAble/Weapon/EquippableAxe.tscn",
+	Keys.Pickaxe : "res://Scenes/Interactive/EquippAble/Weapon/EquippablePickAxe.tscn",
+	Keys.Mushroom : "res://Scenes/Interactive/EquippAble/ConsumAble/EquippableMushroom.tscn",
+	Keys.Tent : "res://Scenes/Interactive/EquippAble/ConstructAble/EquippableConstructablesTent.tscn",
+	Keys.Campfire : "res://Scenes/Interactive/EquippAble/ConstructAble/EquippableConstructablesCampfire.tscn",
+	Keys.Raft : "res://Scenes/Interactive/EquippAble/ConstructAble/EquippableConstructablesRaft.tscn",
+	Keys.CookedMeat : "res://Scenes/Interactive/EquippAble/ConsumAble/EquippableCookedMeat.tscn",
+	Keys.Fruit : "res://Scenes/Interactive/EquippAble/ConsumAble/EquippableFruit.tscn",
+	Keys.Torch : "res://Scenes/Interactive/EquippAble/Weapon/EquippableTorch.tscn",
 }
+
+
+
 
 const PICKUPPABLE_ITEM_PATHS := {
 	Keys.Log : "res://Scenes/Interactive/Rigid/RigidPickAbleLog.tscn",
@@ -92,9 +97,16 @@ const PICKUPPABLE_ITEM_PATHS := {
 	Keys.Flintstone : "res://Scenes/Interactive/Rigid/Rigid_PickAbleFlintstone.tscn"
 }
 
+const CONSTRUCTTABLE_SCENE := {
+	Keys.Tent : "res://Scenes/Interactive/Constructables/ConstructableTent.tscn", 
+	Keys.Raft : "res://Scenes/Interactive/Constructables/ConstructableRaft.tscn", 
+	Keys.Campfire : "res://Scenes/Interactive/Constructables/ConstructableCampfire.tscn",
+}
+
 
 static func get_item_resource(key : Keys) -> ItemResource:
 	return load(ITEM_RESOURCE_PATHS.get(key))
+
 
 static func get_crafting_resource(key : Keys) -> CraftingResource:
 	return load(CRAFTING_RESOURCE_PATHS.get(key))
@@ -106,3 +118,7 @@ static func get_equippable_item(key : Keys) -> PackedScene:
 
 static func get_pickuppable_item(key : Keys) -> PackedScene:
 	return load(PICKUPPABLE_ITEM_PATHS.get(key))
+
+
+static func get_constructable_scene(key : Keys) -> PackedScene:
+	return load(CONSTRUCTTABLE_SCENE.get(key))

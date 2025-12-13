@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5s8cr64sunff"]
+
+[ext_resource type="PackedScene" uid="uid://c16jn2vm5t816" path="res://Scenes/Interactive/EquippAble/ConstructAble/EquippableConstructables.tscn" id="1_copc5"]
+[ext_resource type="PackedScene" uid="uid://bvcgmkka5d3ip" path="res://Assets/Meshes/Scene/Campfire.tscn" id="3_vankk"]
+
+[sub_resource type="Animation" id="Animation_3w31t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Campfire:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, -0.25, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh/Campfire:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.1816616, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qo1vn"]
+resource_name = "Swing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/Campfire:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.3, -0.25, -0.35), Vector3(0.16, -0.5, -0.4), Vector3(0.3, -0.25, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh/Campfire:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.1816616, 0), Vector3(0.31415927, 2.268928, -0.9599311), Vector3(0, 2.1816616, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"try_to_construct"
+}, {
+"args": [],
+"method": &"destroy_self"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w31t"]
+_data = {
+&"RESET": SubResource("Animation_3w31t"),
+&"Swing": SubResource("Animation_qo1vn")
+}
+
+[node name="EquippableConstructablesCampfire" instance=ExtResource("1_copc5")]
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_3w31t")
+}
+
+[node name="Campfire" parent="Mesh" index="0" instance=ExtResource("3_vankk")]
+transform = Transform3D(-0.11471529, 0, 0.1638304, 0, 0.2, 0, -0.1638304, 0, -0.11471529, 0.3, -0.25, -0.35)
+
+[node name="ConstructableArea" parent="." index="3"]
+collision_mask = 254

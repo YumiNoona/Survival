@@ -34,6 +34,9 @@ signal INV_delete_crafting_item
 @warning_ignore("unused_signal")
 signal INV_delete_item_by_index
 
+@warning_ignore("unused_signal")
+signal INV_add_item_by_index
+
 #Player Signal
 
 @warning_ignore("unused_signal")

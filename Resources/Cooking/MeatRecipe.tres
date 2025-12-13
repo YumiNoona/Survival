@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CookingRecipeResource" load_steps=4 format=3 uid="uid://cdh5lcygbma1"]
+
+[ext_resource type="Script" uid="uid://cgqhq1hk7agt" path="res://Scripts/Cooking/CookingRecipeResource.gd" id="1_hdein"]
+[ext_resource type="PackedScene" uid="uid://mgawcgdsd7wc" path="res://Assets/Meshes/Scene/CookedMeat.tscn" id="1_umbp4"]
+[ext_resource type="PackedScene" uid="uid://burxkic2wwcea" path="res://Assets/Meshes/Scene/RawMeat.tscn" id="3_gvshc"]
+
+[resource]
+script = ExtResource("1_hdein")
+uncooked_item_visuals = ExtResource("3_gvshc")
+cooked_item_visuals = ExtResource("1_umbp4")
+metadata/_custom_type_script = "uid://cgqhq1hk7agt"

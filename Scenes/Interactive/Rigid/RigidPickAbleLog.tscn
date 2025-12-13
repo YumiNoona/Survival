@@ -7,7 +7,7 @@
 height = 0.95542145
 radius = 0.16845703
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ou3fo"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3b63c"]
 points = PackedVector3Array(0.0079482645, -0.49870658, 0.13636813, -0.11651788, -0.49831414, 0.06552726, -0.096267164, -0.49841225, -0.04872542, 0.09680345, -0.49870658, 0.061676636, 0.11804145, -0.49870658, 0.07280651, -0.0006387755, 0.503556, 0.117246896, -0.10076732, 0.49992603, 0.06394482, -0.11651788, -0.49831414, -0.061595984, -0.11373972, 0.1868661, 0.0544765, -0.11504844, 0.18755287, -0.07074781, -0.0022230148, -0.4960577, -0.115214564, 0.10787017, -0.4960577, -0.051652946, 0.1098677, -0.17102873, -0.059855297, 0.11037282, 0.49992603, -0.063178435, 0.109454416, 0.503556, 0.053685278, 0.0007388294, 0.50031847, -0.10308247, -0.08051661, 0.50031847, -0.05196943, -0.10076732, 0.49992603, -0.063178435, -0.004541971, 0.17499518, -0.13304347, 0.00027962774, 0.49992603, -0.12674005, 0.0044353902, -0.17102873, -0.12072676)
 
 [node name="RigidPickAbleLog" instance=ExtResource("1_3b63c")]
@@ -24,4 +24,4 @@ shape = SubResource("CylinderShape3D_ou3fo")
 [node name="Log" parent="." index="1" instance=ExtResource("2_hdyjj")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-shape = SubResource("ConvexPolygonShape3D_ou3fo")
+shape = SubResource("ConvexPolygonShape3D_3b63c")

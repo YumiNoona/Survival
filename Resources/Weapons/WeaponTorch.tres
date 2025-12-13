@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://cepwarj8t04fj"]
+
+[ext_resource type="Texture2D" uid="uid://eh5twl2eiqug" path="res://Assets/Textures/ItemIcons/Torch.png" id="1_v4slq"]
+[ext_resource type="Script" uid="uid://byes4ehwa6lci" path="res://Scripts/Weapons/WeaponResources.gd" id="2_vg7im"]
+
+[resource]
+script = ExtResource("2_vg7im")
+attack_range = 1.0
+item_key = 16
+display_name = "Torch"
+icon = ExtResource("1_v4slq")
+is_equippable = true
+description = "A useful torch to bring light around you."
+metadata/_custom_type_script = "uid://byes4ehwa6lci"

@@ -5,4 +5,5 @@ class_name ItemResource
 @export var display_name := "Item Name"
 @export var icon : Texture2D
 @export var is_equippable := false
+@export var cooking_recipe : CookingRecipeResource
 @export_multiline var description := "Description"

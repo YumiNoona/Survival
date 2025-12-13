@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbg3qa1iok3o0"]
+
+[ext_resource type="PackedScene" uid="uid://cr1xnwr3hpkbm" path="res://Scenes/Interactive/HittAble/HittAbleObjects.tscn" id="1_dvq8j"]
+[ext_resource type="Resource" uid="uid://j005m07nbsh4" path="res://Resources/HittAbleObjects/FlinStone_Attributes.tres" id="2_dvq8j"]
+[ext_resource type="PackedScene" uid="uid://b2aaqps4wnvkg" path="res://Assets/Meshes/Scene/FlintstoneBoulder.tscn" id="3_o44c1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5e7ml"]
+radius = 0.4816749
+
+[node name="HittAbleFlinStone" instance=ExtResource("1_dvq8j")]
+attributes = ExtResource("2_dvq8j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1598869, 0)
+shape = SubResource("SphereShape3D_5e7ml")
+
+[node name="Marker3D" type="Marker3D" parent="ItemSpawnPoints" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.12720306, 0.9918767, 0, -0.9918767, -0.12720306, -0.23159897, 0.47133866, -0.26643762)
+
+[node name="Marker3D2" type="Marker3D" parent="ItemSpawnPoints" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.29940718, 0.95412546, 0, -0.95412546, 0.29940718, 0.28744084, 0.5339254, -0.17129081)
+
+[node name="Marker3D3" type="Marker3D" parent="ItemSpawnPoints" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.4377749, -0.8990846, 0, 0.8990846, 0.4377749, -0.20928371, 0.5018649, 0.20967384)
+
+[node name="Marker3D4" type="Marker3D" parent="ItemSpawnPoints" index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.9056355, 0.4240571, 0, -0.4240571, -0.9056355, 0.2744615, 0.5247592, 0.17993256)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25599265, 0)
+shape = SubResource("SphereShape3D_5e7ml")
+
+[node name="FlintstoneBoulder" parent="." index="3" instance=ExtResource("3_o44c1")]

@@ -1,3 +1,5 @@
+CookingRecipeResource
+StandardMaterial3D
 ConsumableResource
 HittableObjectAttributes
 WeaponResource
