@@ -67,3 +67,5 @@ res://Resources/HittAbleObjects/FlinStone_Attributes.tres
 res://Scenes/Interactive/HittAble/HittAbleFlinStone.tscn
 res://Scenes/Interactive/FruitBush.tscn
 res://Scenes/Interactive/PickAble/PickAbleFruit.tscn
+res://Scenes/Core/Main.tscn
+res://Assets/Meshes/Scene/Grass.tscn

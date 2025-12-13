@@ -1,3 +1,4 @@
+ProtonScatter
 Node3D
 StaticBody3D
 OmniLight3D
@@ -11,5 +12,3 @@ HBoxContainer
 VBoxContainer
 CenterContainer
 Interactable
-Marker3D
-Timer

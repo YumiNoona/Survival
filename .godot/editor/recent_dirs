@@ -1,3 +1,8 @@
+res://Scenes/Animals
+res://Assets/Meshes/Scene
+res://Assets/Meshes
+res://Scenes/Interactive/PickAble
+res://Scenes/Interactive/HittAble
 res://Scenes/Interactive
 res://Scripts/Core
 res://Scripts/Cooking
@@ -9,14 +14,9 @@ res://Scenes/Interactive/Constructables
 res://Resources/Material
 res://Scripts/Constructable
 res://Scenes/Interactive/EquippAble
-res://Scenes/Animals
 res://Scripts/Animals
 res://Scenes/Interactive/Rigid
 res://Scripts
 res://Resources/Cosumables
 res://Scripts/Inventory
-res://Scenes/Interactive/HittAble
 res://Scripts/Interactive
-res://Resources/HittAbleObjects
-res://Resources/Weapons
-res://Scenes/Core

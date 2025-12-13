@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://0bdg4kfeqruo"]
+[gd_scene load_steps=4 format=3 uid="uid://0bdg4kfeqruo"]
 
 [ext_resource type="Script" uid="uid://cxelrdqigr1v" path="res://Scripts/Config/StageController.gd" id="1_4v5pd"]
-[ext_resource type="PackedScene" uid="uid://crff7tqvdq" path="res://Scenes/Player/Player.tscn" id="5_kmmkm"]
 [ext_resource type="PackedScene" uid="uid://byisrhqlg3hk8" path="res://Scenes/UI/HUD.tscn" id="8_xlfh5"]
 [ext_resource type="Script" uid="uid://dsi8m7vgbjuuc" path="res://Scripts/Config/BulletinController.gd" id="9_kmmkm"]
 
@@ -9,9 +8,6 @@
 
 [node name="StageController" type="Node" parent="."]
 script = ExtResource("1_4v5pd")
-
-[node name="Player" parent="." instance=ExtResource("5_kmmkm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3168163, 1.4275914)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
