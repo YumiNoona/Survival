@@ -28,9 +28,16 @@ func check_hit() -> void:
 	var result := space_state.intersect_ray(ray_query_params)
 
 	if not result.is_empty():
-		result.collider.take_hit(weapon_resource)
+		var collider = result.get("collider")
+		var hit_position = result.get("position", Vector3.ZERO)
 		
-	EventSystem.SPA_spawn_vfx.emit(VFXConfig.get_vfx(result.collider.hit_particles_key),Transform3D(Basis(), result.position))
+		if collider:
+			collider.take_hit(weapon_resource)
+			
+			# Spawn hit particles - collider is a HitBox which has hit_particles_key property
+			# Access the exported property directly
+			var particles_key = collider.hit_particles_key
+			EventSystem.SPA_spawn_vfx.emit(VFXConfig.get_vfx(particles_key), Transform3D(Basis(), hit_position))
 
 
 func play_swoosh_audio() ->void:

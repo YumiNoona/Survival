@@ -35,3 +35,5 @@ res://Scripts/Vitality/PlayerStatsManager.gd
 res://Scenes/UI/PlayerMenuBase.tscn
 res://Scripts/UI/ScrapSlot.gd
 res://Scripts/Player/PlayerMenuBase.gd
+res://Scripts/Inventory/HotBarUI.gd
+res://Scripts/Vitality/PlayerStatsContainer.gd
