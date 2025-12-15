@@ -27,7 +27,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		drag_preview.size = Vector2(80, 80)
 		drag_preview.modulate.a = 0.7
 		set_drag_preview(drag_preview)
-		#EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
+		EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
 		return self
 	
 	return null
@@ -66,4 +66,4 @@ func _drop_data(_at_position: Vector2, old_slot: Variant) -> void:
 			self is HotbarSlot
 			)
 	
-	#EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)

@@ -23,3 +23,7 @@ func change_energy(energy_change: float) -> void:
 func change_health(health_change: float) -> void:
 	current_health = clampf(current_health + health_change, 0, MAX_HEALTH)
 	EventSystem.PLA_health_updated.emit(MAX_HEALTH, current_health)
+	
+	if current_health <= 0:
+		EventSystem.PLA_freeze_player.emit()
+		EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)

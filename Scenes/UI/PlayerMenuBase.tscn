@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://byhnjma00ehlv"]
+[gd_scene load_steps=10 format=3 uid="uid://byhnjma00ehlv"]
 
 [ext_resource type="Texture2D" uid="uid://dhyppu1wj5v77" path="res://Assets/Textures/UI/PanelSetBeige.png" id="1_qgv4q"]
 [ext_resource type="Script" uid="uid://bpni2rlt4eyb7" path="res://Scripts/Player/PlayerMenuBase.gd" id="1_qu4jx"]
 [ext_resource type="Texture2D" uid="uid://cit3w8ihb4nta" path="res://Assets/Textures/UI/Cross.png" id="2_e1umh"]
 [ext_resource type="PackedScene" uid="uid://17pfsmdbpskn" path="res://Scenes/UI/InventorySlots.tscn" id="2_kk7rf"]
 [ext_resource type="Texture2D" uid="uid://lnuglceo8dqq" path="res://Assets/Textures/UI/PanelSetBrown.png" id="3_jvavk"]
-
+[ext_resource type="Script" uid="uid://dveongch5i5v5" path="res://Scripts/UI/ScrapSlot.gd" id="5_0vn60"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_qu4jx"]
 device = -1
@@ -200,6 +200,33 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+
+[node name="ScrapSlot" type="TextureRect" parent="MarginContainer/HSplitContainer/VSplitContainer/Descriptiom/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("3_jvavk")
+expand_mode = 1
+script = ExtResource("5_0vn60")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Descriptiom/MarginContainer/HBoxContainer/ScrapSlot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HSplitContainer/VSplitContainer/Descriptiom/MarginContainer/HBoxContainer/ScrapSlot/MarginContainer"]
+modulate = Color(0.4858325, 0.24151132, 0.09547339, 1)
+layout_mode = 2
+texture = ExtResource("2_e1umh")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer"]
 layout_mode = 2

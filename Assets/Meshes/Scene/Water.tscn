@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5milc3d4uwe8"]
+
+[ext_resource type="Shader" uid="uid://b2yts8n02w3px" path="res://Assets/Shader/WaterShader.tres" id="1_wyic3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0oir"]
+render_priority = 0
+shader = ExtResource("1_wyic3")
+shader_parameter/ColorParameter = Color(0.196078, 0.509804, 0.752941, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c1w88"]
+material = SubResource("ShaderMaterial_s0oir")
+size = Vector2(1000, 1000)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l1oh0"]
+
+[node name="Water" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_c1w88")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_l1oh0")

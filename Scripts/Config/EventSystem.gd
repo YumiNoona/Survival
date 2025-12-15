@@ -8,6 +8,12 @@ signal BUL_create_bulletin
 @warning_ignore("unused_signal")
 signal BUL_destroy_bulletin
 
+@warning_ignore("unused_signal")
+signal BUL_destroy_all_bulletins
+
+@warning_ignore("unused_signal")
+signal STA_change_stage
+
 #Inventory Signal
 
 @warning_ignore("unused_signal")
@@ -40,10 +46,10 @@ signal INV_add_item_by_index
 #Player Signal
 
 @warning_ignore("unused_signal")
-signal PLA_frezze_player
+signal PLA_freeze_player
 
 @warning_ignore("unused_signal")
-signal PLA_unfrezze_player
+signal PLA_unfreeze_player
 
 @warning_ignore("unused_signal")
 signal PLA_change_energy
@@ -56,6 +62,9 @@ signal PLA_change_health
 
 @warning_ignore("unused_signal")
 signal PLA_health_updated
+
+@warning_ignore("unused_signal")
+signal PLA_player_sleep
 
 #Equip Signal
 
@@ -78,3 +87,58 @@ signal EQU_delete_equipped_item
 
 @warning_ignore("unused_signal")
 signal SPA_spawn_scene
+
+@warning_ignore("unused_signal")
+signal SPA_spawn_vfx
+
+#SFX/Music Signal
+@warning_ignore("unused_signal")
+signal SFX_play_sfx
+
+@warning_ignore("unused_signal")
+signal SFX_play_dynamic_sfx
+
+@warning_ignore("unused_signal")
+signal MUS_play_music
+
+@warning_ignore("unused_signal")
+signal SET_music_volume_changed
+
+@warning_ignore("unused_signal")
+signal SET_sfx_volume_changed
+
+#Game Signal
+@warning_ignore("unused_signal")
+signal GAM_fast_forward_day_night_anim
+
+@warning_ignore("unused_signal")
+signal GAM_game_fade_in
+
+@warning_ignore("unused_signal")
+signal GAM_game_fade_out
+
+@warning_ignore("unused_signal")
+signal GAM_update_navmesh
+
+#HUD Signal
+@warning_ignore("unused_signal")
+signal HUD_hide_hud
+
+@warning_ignore("unused_signal")
+signal HUD_show_hud
+
+#Settings Signal
+@warning_ignore("unused_signal")
+signal SET_res_scale_changed
+
+@warning_ignore("unused_signal")
+signal SET_ssaa_changed
+
+@warning_ignore("unused_signal")
+signal SET_fullscreen_changed
+
+@warning_ignore("unused_signal")
+signal SET_ask_settings_resource
+
+@warning_ignore("unused_signal")
+signal SET_save_settings

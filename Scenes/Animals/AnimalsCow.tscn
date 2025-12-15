@@ -620,9 +620,12 @@ tracks/47/path = NodePath("..")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"times": PackedFloat32Array(0.53333336),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.36666667, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_attack_audio"
+}, {
 "args": [],
 "method": &"attack"
 }]
@@ -4646,12 +4649,17 @@ radius = 0.31769726
 
 [node name="AnimalsCow" instance=ExtResource("1_jxkvn")]
 max_health = 120.0
+attack_audio_key = 9
 idle_animations = Array[String](["Idle", "Idle_2", "Idle_Headlow", "Eating"])
 hurt_animations = Array[String](["Idle_HitReact1", "Idle_HitReact2"])
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.37232977, -0.05633545)
 shape = SubResource("CapsuleShape3D_jxkvn")
+
+[node name="HitBox" parent="." index="1"]
+hit_audio_key = 8
+hit_particles_key = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.024414, -0.25694847)
@@ -4780,7 +4788,7 @@ bones/16/parent = 15
 bones/16/rest = Transform3D(0.07873899, 0.9522533, 0.29498163, 0.99689513, -0.07521333, -0.023297751, 1.1920929e-06, 0.29590026, -0.95521885, -3.3415193e-07, 0.33113313, -8.800693e-08)
 bones/16/enabled = true
 bones/16/position = Vector3(-3.3415193e-07, 0.33113313, -8.800693e-08)
-bones/16/rotation = Quaternion(0.72614926, 0.6710564, 0.10155718, 0.10989402)
+bones/16/rotation = Quaternion(0.7261493, 0.67105645, 0.101557195, 0.10989404)
 bones/16/scale = Vector3(0.9999999, 1.0000001, 1)
 bones/17/name = "BackUpperLeg.L"
 bones/17/parent = 16
@@ -4801,7 +4809,7 @@ bones/19/parent = 1
 bones/19/rest = Transform3D(0.080935515, -0.9966315, -0.013304284, -0.3714607, -0.042547107, 0.92747307, -0.9249148, -0.070123546, -0.37365237, -0.23978533, 0.6233526, 0.6290391)
 bones/19/enabled = true
 bones/19/position = Vector3(-0.23978533, 0.6233526, 0.6290391)
-bones/19/rotation = Quaternion(0.6117874, -0.559055, -0.38339242, -0.40765673)
+bones/19/rotation = Quaternion(0.6117874, -0.559055, -0.3833924, -0.4076567)
 bones/19/scale = Vector3(1.0000005, 1.000001, 0.9999997)
 bones/20/name = "BackLeg.R"
 bones/20/parent = 19
@@ -4864,7 +4872,7 @@ bones/28/parent = 27
 bones/28/rest = Transform3D(1, -1.446069e-08, -1.3373197e-08, 1.3529581e-08, 0.9977406, -0.067182146, 1.4314486e-08, 0.067182146, 0.9977406, 7.1054274e-15, 0.34566414, 3.7252903e-08)
 bones/28/enabled = true
 bones/28/position = Vector3(7.1054274e-15, 0.34566414, 3.7252903e-08)
-bones/28/rotation = Quaternion(0.033610065, -6.925835e-09, 7.0015247e-09, 0.99943507)
+bones/28/rotation = Quaternion(0.033610065, -6.925835e-09, 7.0015242e-09, 0.999435)
 bones/28/scale = Vector3(1, 0.9999999, 0.9999999)
 bones/29/name = "Tail7"
 bones/29/parent = 28

@@ -8,11 +8,12 @@ script = ExtResource("2_r10yk")
 
 [node name="ItemPlaceRay" type="RayCast3D" parent="." index="2"]
 target_position = Vector3(0, 0, -3)
+collision_mask = 129
 
 [node name="ConstructableArea" type="Area3D" parent="." index="3"]
 top_level = true
 collision_layer = 0
-collision_mask = 126
+collision_mask = 254
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ConstructableArea" index="0"]
 

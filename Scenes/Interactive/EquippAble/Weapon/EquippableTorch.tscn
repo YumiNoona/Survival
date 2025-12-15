@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmj1gumylkcfm"]
+[gd_scene load_steps=16 format=3 uid="uid://cmj1gumylkcfm"]
 
 [ext_resource type="PackedScene" uid="uid://dodp5f2axadhe" path="res://Scenes/Interactive/EquippAble/Weapon/EquippableWeapons.tscn" id="1_dyl23"]
+[ext_resource type="AudioStream" uid="uid://bqfn66fobuk6l" path="res://Assets/Audio/SFX/Torch.wav" id="3_6gc6p"]
+[ext_resource type="Script" uid="uid://0ecmdypldnys" path="res://Scripts/Core/FlickerLight.gd" id="3_aeo3i"]
 [ext_resource type="PackedScene" uid="uid://cd7bpelx1m3xh" path="res://Assets/Meshes/Scene/Torch.tscn" id="3_tcnti"]
 
 [sub_resource type="Animation" id="Animation_ymaj8"]
@@ -64,11 +66,14 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"change_energy"
+}, {
+"args": [],
+"method": &"play_swoosh_audio"
 }, {
 "args": [],
 "method": &"check_hit"
@@ -142,7 +147,10 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59342176, 0)
 layers = 3
 light_color = Color(1, 0.79607844, 0.44313726, 1)
+light_energy = 0.7596844
 light_size = 0.3
+script = ExtResource("3_aeo3i")
+metadata/_custom_type_script = "uid://0ecmdypldnys"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Mesh/Torch" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57580495, 0)
@@ -151,3 +159,9 @@ amount = 25
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_gr0xa")
 draw_pass_1 = SubResource("QuadMesh_axlvx")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Mesh/Torch" index="2"]
+stream = ExtResource("3_6gc6p")
+unit_size = 3.0
+autoplay = true
+bus = &"SFX"

@@ -1,10 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://0bdg4kfeqruo"]
+[gd_scene load_steps=12 format=3 uid="uid://0bdg4kfeqruo"]
 
 [ext_resource type="Script" uid="uid://cxelrdqigr1v" path="res://Scripts/Config/StageController.gd" id="1_4v5pd"]
+[ext_resource type="Script" uid="uid://ybri06xlo0ic" path="res://Scripts/UI/HUD.gd" id="2_t7cte"]
+[ext_resource type="Script" uid="uid://b70qljqd5vc35" path="res://Scripts/Core/MusicController.gd" id="4_4v5pd"]
+[ext_resource type="Script" uid="uid://cgedcfg18cr43" path="res://Scripts/Core/SFXController.gd" id="5_gralk"]
+[ext_resource type="Script" uid="uid://dmtwm8yw74sci" path="res://Scripts/Core/GameFadeController.gd" id="6_ah4vs"]
+[ext_resource type="Script" uid="uid://bxau1rrbufv3u" path="res://Scripts/UI/SettingController.gd" id="8_kmmkm"]
 [ext_resource type="PackedScene" uid="uid://byisrhqlg3hk8" path="res://Scenes/UI/HUD.tscn" id="8_xlfh5"]
 [ext_resource type="Script" uid="uid://dsi8m7vgbjuuc" path="res://Scripts/Config/BulletinController.gd" id="9_kmmkm"]
 
+[sub_resource type="Animation" id="Animation_t7cte"]
+resource_name = "Loading"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.12156863), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadingLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xlfh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xlfh5"]
+_data = {
+&"Loading": SubResource("Animation_t7cte"),
+&"RESET": SubResource("Animation_xlfh5")
+}
+
 [node name="Main" type="Node"]
+process_mode = 3
 
 [node name="StageController" type="Node" parent="."]
 script = ExtResource("1_4v5pd")
@@ -12,8 +68,53 @@ script = ExtResource("1_4v5pd")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Node" parent="UI"]
+script = ExtResource("2_t7cte")
 
 [node name="HUD" parent="UI/HUD" instance=ExtResource("8_xlfh5")]
 
 [node name="BulletinController" type="Node" parent="UI"]
 script = ExtResource("9_kmmkm")
+
+[node name="MusicController" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_4v5pd")
+metadata/_custom_type_script = "uid://b70qljqd5vc35"
+
+[node name="SFXController" type="AudioStreamPlayer" parent="."]
+script = ExtResource("5_gralk")
+metadata/_custom_type_script = "uid://cgedcfg18cr43"
+
+[node name="FadingLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="GameFadeController" type="ColorRect" parent="FadingLayer" node_paths=PackedStringArray("animation_player")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_ah4vs")
+animation_player = NodePath("AnimationPlayer")
+metadata/_custom_type_script = "uid://dmtwm8yw74sci"
+
+[node name="LoadingLabel" type="Label" parent="FadingLayer/GameFadeController"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "LOADING....."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadingLayer/GameFadeController"]
+libraries = {
+&"": SubResource("AnimationLibrary_xlfh5")
+}
+
+[node name="SettingController" type="Node" parent="."]
+script = ExtResource("8_kmmkm")

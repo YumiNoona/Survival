@@ -10,7 +10,7 @@ func _enter_tree() -> void:
 	EventSystem.INV_inventory_updated.connect(update_inventory)
 
 func _ready() -> void:
-	EventSystem.PLA_frezze_player.emit()
+	EventSystem.PLA_freeze_player.emit()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	EventSystem.INV_ask_update_inventory.emit()
 	
@@ -22,7 +22,10 @@ func _ready() -> void:
 	for hotbar_slot in get_tree().get_nodes_in_group("HotBarSlots"):
 		hotbar_slot.mouse_entered.connect(show_item_info.bind(hotbar_slot))
 		hotbar_slot.mouse_exited.connect(hide_item_info)
-
+		
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
+	
+	%ScrapSlot.item_scrapped.connect(hide_item_info)
 
 func show_item_info(slot_identifier) -> void:
 	var slot : InventorySlot
@@ -52,12 +55,13 @@ func hide_item_info() -> void:
 
 	item_description.text = ""
 
-	
-func close() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.CraftingMenu)
-	EventSystem.PLA_unfrezze_player.emit()
-
 func update_inventory(inventory : Array) -> void:
 	for i in inventory.size():
 		inventory_container.get_child(i).set_item_key(inventory[i])
+
+
+func close() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.CraftingMenu)
+	EventSystem.PLA_unfreeze_player.emit()
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)

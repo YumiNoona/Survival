@@ -15,6 +15,10 @@ run/main_scene="uid://0bdg4kfeqruo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://dwg4cms7uskkp"
 
+[audio]
+
+buses/default_bus_layout="res://Music.tres"
+
 [autoload]
 
 EventSystem="*res://Scripts/Config/EventSystem.gd"
@@ -100,3 +104,4 @@ Use={
 3d_physics/layer_5="BigRigidPickAble"
 3d_physics/layer_6="SmallRigidPickAble"
 3d_physics/layer_7="StaticBody"
+3d_physics/layer_8="Water"

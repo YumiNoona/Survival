@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcpuf144encuq"]
+
+[ext_resource type="PackedScene" uid="uid://c5milc3d4uwe8" path="res://Assets/Meshes/Scene/Water.tscn" id="1_habdp"]
+[ext_resource type="Script" uid="uid://btl1u70kto4ou" path="res://Scripts/UI/Credits.gd" id="1_ng6he"]
+[ext_resource type="PackedScene" uid="uid://bgrl0t8e5u3e8" path="res://Assets/Meshes/Scene/Raft.tscn" id="2_eg3jt"]
+[ext_resource type="Script" uid="uid://dp4niewyht13w" path="res://Scripts/Core/ShakingCamera.gd" id="3_u63pf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eg3jt"]
+sky_top_color = Color(0.3254902, 0.8784314, 1, 1)
+sky_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
+ground_horizon_color = Color(0.67058825, 0.78431374, 0.83137256, 1)
+
+[sub_resource type="Sky" id="Sky_lucuv"]
+sky_material = SubResource("ProceduralSkyMaterial_eg3jt")
+
+[sub_resource type="Environment" id="Environment_u63pf"]
+background_mode = 2
+sky = SubResource("Sky_lucuv")
+ambient_light_color = Color(0.3254902, 0.8784314, 1, 1)
+ambient_light_sky_contribution = 0.5
+
+[sub_resource type="Animation" id="Animation_ng6he"]
+resource_name = "Credits"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 6, 8.908493, 10, 13, 14, 16.908493, 18, 21, 22, 24.908493, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6, 11, 14, 20, 22, 23),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["GO HOME!!!", "GODOT ENGINE", "MADE BY VEIL", "TRY MY OTHER GAMES", "ON YUMINOONA.ITCH.IO", "GAME NOT OVER YET"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(29.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"exit_to_menu"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Label:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.78039217, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpuvh"]
+_data = {
+&"Credits": SubResource("Animation_ng6he")
+}
+
+[node name="Credits" type="Node"]
+script = ExtResource("1_ng6he")
+music_to_play = 2
+
+[node name="Water" parent="." instance=ExtResource("1_habdp")]
+
+[node name="Raft" parent="." instance=ExtResource("2_eg3jt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5871568, 0)
+
+[node name="CameraHolder" type="Node3D" parent="Raft"]
+transform = Transform3D(0.97437006, 0, 0.22495104, 0, 1, 0, -0.22495104, 0, 0.97437006, 0.7, 0.7, -0.2)
+
+[node name="ShakingCamera" type="Camera3D" parent="Raft/CameraHolder"]
+script = ExtResource("3_u63pf")
+noise_speed = 4
+noise_multiplier = 0.15
+metadata/_custom_type_script = "uid://dp4niewyht13w"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(0.99607843, 1, 0.7294118, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u63pf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wpuvh")
+}
+autoplay = "Credits"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -150.0
+offset_right = 180.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.17152427, 0.8180602, 0.17152427, 1)
+theme_override_font_sizes/font_size = 64
+text = "GO HOME!!!"
+horizontal_alignment = 1
+vertical_alignment = 1

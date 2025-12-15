@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl7otymbq7psn"]
+[gd_scene load_steps=5 format=3 uid="uid://bl7otymbq7psn"]
 
 [ext_resource type="PackedScene" uid="uid://cr1xnwr3hpkbm" path="res://Scenes/Interactive/HittAble/HittAbleObjects.tscn" id="1_8pqkh"]
 [ext_resource type="Resource" uid="uid://dced0bnfxkpm0" path="res://Resources/HittAbleObjects/CoalBoulder_Attributes.tres" id="2_5e7ml"]
@@ -24,6 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 0.4377749, -0.8990846, 0, 0.8990846, 0.43777
 
 [node name="Marker3D4" type="Marker3D" parent="ItemSpawnPoints" index="3"]
 transform = Transform3D(1, 0, 0, 0, -0.9056355, 0.4240571, 0, -0.4240571, -0.9056355, 0.2744615, 0.5247592, 0.17993256)
+
+[node name="HitBox" parent="." index="2"]
+hit_audio_key = 7
+hit_particles_key = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19931102, 0)

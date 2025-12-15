@@ -35,8 +35,6 @@ var state := States.Idle
 @export var normal_speed := 0.6
 @export var alarmed_speed := 1.8
 @export var max_health := 80.0
-@export var idle_animations:Array[String] = []
-@export var hurt_animations:Array[String] = []
 @export var turn_speed_weight := 0.07
 @export var min_idle_time := 2.0
 @export var max_idle_time := 7.0
@@ -48,7 +46,9 @@ var state := States.Idle
 @export var damage := 20.0
 @export var vision_range := 15.0
 @export var vision_fov := 80.0
-#@export var attack_audio_key := SFXConfig.Keys.WolfAttack
+@export var attack_audio_key := SFXConfig.Keys.WolfAttack
+@export var idle_animations:Array[String] = []
+@export var hurt_animations:Array[String] = []
 
 
 var player_in_vision_range := false
@@ -96,6 +96,7 @@ func idle_loop() -> void:
 	apply_gravity()
 	if is_aggressive and can_see_player():
 		set_state(States.Chase)
+		apply_gravity()
 
 
 func wander_loop() -> void:
@@ -253,8 +254,8 @@ func set_state(new_state : States) -> void:
 			disappear_after_death_timer.start()
 
 
-#func play_attack_audio() -> void:
-	#EventSystem.SFX_play_dynamic_sfx.emit(attack_audio_key, global_position)
+func play_attack_audio() -> void:
+	EventSystem.SFX_play_dynamic_sfx.emit(attack_audio_key, global_position)
 
 
 func take_hit(weapon_resource : WeaponResource) -> void:

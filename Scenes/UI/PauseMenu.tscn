@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://o3k0mp3xhfv7"]
+
+[ext_resource type="PackedScene" uid="uid://d0va3wuq4l3eg" path="res://Scenes/UI/FadingBulletinBase.tscn" id="1_eod5q"]
+[ext_resource type="Script" uid="uid://bas5180ubadwe" path="res://Scripts/UI/PauseMenu.gd" id="1_n4i8v"]
+[ext_resource type="Theme" uid="uid://dcquy3bjwq6j0" path="res://Scenes/UI/UITheme.tres" id="3_238ko"]
+[ext_resource type="Script" uid="uid://br63qumntp3uo" path="res://Scripts/UI/UIButton.gd" id="4_2bpff"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n4i8v"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_2bpff"]
+events = [SubResource("InputEventKey_n4i8v")]
+
+[node name="PauseMenu" instance=ExtResource("1_eod5q")]
+theme = ExtResource("3_238ko")
+script = ExtResource("1_n4i8v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_238ko")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BTN_Resume" type="Button" parent="VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+shortcut = SubResource("Shortcut_2bpff")
+shortcut_in_tooltip = false
+text = "Resume"
+script = ExtResource("4_2bpff")
+metadata/_custom_type_script = "uid://br63qumntp3uo"
+
+[node name="BTN_Settings" type="Button" parent="VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Settings"
+script = ExtResource("4_2bpff")
+metadata/_custom_type_script = "uid://br63qumntp3uo"
+
+[node name="BTN_Quit" type="Button" parent="VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Quit"
+script = ExtResource("4_2bpff")
+metadata/_custom_type_script = "uid://br63qumntp3uo"
+
+[connection signal="pressed" from="VBoxContainer/BTN_Resume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Settings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTN_Quit" to="." method="_on_btn_quit_pressed"]

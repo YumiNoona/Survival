@@ -88,8 +88,6 @@ const EQUIPPABLE_ITEM_PATHS := {
 }
 
 
-
-
 const PICKUPPABLE_ITEM_PATHS := {
 	Keys.Log : "res://Scenes/Interactive/Rigid/RigidPickAbleLog.tscn",
 	Keys.Coal : "res://Scenes/Interactive/Rigid/Rigid_PickAbleCoal.tscn",

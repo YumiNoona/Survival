@@ -12,11 +12,14 @@ extends CharacterBody3D
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast: RayCast3D = $Head/InteractionRayCast
 @onready var equippabel_item_holder: Node3D = %EquippabelItemHolder
+@onready var footstep_audio_timer: Timer = $FootStepAudioTimer
 
+var is_sprinting := false
+var is_grounded := true
 
 func _enter_tree() -> void:
-	EventSystem.PLA_frezze_player.connect(set_freeze.bind(true))
-	EventSystem.PLA_unfrezze_player.connect(set_freeze.bind(false))
+	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
+	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
 
 
 func set_freeze(freeze : bool) -> void:
@@ -33,6 +36,11 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	EventSystem.HUD_show_hud.emit()
+
+
+func _exit_tree() -> void:
+	EventSystem.HUD_hide_hud.emit()
 
 
 func _physics_process(delta: float) -> void:
@@ -43,27 +51,34 @@ func _physics_process(delta: float) -> void:
 		equippabel_item_holder.try_to_use_item()
 
 
-func move() -> void:
-	var is_sprinting : bool
-	
+func move():
 	if is_on_floor():
 		is_sprinting = Input.is_action_pressed("Sprint")
-
+		
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_velocity
-			
+		
+		if velocity != Vector3.ZERO and footstep_audio_timer.is_stopped():
+			EventSystem.SFX_play_dynamic_sfx.emit(SFXConfig.Keys.Footstep, global_position, 0.3)
+			footstep_audio_timer.start(walking_footstep_audio_interval if not is_sprinting else sprinting_footstep_audio_interval)
+		
+		if not is_grounded:
+			is_grounded = true
+			EventSystem.SFX_play_dynamic_sfx.emit(SFXConfig.Keys.JumpLand, global_position)
+	
 	else:
 		velocity.y -= gravity
-		is_sprinting = false
+		
+		if is_grounded:
+			is_grounded = false
 	
 	var speed := normal_speed if not is_sprinting else sprint_speed
-
-
 	var input_dir := Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
-	var direction := transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	velocity.z = direction.z * speed
 	velocity.x = direction.x * speed
-
+	
 	move_and_slide()
 
 
@@ -90,6 +105,7 @@ func look_around(relative : Vector2) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
 	elif event.is_action_pressed("Inventory"):
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu, null)

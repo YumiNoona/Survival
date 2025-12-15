@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://1nalyblh4f4v"]
+[gd_scene load_steps=12 format=3 uid="uid://1nalyblh4f4v"]
 
 [ext_resource type="Script" uid="uid://cuq4k8722i2xl" path="res://Scripts/Cooking/InteractableCooker.gd" id="1_gdvxy"]
 [ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="2_5xf1g"]
+[ext_resource type="AudioStream" uid="uid://bwoxcohf027yy" path="res://Assets/Audio/SFX/Campfire.wav" id="2_w2amn"]
 [ext_resource type="Script" uid="uid://0ecmdypldnys" path="res://Scripts/Core/FlickerLight.gd" id="3_3p0s6"]
 
 [sub_resource type="Gradient" id="Gradient_3p0s6"]
@@ -63,6 +64,9 @@ one_shot = true
 [node name="FoodVisualsHolder" type="Marker3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_w2amn")
+unit_size = 7.0
+bus = &"SFX"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 25
@@ -74,7 +78,9 @@ draw_pass_1 = SubResource("QuadMesh_t8ymk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1828466, 0)
 layers = 3
 light_color = Color(0.7019608, 0.54509807, 0.27058825, 1)
+light_energy = 0.6450156
 shadow_enabled = true
 script = ExtResource("3_3p0s6")
+metadata/_custom_type_script = "uid://0ecmdypldnys"
 
 [connection signal="timeout" from="CookingTimer" to="." method="cooking_finished"]

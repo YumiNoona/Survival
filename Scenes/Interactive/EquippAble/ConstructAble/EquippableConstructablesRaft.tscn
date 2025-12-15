@@ -91,5 +91,9 @@ libraries = {
 [node name="Raft" parent="Mesh" index="0" instance=ExtResource("3_61s6j")]
 transform = Transform3D(-0.057357647, 0, 0.0819152, 0, 0.1, 0, -0.0819152, 0, -0.057357647, 0.3, -0.25, -0.35)
 
+[node name="ItemPlaceRay" parent="." index="2"]
+target_position = Vector3(0, 0, -8)
+collision_mask = 129
+
 [node name="ConstructableArea" parent="." index="3"]
-collision_mask = 254
+collision_mask = 127

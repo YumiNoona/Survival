@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c5bs5j4uwlipi" path="res://Scripts/Core/Spawner.gd" id="1_kj3xf"]
 
-
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_kj3xf")
 
 [node name="Items" type="Node3D" parent="."]
+
+[node name="ConstructableHolder" type="Node3D" parent="."]

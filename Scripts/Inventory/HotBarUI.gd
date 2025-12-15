@@ -3,6 +3,7 @@ extends HBoxContainer
 func _enter_tree() -> void:
 	EventSystem.INV_hotbar_updated.connect(update_hotbar)
 	EventSystem.EQU_active_hotbar_slot_updated.connect(active_slot_updated)
+	EventSystem.EQU_unequip_item.connect(active_slot_updated.bind(null))
 
 func update_hotbar(hotbar: Array) -> void:
 	for slot in get_children():
