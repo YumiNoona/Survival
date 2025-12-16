@@ -1,12 +1,13 @@
+res://Scenes/Animals
+res://Assets/Meshes/Scene/Animals
+res://Assets/Meshes/Scene
+res://
 res://Scripts/UI
 res://Scenes/Particles
 res://Scripts/Core
-res://Assets/Meshes/Scene
 res://Scenes/UI
 res://Scripts
 res://Scripts/Player
-res://Scenes/Animals
-res://
 res://Assets/Shader
 res://Assets/Meshes
 res://Scenes/Interactive/PickAble
@@ -19,4 +20,3 @@ res://Resources/Cooking
 res://Scenes/Interactive/Constructables
 res://Resources/Material
 res://Scripts/Constructable
-res://Scenes/Interactive/EquippAble

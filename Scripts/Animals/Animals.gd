@@ -35,6 +35,7 @@ var state := States.Idle
 @export var normal_speed := 0.6
 @export var alarmed_speed := 1.8
 @export var max_health := 80.0
+@export var meat_drop_count := 1 
 @export var turn_speed_weight := 0.07
 @export var min_idle_time := 2.0
 @export var max_idle_time := 7.0
@@ -42,6 +43,7 @@ var state := States.Idle
 @export var max_wander_time := 4.0
 @export var flee_time := 3.0
 @export var is_aggressive := false
+@export var aggressive_after_hits := -1
 @export var attack_distance = 2.0
 @export var damage := 20.0
 @export var vision_range := 15.0
@@ -53,6 +55,7 @@ var state := States.Idle
 
 var player_in_vision_range := false
 @onready var health := max_health
+var hit_count := 0
 
 
 func _ready() -> void:
@@ -65,7 +68,7 @@ func animation_finished(_anim_name : String) -> void:
 		animation_player.play(idle_animations.pick_random(), ANIM_BLEND_TIME)
 	
 	elif state == States.Hurt:
-		if not is_aggressive:
+		if not is_aggressive and not is_aggressive_after_hits():
 			set_state(States.Flee)
 		
 		else:
@@ -94,7 +97,7 @@ func _physics_process(_delta: float) -> void:
 
 func idle_loop() -> void:
 	apply_gravity()
-	if is_aggressive and can_see_player():
+	if (is_aggressive or is_aggressive_after_hits()) and can_see_player():
 		set_state(States.Chase)
 		apply_gravity()
 
@@ -104,7 +107,7 @@ func wander_loop() -> void:
 	apply_gravity()
 	move_and_slide()
 	
-	if is_aggressive and can_see_player():
+	if (is_aggressive or is_aggressive_after_hits()) and can_see_player():
 		set_state(States.Chase)
 
 
@@ -240,7 +243,7 @@ func set_state(new_state : States) -> void:
 			animation_player.play("Gallop", ANIM_BLEND_TIME)
 		
 		States.Attack:
-			animation_player.play("Attack", ANIM_BLEND_TIME)
+			animation_player.play("Attack_Headbutt", ANIM_BLEND_TIME)
 		
 		States.Dead:
 			idle_timer.stop()
@@ -248,8 +251,7 @@ func set_state(new_state : States) -> void:
 			flee_timer.stop()
 			main_collision_shape.disabled = true
 			animation_player.play("Death", ANIM_BLEND_TIME)
-			var meat_scene := ItemConfig.get_pickuppable_item(ItemConfig.Keys.RawMeat)
-			EventSystem.SPA_spawn_scene.emit(meat_scene, meat_spawn_marker.global_transform)
+			spawn_meat()
 			set_physics_process(false)
 			disappear_after_death_timer.start()
 
@@ -260,6 +262,8 @@ func play_attack_audio() -> void:
 
 func take_hit(weapon_resource : WeaponResource) -> void:
 	health -= weapon_resource.damage
+	hit_count += 1
+	
 	if state != States.Dead and health <= 0:
 		set_state(States.Dead)
 	
@@ -275,3 +279,24 @@ func _on_vision_area_body_entered(body: Node3D) -> void:
 func _on_vision_area_body_exited(body: Node3D) -> void:
 	if body == player:
 		player_in_vision_range = false
+
+
+func is_aggressive_after_hits() -> bool:
+	if aggressive_after_hits <= 0:
+		return false
+	return hit_count >= aggressive_after_hits
+
+
+func spawn_meat() -> void:
+	var meat_scene := ItemConfig.get_pickuppable_item(ItemConfig.Keys.RawMeat)
+	
+	for i in range(meat_drop_count):
+		# Add slight random offset to each meat spawn so they don't all stack
+		var offset := Vector3(
+			randf_range(-0.3, 0.3),
+			0.0,
+			randf_range(-0.3, 0.3)
+		)
+		var spawn_transform := meat_spawn_marker.global_transform
+		spawn_transform.origin += offset
+		EventSystem.SPA_spawn_scene.emit(meat_scene, spawn_transform)

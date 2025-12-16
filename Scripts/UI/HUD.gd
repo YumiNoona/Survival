@@ -12,8 +12,10 @@ func _ready() -> void:
 
 
 func hide_hud() -> void:
-	remove_child(hud)
+	if hud and hud.get_parent() == self:
+		remove_child(hud)
 
 
 func show_hud() -> void:
-	add_child(hud)
+	if hud and hud.get_parent() != self:
+		add_child(hud)

@@ -58,7 +58,7 @@ fog_light_color = Color(0.2627451, 0.28627452, 0.3254902, 1)
 fog_light_energy = 0.5
 fog_density = 0.08
 
-[sub_resource type="Resource" id="Resource_2v0rb"]
+[sub_resource type="Resource" id="Resource_sdupg"]
 script = ExtResource("6_euk5f")
 amount = 50
 override_global_seed = true
@@ -66,30 +66,30 @@ custom_seed = 1
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ecrs6"]
+[sub_resource type="Resource" id="Resource_2v0rb"]
 script = ExtResource("8_w0mr3")
 rotation = Vector3(0, 360, 0)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_p7t0b"]
+[sub_resource type="Resource" id="Resource_ecrs6"]
 script = ExtResource("9_ytwc7")
 offset_step = 0.5
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_4b2gn"]
+[sub_resource type="Resource" id="Resource_p7t0b"]
 script = ExtResource("7_kdsd0")
 ray_length = 1.0
 ray_offset = 5.0
 
-[sub_resource type="Resource" id="Resource_q0kel"]
+[sub_resource type="Resource" id="Resource_4b2gn"]
 script = ExtResource("4_hys1s")
-stack = Array[ExtResource("5_fgqbg")]([SubResource("Resource_2v0rb"), SubResource("Resource_ecrs6"), SubResource("Resource_p7t0b"), SubResource("Resource_4b2gn")])
+stack = Array[ExtResource("5_fgqbg")]([SubResource("Resource_sdupg"), SubResource("Resource_2v0rb"), SubResource("Resource_ecrs6"), SubResource("Resource_p7t0b")])
 
 [sub_resource type="Resource" id="Resource_sqe33"]
 script = ExtResource("12_ervkh")
 size = Vector3(62.75222, 31.071234, 51.656666)
 
-[sub_resource type="Resource" id="Resource_uab0n"]
+[sub_resource type="Resource" id="Resource_q0kel"]
 script = ExtResource("6_euk5f")
 amount = 40000
 override_global_seed = true
@@ -97,31 +97,31 @@ custom_seed = 2
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_1j211"]
+[sub_resource type="Resource" id="Resource_uab0n"]
 script = ExtResource("13_hys1s")
 rotation = Vector3(0, 360, 0)
 scale = Vector3(0.6, 0.6, 0.6)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_qe82h"]
+[sub_resource type="Resource" id="Resource_1j211"]
 script = ExtResource("9_ytwc7")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_uddis"]
+[sub_resource type="Resource" id="Resource_qe82h"]
 script = ExtResource("7_kdsd0")
 ray_length = 1.0
 ray_offset = 5.0
 
-[sub_resource type="Resource" id="Resource_y51v7"]
+[sub_resource type="Resource" id="Resource_uddis"]
 script = ExtResource("8_w0mr3")
 rotation = Vector3(0, 360, 0)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_n4yjw"]
+[sub_resource type="Resource" id="Resource_y51v7"]
 script = ExtResource("4_hys1s")
-stack = Array[ExtResource("5_fgqbg")]([SubResource("Resource_uab0n"), SubResource("Resource_1j211"), SubResource("Resource_qe82h"), SubResource("Resource_uddis"), SubResource("Resource_y51v7")])
+stack = Array[ExtResource("5_fgqbg")]([SubResource("Resource_q0kel"), SubResource("Resource_uab0n"), SubResource("Resource_1j211"), SubResource("Resource_qe82h"), SubResource("Resource_uddis")])
 
 [sub_resource type="Resource" id="Resource_4pyop"]
 script = ExtResource("12_ervkh")
@@ -196,7 +196,7 @@ environment = SubResource("Environment_4pyop")
 [node name="ScatterTrees" type="Node3D" parent="Island"]
 script = ExtResource("3_ab04i")
 render_mode = 1
-modifier_stack = SubResource("Resource_q0kel")
+modifier_stack = SubResource("Resource_4b2gn")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://da8lh368vbt4d"
@@ -212,7 +212,7 @@ shape = SubResource("Resource_sqe33")
 
 [node name="ScatterGrass" type="Node3D" parent="Island"]
 script = ExtResource("3_ab04i")
-modifier_stack = SubResource("Resource_n4yjw")
+modifier_stack = SubResource("Resource_y51v7")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://da8lh368vbt4d"
@@ -251,7 +251,7 @@ draw_pass_1 = SubResource("QuadMesh_t8ymk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1828466, 0)
 layers = 3
 light_color = Color(0.7019608, 0.54509807, 0.27058825, 1)
-light_energy = 1.2359192
+light_energy = 0.95371056
 shadow_enabled = true
 script = ExtResource("19_xwq8e")
 metadata/_custom_type_script = "uid://0ecmdypldnys"
