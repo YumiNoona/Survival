@@ -1,5 +1,2 @@
-res://Scenes/Animals/AnimalsAlpaca.tscn
-res://Assets/Shader/WaterShader.tres
 res://Scenes/Core/Island.tscn
-res://Scripts/Core/SFXConfig.gd
-res://Scripts/Animals/Animals.gd
+res://Assets/Shader/WaterShader.tres
