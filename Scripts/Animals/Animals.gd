@@ -49,6 +49,9 @@ var state := States.Idle
 @export var vision_range := 15.0
 @export var vision_fov := 80.0
 @export var attack_audio_key := SFXConfig.Keys.WolfAttack
+@export var attack_animation_name := "Attack_Headbutt"
+@export var use_back_attack_kick := true  # If true, use Attack_Kick when player is behind
+@export var back_attack_angle := 90.0  # Angle in degrees (90 = directly behind, 180 = full rear arc)
 @export var idle_animations:Array[String] = []
 @export var hurt_animations:Array[String] = []
 
@@ -65,7 +68,10 @@ func _ready() -> void:
 
 func animation_finished(_anim_name : String) -> void:
 	if state == States.Idle:
-		animation_player.play(idle_animations.pick_random(), ANIM_BLEND_TIME)
+		if idle_animations.size() > 0:
+			var anim_name = idle_animations.pick_random()
+			if animation_player.has_animation(anim_name):
+				animation_player.play(anim_name, ANIM_BLEND_TIME)
 	
 	elif state == States.Hurt:
 		if not is_aggressive and not is_aggressive_after_hits():
@@ -218,7 +224,10 @@ func set_state(new_state : States) -> void:
 	match state:
 		States.Idle:
 			idle_timer.start(randf_range(min_idle_time, max_idle_time))
-			animation_player.play(idle_animations.pick_random(), ANIM_BLEND_TIME)
+			if idle_animations.size() > 0:
+				var anim_name = idle_animations.pick_random()
+				if animation_player.has_animation(anim_name):
+					animation_player.play(anim_name, ANIM_BLEND_TIME)
 		
 		States.Wander:
 			pick_wander_velocity()
@@ -229,7 +238,10 @@ func set_state(new_state : States) -> void:
 			idle_timer.stop()
 			wander_timer.stop()
 			flee_timer.stop()
-			animation_player.play(hurt_animations.pick_random(), ANIM_BLEND_TIME)
+			if hurt_animations.size() > 0:
+				var anim_name = hurt_animations.pick_random()
+				if animation_player.has_animation(anim_name):
+					animation_player.play(anim_name, ANIM_BLEND_TIME)
 		
 		States.Flee:
 			pick_away_from_player_velocity()
@@ -243,7 +255,15 @@ func set_state(new_state : States) -> void:
 			animation_player.play("Gallop", ANIM_BLEND_TIME)
 		
 		States.Attack:
-			animation_player.play("Attack_Headbutt", ANIM_BLEND_TIME)
+			var anim_to_play = get_attack_animation()
+			if animation_player.has_animation(anim_to_play):
+				animation_player.play(anim_to_play, ANIM_BLEND_TIME)
+			else:
+				# Fallback: try default attack animation
+				if animation_player.has_animation(attack_animation_name):
+					animation_player.play(attack_animation_name, ANIM_BLEND_TIME)
+				elif animation_player.has_animation("Attack"):
+					animation_player.play("Attack", ANIM_BLEND_TIME)
 		
 		States.Dead:
 			idle_timer.stop()
@@ -285,6 +305,39 @@ func is_aggressive_after_hits() -> bool:
 	if aggressive_after_hits <= 0:
 		return false
 	return hit_count >= aggressive_after_hits
+
+
+func is_player_behind() -> bool:
+	if not player:
+		return false
+	
+	var direction_to_player := global_position.direction_to(player.global_position)
+	var forward := -global_transform.basis.z  # Animal's forward direction
+	forward.y = 0
+	direction_to_player.y = 0
+	
+	# Normalize both vectors
+	forward = forward.normalized()
+	direction_to_player = direction_to_player.normalized()
+	
+	# Calculate angle between forward and direction to player
+	# Dot product gives us the cosine of the angle
+	var dot_product = forward.dot(direction_to_player)
+	var angle = rad_to_deg(acos(clamp(dot_product, -1.0, 1.0)))
+	
+	# If angle is greater than the threshold, player is behind
+	# 0° = directly in front, 90° = directly to side, 180° = directly behind
+	return angle >= back_attack_angle
+
+
+func get_attack_animation() -> String:
+	# Check if we should use kick animation when player is behind
+	if use_back_attack_kick and is_player_behind():
+		if animation_player.has_animation("Attack_Kick"):
+			return "Attack_Kick"
+	
+	# Default to the configured attack animation
+	return attack_animation_name
 
 
 func spawn_meat() -> void:

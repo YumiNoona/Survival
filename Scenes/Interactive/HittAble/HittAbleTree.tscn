@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx5e2rtb3nysl"]
+[gd_scene load_steps=7 format=3 uid="uid://dx5e2rtb3nysl"]
 
 [ext_resource type="PackedScene" uid="uid://cr1xnwr3hpkbm" path="res://Scenes/Interactive/HittAble/HittAbleObjects.tscn" id="1_d2lkk"]
 [ext_resource type="PackedScene" uid="uid://cdjw723k2hbs6" path="res://Assets/Meshes/Scene/Tree.tscn" id="2_e1prk"]

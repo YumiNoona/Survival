@@ -1,2 +1,15 @@
-res://Scenes/Core/Island.tscn
+res://Scenes/Animals/AnimalsDonkey.tscn
 res://Assets/Shader/WaterShader.tres
+res://Scenes/Animals/AnimalsFox.tscn
+res://Scenes/Animals/AnimalsAgrroCow.tscn
+res://Scenes/Animals/AnimalsStag.tscn
+res://Scenes/Animals/AnimalsHorse.tscn
+res://Scenes/Core/Island.tscn
+res://Scripts/Animals/Animals.gd
+res://Scripts/Config/EventSystem.gd
+res://Scripts/Inventory/EquippabelItemHolder.gd
+res://Scripts/Inventory/EquippableWeapons.gd
+res://Scripts/Inventory/InventoryManager.gd
+res://Scripts/Inventory/InventorySlot.gd
+res://Scripts/Player/PlayerMenuBase.gd
+res://Scripts/Weapons/WeaponResources.gd

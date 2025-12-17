@@ -5147,12 +5147,12 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_dxpig"]
 radius = 0.33101192
 
-[node name="Animals" instance=ExtResource("1_17ahg")]
+[node name="AnimalsHorse" instance=ExtResource("1_17ahg")]
 max_health = 200.0
 meat_drop_count = 4
 aggressive_after_hits = 2
 attack_audio_key = 15
-idle_animations = Array[String](["Idle", "Idle_1", "Idle_Headlow", "Eating"])
+idle_animations = Array[String](["Idle", "Idle_2", "Idle_Headlow", "Eating"])
 hurt_animations = Array[String](["Idle_HitReact1", "Idle_HitReact2"])
 
 [node name="CollisionShape3D" parent="." index="0"]
