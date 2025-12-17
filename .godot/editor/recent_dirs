@@ -1,3 +1,5 @@
+res://Resources/Skills
+res://Scenes/UI
 res://Scenes/Animals
 res://Assets/Meshes/Scene/Animals
 res://Assets/Meshes/Scene
@@ -5,7 +7,6 @@ res://
 res://Scripts/UI
 res://Scenes/Particles
 res://Scripts/Core
-res://Scenes/UI
 res://Scripts
 res://Scripts/Player
 res://Assets/Shader
@@ -19,4 +20,3 @@ res://Scenes/Interactive/Cooking
 res://Resources/Cooking
 res://Scenes/Interactive/Constructables
 res://Resources/Material
-res://Scripts/Constructable

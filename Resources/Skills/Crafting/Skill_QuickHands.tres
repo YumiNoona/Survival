@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://caxts147bra8u"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Quick Hands.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "crafting_quick_hands"
+display_name = "Quick Hands"
+description = "Crafting is 25% faster"
+icon = ExtResource("2_icon")
+category = 2
+xp_cost = 15
+position = Vector2(400, 200)
+unlock_value = 25

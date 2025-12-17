@@ -272,6 +272,8 @@ func set_state(new_state : States) -> void:
 			main_collision_shape.disabled = true
 			animation_player.play("Death", ANIM_BLEND_TIME)
 			spawn_meat()
+			# Award XP for killing animal (example: 10-20 XP based on difficulty)
+			EventSystem.XP_award_xp.emit(15)
 			set_physics_process(false)
 			disappear_after_death_timer.start()
 

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Double Jump.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "exploration_double_jump"
+display_name = "Double Jump"
+description = "Gain the ability to jump a second time while in the air"
+icon = ExtResource("2_icon")
+category = 3
+xp_cost = 15
+position = Vector2(200, 200)
+prerequisites = []
+unlock_type = 1
+unlock_value = 0
+unlock_data = ""

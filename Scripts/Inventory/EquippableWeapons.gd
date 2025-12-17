@@ -4,6 +4,10 @@ class_name EquippableWeapon
 @onready var hit_check_marker: Marker3D = $HitCheckMarker
 
 var weapon_resource: WeaponResource
+var damage_modifier := 1.0
+
+func _enter_tree() -> void:
+	EventSystem.PLA_increase_attack_damage.connect(_on_increase_attack_damage)
 
 func _ready() -> void:
 	if weapon_resource:
@@ -32,12 +36,19 @@ func check_hit() -> void:
 		var hit_position = result.get("position", Vector3.ZERO)
 		
 		if collider:
+			# Apply damage modifier
+			var original_damage = weapon_resource.damage
+			weapon_resource.damage = original_damage * damage_modifier
 			collider.take_hit(weapon_resource)
+			weapon_resource.damage = original_damage  # Restore original damage
 			
 			# Spawn hit particles - collider is a HitBox which has hit_particles_key property
 			# Access the exported property directly
 			var particles_key = collider.hit_particles_key
 			EventSystem.SPA_spawn_vfx.emit(VFXConfig.get_vfx(particles_key), Transform3D(Basis(), hit_position))
+
+func _on_increase_attack_damage(percentage: int) -> void:
+	damage_modifier += percentage / 100.0
 
 
 func play_swoosh_audio() ->void:

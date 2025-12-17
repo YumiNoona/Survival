@@ -75,3 +75,5 @@ func craft_button_pressed(item_key:ItemConfig.Keys) -> void:
 	EventSystem.INV_delete_crafting_item.emit(ItemConfig.get_crafting_resource(item_key).costs)
 	EventSystem.INV_add_item.emit(item_key)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)
+	# Award XP for crafting (example: 5 XP per craft)
+	EventSystem.XP_award_xp.emit(5)

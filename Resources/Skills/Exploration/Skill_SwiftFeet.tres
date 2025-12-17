@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Swift Feet.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "exploration_swift_feet"
+display_name = "Swift Feet"
+description = "Increases movement speed by 10%"
+icon = ExtResource("2_icon")
+category = 3
+xp_cost = 10
+position = Vector2(400, 200)
+prerequisites = []
+unlock_type = 4
+unlock_value = 10
+unlock_data = ""

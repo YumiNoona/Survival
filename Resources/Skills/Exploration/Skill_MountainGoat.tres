@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://dfciasicauyfk"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Mountain Goat.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "exploration_mountain_goat"
+display_name = "Mountain Goat"
+description = "Jump height increased by 30% and reduced fall damage by 50%"
+icon = ExtResource("2_icon")
+category = 3
+xp_cost = 20
+position = Vector2(200, 400)
+prerequisites = Array[String](["exploration_double_jump"])
+unlock_value = 30

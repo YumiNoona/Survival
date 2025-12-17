@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Extra Pockets.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "survival_extra_pockets"
+display_name = "Extra Pockets"
+description = "Unlocks 5 additional inventory slots"
+icon = ExtResource("2_icon")
+category = 1
+xp_cost = 10
+position = Vector2(200, 200)
+prerequisites = []
+unlock_type = 0
+unlock_value = 5
+unlock_data = ""

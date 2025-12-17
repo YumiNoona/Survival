@@ -1,3 +1,4 @@
+SkillResource
 CookingRecipeResource
 StandardMaterial3D
 ConsumableResource

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Vitality Boost.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "survival_vitality_boost"
+display_name = "Vitality Boost"
+description = "Increases maximum health by 20"
+icon = ExtResource("2_icon")
+category = 1
+xp_cost = 15
+position = Vector2(600, 200)
+prerequisites = []
+unlock_type = 6
+unlock_value = 20
+unlock_data = ""

@@ -142,3 +142,50 @@ signal SET_ask_settings_resource
 
 @warning_ignore("unused_signal")
 signal SET_save_settings
+
+#XP Signal
+@warning_ignore("unused_signal")
+signal XP_award_xp
+
+@warning_ignore("unused_signal")
+signal XP_xp_updated
+
+#Skill Signal
+@warning_ignore("unused_signal")
+signal SKL_try_unlock_skill
+
+@warning_ignore("unused_signal")
+signal SKL_skill_unlocked
+
+@warning_ignore("unused_signal")
+signal SKL_is_skill_unlocked
+
+#Crafting Signal
+@warning_ignore("unused_signal")
+signal CRAFT_unlock_weapon_tier
+
+@warning_ignore("unused_signal")
+signal CRAFT_unlock_recipe
+
+#Inventory Signal (for skill unlocks)
+@warning_ignore("unused_signal")
+signal INV_add_inventory_slots
+
+@warning_ignore("unused_signal")
+signal INV_inventory_slots_added
+
+#Player Stat Modifications (for skill unlocks)
+@warning_ignore("unused_signal")
+signal PLA_enable_double_jump
+
+@warning_ignore("unused_signal")
+signal PLA_increase_movement_speed
+
+@warning_ignore("unused_signal")
+signal PLA_increase_max_health
+
+@warning_ignore("unused_signal")
+signal PLA_increase_max_energy
+
+@warning_ignore("unused_signal")
+signal PLA_increase_attack_damage

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://cuo3ed8y68jjm"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Natural Regeneration.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "survival_natural_regeneration"
+display_name = "Natural Regeneration"
+description = "Slowly regenerate health over time when not in combat (1 HP per 10 seconds)"
+icon = ExtResource("2_icon")
+category = 1
+xp_cost = 30
+position = Vector2(600, 400)
+prerequisites = Array[String](["survival_vitality_boost", "survival_endurance_training"])
+unlock_value = 1

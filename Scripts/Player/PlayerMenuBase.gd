@@ -4,20 +4,54 @@ class_name PlayerMenuBase
 @onready var inventory_container: GridContainer = %InventoryContainer
 @onready var item_description: Label = %ItemDescription
 @onready var item_extra_info: Label = %ItemExtraInfo
+@onready var filter_button: OptionButton = %FilterButton
 
+enum FilterType {
+	ALL,
+	WEAPONS,
+	CONSUMABLES,
+	ITEMS
+}
+
+
+@export var inventory_slot_scene: PackedScene
+
+var _ready_called := false
+var slot_signals_connected := false
 
 func _enter_tree() -> void:
 	EventSystem.INV_inventory_updated.connect(update_inventory)
+	EventSystem.INV_inventory_slots_added.connect(_on_inventory_slots_added)
 
 func _ready() -> void:
+	if _ready_called:
+		return
+	_ready_called = true
+	
 	EventSystem.PLA_freeze_player.emit()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	EventSystem.INV_ask_update_inventory.emit()
 	
-	for i in range(inventory_container.get_child_count()):
-		var slot := inventory_container.get_child(i)
-		slot.mouse_entered.connect(show_item_info.bind(i))
-		slot.mouse_exited.connect(hide_item_info)
+
+	if filter_button:
+		filter_button.add_item("All")
+		filter_button.add_item("Weapons")
+		filter_button.add_item("Consumables")
+		filter_button.add_item("Items")
+		filter_button.selected = FilterType.ALL
+		filter_button.item_selected.connect(_on_filter_selected)
+	
+	# Connect signals for existing slots only once
+	if not slot_signals_connected:
+		for i in range(inventory_container.get_child_count()):
+			var slot := inventory_container.get_child(i)
+			# Check if already connected before connecting (safety check)
+			var bound_func = show_item_info.bind(i)
+			if not slot.mouse_entered.is_connected(bound_func):
+				slot.mouse_entered.connect(bound_func)
+			if not slot.mouse_exited.is_connected(hide_item_info):
+				slot.mouse_exited.connect(hide_item_info)
+		slot_signals_connected = true
 
 	for hotbar_slot in get_tree().get_nodes_in_group("HotBarSlots"):
 		hotbar_slot.mouse_entered.connect(show_item_info.bind(hotbar_slot))
@@ -26,6 +60,7 @@ func _ready() -> void:
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
 	
 	%ScrapSlot.item_scrapped.connect(hide_item_info)
+	apply_filter()
 
 func show_item_info(slot_identifier) -> void:
 	var slot : InventorySlot
@@ -56,8 +91,88 @@ func hide_item_info() -> void:
 	item_description.text = ""
 
 func update_inventory(inventory : Array) -> void:
+	# Ensure we have enough slots in the UI
+	ensure_slots_exist(inventory.size())
+	
+	# Update existing slots
 	for i in inventory.size():
-		inventory_container.get_child(i).set_item_key(inventory[i])
+		if i < inventory_container.get_child_count():
+			inventory_container.get_child(i).set_item_key(inventory[i])
+	apply_filter()
+
+func ensure_slots_exist(required_count: int) -> void:
+	var current_slot_count = inventory_container.get_child_count()
+	
+	if current_slot_count < required_count:
+		# Need to create more slots
+		if not inventory_slot_scene:
+			# Try to load from the first existing slot
+			if current_slot_count > 0:
+				var existing_slot = inventory_container.get_child(0)
+				inventory_slot_scene = load(existing_slot.scene_file_path) as PackedScene
+			else:
+				push_error("No inventory slot scene available!")
+				return
+		
+		# Create new slots
+		for i in range(required_count - current_slot_count):
+			var new_slot = inventory_slot_scene.instantiate()
+			inventory_container.add_child(new_slot)
+			var slot_index = current_slot_count + i
+			# Connect signals for new slots
+			new_slot.mouse_entered.connect(show_item_info.bind(slot_index))
+			new_slot.mouse_exited.connect(hide_item_info)
+
+func _on_inventory_slots_added(_amount: int) -> void:
+	# When slots are added, we'll create them on next inventory update
+	# This is handled by ensure_slots_exist() in update_inventory()
+	pass
+
+
+func _on_filter_selected(_index: int) -> void:
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
+	apply_filter()
+
+
+func apply_filter() -> void:
+	if not filter_button:
+		# If no filter button, show all slots
+		for i in range(inventory_container.get_child_count()):
+			var slot: InventorySlot = inventory_container.get_child(i)
+			slot.visible = true
+		return
+	
+	var filter_type = filter_button.selected
+	
+
+	if filter_type == FilterType.ALL:
+		for i in range(inventory_container.get_child_count()):
+			var slot: InventorySlot = inventory_container.get_child(i)
+			slot.visible = true
+		return
+	
+
+	for i in range(inventory_container.get_child_count()):
+		var slot: InventorySlot = inventory_container.get_child(i)
+		var should_show = should_show_slot(slot, filter_type)
+		slot.visible = should_show
+
+
+func should_show_slot(slot: InventorySlot, filter_type: int) -> bool:
+	if slot.item_key == null:
+		return false
+	
+	var item_resource = ItemConfig.get_item_resource(slot.item_key)
+	
+	match filter_type:
+		FilterType.WEAPONS:
+			return item_resource is WeaponResource
+		FilterType.CONSUMABLES:
+			return item_resource is ConsumableResource
+		FilterType.ITEMS:
+			return not (item_resource is WeaponResource or item_resource is ConsumableResource)
+	
+	return true
 
 
 func close() -> void:

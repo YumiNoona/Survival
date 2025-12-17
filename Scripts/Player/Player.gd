@@ -16,10 +16,15 @@ extends CharacterBody3D
 
 var is_sprinting := false
 var is_grounded := true
+var can_double_jump := false
+var has_double_jumped := false
+var speed_modifier := 1.0
 
 func _enter_tree() -> void:
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
 	EventSystem.PLA_unfreeze_player.connect(set_freeze.bind(false))
+	EventSystem.PLA_enable_double_jump.connect(_on_enable_double_jump)
+	EventSystem.PLA_increase_movement_speed.connect(_on_increase_movement_speed)
 
 
 func set_freeze(freeze : bool) -> void:
@@ -36,6 +41,7 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	EventSystem.XP_award_xp.emit(1000)
 	EventSystem.HUD_show_hud.emit()
 
 
@@ -54,6 +60,7 @@ func _physics_process(delta: float) -> void:
 func move():
 	if is_on_floor():
 		is_sprinting = Input.is_action_pressed("Sprint")
+		has_double_jumped = false  # Reset double jump when on ground
 		
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_velocity
@@ -71,8 +78,13 @@ func move():
 		
 		if is_grounded:
 			is_grounded = false
+		
+		# Double jump logic
+		if can_double_jump and Input.is_action_just_pressed("Jump") and not has_double_jumped:
+			velocity.y = jump_velocity
+			has_double_jumped = true
 	
-	var speed := normal_speed if not is_sprinting else sprint_speed
+	var speed := (normal_speed if not is_sprinting else sprint_speed) * speed_modifier
 	var input_dir := Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -80,6 +92,12 @@ func move():
 	velocity.x = direction.x * speed
 	
 	move_and_slide()
+
+func _on_enable_double_jump() -> void:
+	can_double_jump = true
+
+func _on_increase_movement_speed(percentage: int) -> void:
+	speed_modifier += percentage / 100.0
 
 
 func check_walking_energy_change(delta: float) -> void:
@@ -112,3 +130,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	elif event.is_action_pressed("ItemHotKeys"):
 		EventSystem.EQU_hotkey_pressed.emit(int(event.as_text()))
+
+
+	elif event.is_action_pressed("SkillTree"):
+		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTree)

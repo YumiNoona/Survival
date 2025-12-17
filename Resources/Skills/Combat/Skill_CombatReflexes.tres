@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://b3cm2see7irub"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Combat Reflexes.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "combat_combat_reflexes"
+display_name = "Combat Reflexes"
+description = "Increases attack speed by 15%"
+icon = ExtResource("2_icon")
+xp_cost = 15
+position = Vector2(200, 400)
+prerequisites = Array[String](["combat_basic_training"])
+unlock_value = 15

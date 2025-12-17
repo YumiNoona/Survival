@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Pack Mule.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "survival_pack_mule"
+display_name = "Pack Mule"
+description = "Unlocks 10 more inventory slots"
+icon = ExtResource("2_icon")
+category = 1
+xp_cost = 15
+position = Vector2(400, 200)
+prerequisites = ["survival_extra_pockets"]
+unlock_type = 0
+unlock_value = 10
+unlock_data = ""

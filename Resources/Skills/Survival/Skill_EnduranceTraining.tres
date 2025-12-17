@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Endurance Training.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "survival_endurance_training"
+display_name = "Endurance Training"
+description = "Increases maximum energy by 30"
+icon = ExtResource("2_icon")
+category = 1
+xp_cost = 15
+position = Vector2(800, 200)
+prerequisites = []
+unlock_type = 7
+unlock_value = 30
+unlock_data = ""

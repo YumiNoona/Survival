@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://dyv5efbwy7hs5"]
+
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Critical Strikes.png" id="1_tuukx"]
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="2_s4unw"]
+
+[resource]
+script = ExtResource("2_s4unw")
+skill_key = "combat_critical_strikes"
+display_name = "Critical Strikes"
+description = "10% chance to deal double damage"
+icon = ExtResource("1_tuukx")
+xp_cost = 20
+position = Vector2(400, 200)
+prerequisites = Array[String](["combat_basic_training"])
+unlock_value = 10

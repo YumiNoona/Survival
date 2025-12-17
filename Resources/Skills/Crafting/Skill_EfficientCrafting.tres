@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://fen4ak8hhk2j"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Efficient Crafting.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_skill")
+skill_key = "crafting_efficient_crafting"
+display_name = "Efficient Crafting"
+description = "Crafting uses 15% fewer materials"
+icon = ExtResource("2_icon")
+category = 2
+xp_cost = 15
+position = Vector2(200, 200)
+unlock_value = 15
