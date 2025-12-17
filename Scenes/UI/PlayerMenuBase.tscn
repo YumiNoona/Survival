@@ -59,110 +59,117 @@ layout_mode = 2
 texture = ExtResource("1_qgv4q")
 patch_margin_left = 32
 patch_margin_top = 32
-patch_margin_right = 48
+patch_margin_right = 32
 patch_margin_bottom = 32
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(840, 460)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -230.0
+offset_right = 424.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer"]
-layout_mode = 2
-
-[node name="InventoryContainer" type="GridContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer"]
+[node name="InventoryContainer" type="GridContainer" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/h_separation = 24
 theme_override_constants/v_separation = 24
 columns = 7
 
-[node name="InventorySlots" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots2" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots2" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots3" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots3" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots4" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots4" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots5" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots5" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots6" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots6" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots7" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots7" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots8" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots8" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots9" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots9" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots10" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots10" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots11" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots11" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots12" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots12" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots13" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots13" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots14" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots14" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots15" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots15" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots16" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots16" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots17" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots17" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots18" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots18" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots19" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots19" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots20" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots20" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots21" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots21" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots22" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots22" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots23" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots23" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots24" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots24" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots25" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots25" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots26" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots26" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots27" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots27" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
-[node name="InventorySlots28" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/CenterContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
+[node name="InventorySlots28" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory/ScrollContainer/InventoryContainer" instance=ExtResource("2_kk7rf")]
 layout_mode = 2
 
 [node name="FilterButton" type="OptionButton" parent="MarginContainer/HSplitContainer/VSplitContainer/Inventory"]

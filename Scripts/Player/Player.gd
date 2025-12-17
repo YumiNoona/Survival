@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 func move():
 	if is_on_floor():
 		is_sprinting = Input.is_action_pressed("Sprint")
-		has_double_jumped = false  # Reset double jump when on ground
+		has_double_jumped = false 
 		
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_velocity
@@ -78,8 +78,8 @@ func move():
 		
 		if is_grounded:
 			is_grounded = false
-		
-		# Double jump logic
+
+
 		if can_double_jump and Input.is_action_just_pressed("Jump") and not has_double_jumped:
 			velocity.y = jump_velocity
 			has_double_jumped = true

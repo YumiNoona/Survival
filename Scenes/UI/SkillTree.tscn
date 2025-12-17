@@ -16,19 +16,26 @@ script = ExtResource("4_skilltree")
 skill_node_scene = ExtResource("3_skillnode")
 
 [node name="Background" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(1500, 700)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -350.0
+offset_right = 750.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_panel")
 patch_margin_left = 32
 patch_margin_top = 32
-patch_margin_right = 48
+patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,55 +47,55 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 20
 
-[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Header" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/Header"]
+[node name="Title" type="Label" parent="Background/MarginContainer/VBoxContainer/Header"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 0.0627451, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 64
-text = "Skill Tree"
+theme_override_font_sizes/font_size = 48
+text = "        Skill Tree"
 horizontal_alignment = 1
 
-[node name="CloseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Header"]
+[node name="CloseButton" type="TextureButton" parent="Background/MarginContainer/VBoxContainer/Header"]
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("2_cross")
 stretch_mode = 5
 
-[node name="XPDisplay" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="XPDisplay" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="XPLabel" type="Label" parent="MarginContainer/VBoxContainer/XPDisplay"]
+[node name="XPLabel" type="Label" parent="Background/MarginContainer/VBoxContainer/XPDisplay"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67058825, 0.023529412, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "Available XP: "
 
-[node name="XPValue" type="Label" parent="MarginContainer/VBoxContainer/XPDisplay"]
+[node name="XPValue" type="Label" parent="Background/MarginContainer/VBoxContainer/XPDisplay"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67058825, 0.023529412, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "0"
 
-[node name="CategoryTabs" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="CategoryTabs" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="CombatTab" type="Button" parent="MarginContainer/VBoxContainer/CategoryTabs"]
+[node name="CombatTab" type="Button" parent="Background/MarginContainer/VBoxContainer/CategoryTabs"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -97,7 +104,7 @@ theme_override_colors/font_pressed_color = Color(0.8681636, 0.93896914, 1.540184
 theme_override_font_sizes/font_size = 20
 text = "Combat"
 
-[node name="SurvivalTab" type="Button" parent="MarginContainer/VBoxContainer/CategoryTabs"]
+[node name="SurvivalTab" type="Button" parent="Background/MarginContainer/VBoxContainer/CategoryTabs"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
@@ -105,7 +112,7 @@ theme_override_colors/font_pressed_color = Color(0.8681636, 0.93896914, 1.540184
 theme_override_font_sizes/font_size = 20
 text = "Survival"
 
-[node name="CraftingTab" type="Button" parent="MarginContainer/VBoxContainer/CategoryTabs"]
+[node name="CraftingTab" type="Button" parent="Background/MarginContainer/VBoxContainer/CategoryTabs"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
@@ -113,7 +120,7 @@ theme_override_colors/font_pressed_color = Color(0.8681636, 0.93896914, 1.540184
 theme_override_font_sizes/font_size = 20
 text = "Crafting"
 
-[node name="ExplorationTab" type="Button" parent="MarginContainer/VBoxContainer/CategoryTabs"]
+[node name="ExplorationTab" type="Button" parent="Background/MarginContainer/VBoxContainer/CategoryTabs"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
@@ -121,111 +128,42 @@ theme_override_colors/font_pressed_color = Color(0.8681636, 0.93896914, 1.540184
 theme_override_font_sizes/font_size = 20
 text = "Exploration"
 
-[node name="TreeArea" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="TreeArea" type="PanelContainer" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TreeArea"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/MarginContainer/VBoxContainer/TreeArea"]
 layout_mode = 2
 
-[node name="TreeCanvas" type="Control" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer"]
+[node name="TreeCanvas" type="Control" parent="Background/MarginContainer/VBoxContainer/TreeArea/ScrollContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(1600, 1200)
+custom_minimum_size = Vector2(1400, 1000)
 layout_mode = 2
 
-[node name="ConnectionLines" type="Node2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas"]
+[node name="ConnectionLines" type="Node2D" parent="Background/MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas"]
 unique_name_in_owner = true
 
-[node name="Line1" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(200, 200, 400, 200)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="Line2" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(200, 200, 200, 400)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="Line3" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(400, 200, 400, 400)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="Line4" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(200, 400, 400, 400)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="Line5" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(400, 400, 600, 400)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="Line6" type="Line2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/ConnectionLines"]
-points = PackedVector2Array(400, 400, 400, 600)
-width = 3.0
-default_color = Color(0.8, 0.8, 0.8, 0.6)
-
-[node name="SkillNodes" type="Node2D" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas"]
+[node name="SkillNodes" type="Node2D" parent="Background/MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas"]
 unique_name_in_owner = true
 
-[node name="SkillNode1" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 200.0
-offset_top = 200.0
-offset_right = 320.0
-offset_bottom = 320.0
-
-[node name="SkillNode2" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 400.0
-offset_top = 200.0
-offset_right = 520.0
-offset_bottom = 320.0
-
-[node name="SkillNode3" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 200.0
-offset_top = 400.0
-offset_right = 320.0
-offset_bottom = 520.0
-
-[node name="SkillNode4" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 400.0
-offset_top = 400.0
-offset_right = 520.0
-offset_bottom = 520.0
-
-[node name="SkillNode5" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 600.0
-offset_top = 400.0
-offset_right = 720.0
-offset_bottom = 520.0
-
-[node name="SkillNode6" parent="MarginContainer/VBoxContainer/TreeArea/ScrollContainer/TreeCanvas/SkillNodes" instance=ExtResource("3_skillnode")]
-layout_mode = 3
-offset_left = 400.0
-offset_top = 600.0
-offset_right = 520.0
-offset_bottom = 720.0
-
-[node name="SkillDescription" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="SkillDescription" type="VBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="DescriptionTitle" type="Label" parent="MarginContainer/VBoxContainer/SkillDescription"]
+[node name="DescriptionTitle" type="Label" parent="Background/MarginContainer/VBoxContainer/SkillDescription"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "Skill Description"
+horizontal_alignment = 1
 
-[node name="DescriptionText" type="Label" parent="MarginContainer/VBoxContainer/SkillDescription"]
+[node name="DescriptionText" type="Label" parent="Background/MarginContainer/VBoxContainer/SkillDescription"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(1856, 20)
+custom_minimum_size = Vector2(1400, 80)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "Select a skill to view its description and requirements."
+horizontal_alignment = 1
 autowrap_mode = 3

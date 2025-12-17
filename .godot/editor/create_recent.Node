@@ -1,8 +1,8 @@
-Line2D
+HBoxContainer
 Control
+Line2D
 ScrollContainer
 PanelContainer
-HBoxContainer
 VBoxContainer
 MarginContainer
 OptionButton
@@ -12,4 +12,3 @@ GPUParticles3D
 FlickeringLight
 Label
 AnimationPlayer
-ShakingCamera

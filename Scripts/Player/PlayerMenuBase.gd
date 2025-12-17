@@ -20,8 +20,11 @@ var _ready_called := false
 var slot_signals_connected := false
 
 func _enter_tree() -> void:
-	EventSystem.INV_inventory_updated.connect(update_inventory)
+	EventSystem.INV_inventory_updated.connect(_on_inventory_updated)
 	EventSystem.INV_inventory_slots_added.connect(_on_inventory_slots_added)
+
+func _on_inventory_updated(inventory: Array) -> void:
+	call_deferred("update_inventory", inventory)
 
 func _ready() -> void:
 	if _ready_called:
@@ -41,11 +44,10 @@ func _ready() -> void:
 		filter_button.selected = FilterType.ALL
 		filter_button.item_selected.connect(_on_filter_selected)
 	
-	# Connect signals for existing slots only once
+
 	if not slot_signals_connected:
 		for i in range(inventory_container.get_child_count()):
 			var slot := inventory_container.get_child(i)
-			# Check if already connected before connecting (safety check)
 			var bound_func = show_item_info.bind(i)
 			if not slot.mouse_entered.is_connected(bound_func):
 				slot.mouse_entered.connect(bound_func)
@@ -91,41 +93,47 @@ func hide_item_info() -> void:
 	item_description.text = ""
 
 func update_inventory(inventory : Array) -> void:
-	# Ensure we have enough slots in the UI
+	if not visible or not is_inside_tree():
+		return
+
+	if not inventory_container or not is_instance_valid(inventory_container):
+		return
+		
 	ensure_slots_exist(inventory.size())
-	
-	# Update existing slots
+
 	for i in inventory.size():
 		if i < inventory_container.get_child_count():
 			inventory_container.get_child(i).set_item_key(inventory[i])
 	apply_filter()
 
 func ensure_slots_exist(required_count: int) -> void:
+	if not inventory_container or not is_instance_valid(inventory_container):
+		return
+	
 	var current_slot_count = inventory_container.get_child_count()
 	
 	if current_slot_count < required_count:
-		# Need to create more slots
 		if not inventory_slot_scene:
-			# Try to load from the first existing slot
 			if current_slot_count > 0:
 				var existing_slot = inventory_container.get_child(0)
-				inventory_slot_scene = load(existing_slot.scene_file_path) as PackedScene
-			else:
+				if existing_slot and is_instance_valid(existing_slot):
+					inventory_slot_scene = load(existing_slot.scene_file_path) as PackedScene
+			if not inventory_slot_scene:
 				push_error("No inventory slot scene available!")
 				return
-		
-		# Create new slots
+
+
 		for i in range(required_count - current_slot_count):
 			var new_slot = inventory_slot_scene.instantiate()
-			inventory_container.add_child(new_slot)
-			var slot_index = current_slot_count + i
-			# Connect signals for new slots
-			new_slot.mouse_entered.connect(show_item_info.bind(slot_index))
-			new_slot.mouse_exited.connect(hide_item_info)
+			if new_slot and inventory_container:
+				inventory_container.add_child(new_slot)
+				var slot_index = current_slot_count + i
+				if new_slot.has_signal("mouse_entered"):
+					new_slot.mouse_entered.connect(show_item_info.bind(slot_index))
+				if new_slot.has_signal("mouse_exited"):
+					new_slot.mouse_exited.connect(hide_item_info)
 
 func _on_inventory_slots_added(_amount: int) -> void:
-	# When slots are added, we'll create them on next inventory update
-	# This is handled by ensure_slots_exist() in update_inventory()
 	pass
 
 
@@ -136,7 +144,6 @@ func _on_filter_selected(_index: int) -> void:
 
 func apply_filter() -> void:
 	if not filter_button:
-		# If no filter button, show all slots
 		for i in range(inventory_container.get_child_count()):
 			var slot: InventorySlot = inventory_container.get_child(i)
 			slot.visible = true

@@ -13,3 +13,4 @@ res://Scripts/Player/PlayerMenuBase.gd
 res://Scripts/Vitality/PlayerStatsManager.gd
 res://Scripts/Inventory/InventorySlot.gd
 res://Scenes/UI/PlayerMenuBase.tscn
+res://Scenes/UI/PlayerMenuBase2.tscn
