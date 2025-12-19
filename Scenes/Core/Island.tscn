@@ -1205,7 +1205,9 @@ shape = SubResource("ConcavePolygonShape3D_gralk")
 
 [node name="ScatterTrees" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_ox5ku")
 Performance/use_chunks = true
@@ -1263,7 +1265,9 @@ shape = SubResource("Resource_ypog8")
 
 [node name="ScatterFruitBushes" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_l1oh0")
 Performance/use_chunks = true
@@ -1321,7 +1325,9 @@ shape = SubResource("Resource_q68hn")
 
 [node name="ScatterCoalBoulders" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_gfyh5")
 Performance/use_chunks = true
@@ -1379,7 +1385,9 @@ shape = SubResource("Resource_lqgul")
 
 [node name="ScatterFlinStoneBoulders" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_klc8e")
 Performance/use_chunks = true
@@ -1457,7 +1465,9 @@ constructable_holder = NodePath("../NavigationRegion3D/ConstructableHolder")
 
 [node name="ScatterMushroom" type="Node3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_plfmo")
 Performance/use_chunks = true
@@ -1515,7 +1525,9 @@ shape = SubResource("Resource_6lsbb")
 
 [node name="ScatterStick_Stone_Plants" type="Node3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_3qces")
 Performance/use_chunks = true
@@ -1597,7 +1609,9 @@ shape = SubResource("Resource_bvwsj")
 
 [node name="ScatterGrass" type="Node3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+visible = false
 script = ExtResource("2_ntp2v")
+enabled = false
 modifier_stack = SubResource("Resource_oert0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)

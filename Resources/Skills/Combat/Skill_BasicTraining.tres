@@ -1,18 +1,16 @@
-[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://dtmvdlwjp2rq2"]
 
-[ext_resource type="Script" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
-[ext_resource type="Texture2D" path="res://Assets/Textures/Skills/Basic Training.png" id="2_icon"]
+[ext_resource type="Script" uid="uid://c0u1u3gpecguf" path="res://Scripts/Skills/SkillResource.gd" id="1_skill"]
+[ext_resource type="Texture2D" uid="uid://dcxkeeo2skw0p" path="res://Assets/Textures/Skills/Basic Training.png" id="2_icon"]
 
 [resource]
 script = ExtResource("1_skill")
 skill_key = "combat_basic_training"
 display_name = "Basic Training"
-description = "Increases your base attack damage by 10%"
+description = "Increases your base attack damage"
 icon = ExtResource("2_icon")
-category = 0
-xp_cost = 10
 position = Vector2(200, 200)
-prerequisites = []
-unlock_type = 8
 unlock_value = 10
-unlock_data = ""
+max_level = 3
+xp_cost_per_level = 20
+value_per_level = 5

@@ -1,15 +1,18 @@
 extends FadingBulletin
 
 const BUTTON_FADE_TIME = 0.15
+const SKIP_TIME_HOURS: float = 6.0
 
 @onready var btn_resume: Button = $VBoxContainer/BTN_Resume
 @onready var btn_settings: Button = $VBoxContainer/BTN_Settings
+@onready var btn_skip_time: Button = $VBoxContainer/BTN_SkipTime
 @onready var btn_quit: Button = $VBoxContainer/BTN_Quit
 
 
 func _ready() -> void:
 	btn_resume.modulate = TRANSPARENT_COLOR
 	btn_settings.modulate = TRANSPARENT_COLOR
+	btn_skip_time.modulate = TRANSPARENT_COLOR
 	btn_quit.modulate = TRANSPARENT_COLOR
 	
 	get_tree().paused = true
@@ -25,6 +28,7 @@ func fade_in() -> void:
 	var tween := create_tween()
 	tween.tween_property(btn_resume, "modulate", Color.WHITE, BUTTON_FADE_TIME)
 	tween.tween_property(btn_settings, "modulate", Color.WHITE, BUTTON_FADE_TIME)
+	tween.tween_property(btn_skip_time, "modulate", Color.WHITE, BUTTON_FADE_TIME)
 	tween.tween_property(btn_quit, "modulate", Color.WHITE, BUTTON_FADE_TIME)
 
 
@@ -38,6 +42,14 @@ func _on_btn_resume_pressed() -> void:
 func _on_btn_settings_pressed() -> void:
 	EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SettingsMenu, true)
 	fade_out()
+
+
+func _on_btn_skip_time_pressed() -> void:
+	if has_node("/root/DayTimerManager"):
+		DayTimerManager.skip_time(SKIP_TIME_HOURS)
+		EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
+	else:
+		push_warning("DayTimerManager not found!")
 
 
 func _on_btn_quit_pressed() -> void:

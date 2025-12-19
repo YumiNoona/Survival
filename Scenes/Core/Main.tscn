@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bxau1rrbufv3u" path="res://Scripts/UI/SettingController.gd" id="8_kmmkm"]
 [ext_resource type="PackedScene" uid="uid://byisrhqlg3hk8" path="res://Scenes/UI/HUD.tscn" id="8_xlfh5"]
 [ext_resource type="Script" uid="uid://dsi8m7vgbjuuc" path="res://Scripts/Config/BulletinController.gd" id="9_kmmkm"]
+[ext_resource type="Script" path="res://Scripts/UI/NotificationManager.gd" id="10_notif"]
 
 [sub_resource type="Animation" id="Animation_t7cte"]
 resource_name = "Loading"
@@ -65,7 +66,7 @@ process_mode = 3
 [node name="StageController" type="Node" parent="."]
 script = ExtResource("1_4v5pd")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." groups=["UI", "UILayer"]]
 
 [node name="HUD" type="Node" parent="UI"]
 script = ExtResource("2_t7cte")
@@ -74,6 +75,9 @@ script = ExtResource("2_t7cte")
 
 [node name="BulletinController" type="Node" parent="UI"]
 script = ExtResource("9_kmmkm")
+
+[node name="NotificationManager" type="Node" parent="UI"]
+script = ExtResource("10_notif")
 
 [node name="MusicController" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_4v5pd")

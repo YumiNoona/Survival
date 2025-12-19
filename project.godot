@@ -24,6 +24,8 @@ buses/default_bus_layout="res://Music.tres"
 EventSystem="*res://Scripts/Config/EventSystem.gd"
 XPManager="*res://Scripts/Skills/XPManager.gd"
 SkillTreeManager="*res://Scripts/Skills/SkillTreeManager.gd"
+DayTimerManager="*res://Scripts/Core/DayTimerManager.gd"
+PlayerStatsTracker="*res://Scripts/Core/PlayerStatsTracker.gd"
 
 [display]
 

@@ -160,6 +160,9 @@ signal SKL_skill_unlocked
 @warning_ignore("unused_signal")
 signal SKL_is_skill_unlocked
 
+@warning_ignore("unused_signal")
+signal SKL_get_skill_level
+
 #Crafting Signal
 @warning_ignore("unused_signal")
 signal CRAFT_unlock_weapon_tier
@@ -189,3 +192,16 @@ signal PLA_increase_max_energy
 
 @warning_ignore("unused_signal")
 signal PLA_increase_attack_damage
+
+#Time Signal
+@warning_ignore("unused_signal")
+signal TIM_time_updated
+
+@warning_ignore("unused_signal")
+signal TIM_day_changed
+
+@warning_ignore("unused_signal")
+signal TIM_skip_time
+
+@warning_ignore("unused_signal")
+signal TIM_set_time_speed

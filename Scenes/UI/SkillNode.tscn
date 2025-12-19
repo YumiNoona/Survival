@@ -1,33 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://skillnode001"]
+[gd_scene load_steps=3 format=3 uid="uid://skillnode001"]
 
-[ext_resource type="Texture2D" uid="uid://dhyppu1wj5v77" path="res://Assets/Textures/UI/PanelSetBeige.png" id="1_skill"]
 [ext_resource type="Texture2D" uid="uid://7que4dlhqyrv" path="res://Assets/Textures/UI/PanelBlue.png" id="2_skill"]
-[ext_resource type="Script" path="res://Scripts/UI/SkillNode.gd" id="3_script"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_locked"]
-bg_color = Color(0.2, 0.2, 0.2, 0.8)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_available"]
-bg_color = Color(0.3, 0.5, 0.3, 0.8)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_unlocked"]
-bg_color = Color(0.3, 0.3, 0.5, 0.8)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[ext_resource type="Script" uid="uid://cjmt3ijgr1sds" path="res://Scripts/UI/SkillNode.gd" id="3_script"]
 
 [node name="SkillNode" type="Control"]
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 1
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -58,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -50.0
-offset_right = 40.0
-offset_bottom = 10.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 8
@@ -76,6 +54,7 @@ expand_mode = 1
 
 [node name="SkillName" type="Label" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -83,32 +62,54 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -50.0
-offset_top = -20.0
+offset_top = -30.0
 offset_right = 50.0
-offset_bottom = 0.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 12
-horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 0.6156863, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "Skill Name"
+horizontal_alignment = 1
 
 [node name="XPCost" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -50.0
-offset_top = -40.0
+offset_top = -45.0
 offset_right = 50.0
-offset_bottom = -20.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.7176471, 0.9882353, 0.2901961, 1)
 theme_override_font_sizes/font_size = 10
-horizontal_alignment = 1
 text = "10 XP"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = 10.0
+offset_right = -8.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.9490196, 0.6, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Lv.1"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="LockedOverlay" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -134,10 +135,10 @@ offset_right = 20.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 64
+text = "🔒"
 horizontal_alignment = 1
 vertical_alignment = 1
-text = "🔒"
 
 [node name="Button" type="Button" parent="."]
 unique_name_in_owner = true
@@ -148,3 +149,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
+
+[node name="GlowEffect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.8, 1, 0)
+
+[node name="ParticlesContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
