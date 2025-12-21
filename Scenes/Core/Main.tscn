@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dsi8m7vgbjuuc" path="res://Scripts/Config/BulletinController.gd" id="9_kmmkm"]
 [ext_resource type="Script" path="res://Scripts/UI/NotificationManager.gd" id="10_notif"]
 [ext_resource type="Script" path="res://Scripts/Core/Main.gd" id="11_main"]
+[ext_resource type="PackedScene" uid="uid://cnutkd4aj7sbc" path="res://Scenes/UI/JoyStick.tscn" id="12_joystick"]
 
 [sub_resource type="Animation" id="Animation_t7cte"]
 resource_name = "Loading"
@@ -80,6 +81,8 @@ script = ExtResource("9_kmmkm")
 
 [node name="NotificationManager" type="Node" parent="UI"]
 script = ExtResource("10_notif")
+
+[node name="JoyStick" parent="UI" instance=ExtResource("12_joystick")]
 
 [node name="MusicController" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_4v5pd")

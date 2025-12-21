@@ -85,7 +85,12 @@ func move():
 			has_double_jumped = true
 	
 	var speed := (normal_speed if not is_sprinting else sprint_speed) * speed_modifier
-	var input_dir := Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
+	var keyboard_input := Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
+	var joystick = get_tree().get_first_node_in_group("JoystickUI")
+	var joystick_vec := Vector2.ZERO
+	if joystick and joystick.has_method("get_joystick_input"):
+		joystick_vec = joystick.get_joystick_input()
+	var input_dir := keyboard_input if joystick_vec.length() < 0.1 else joystick_vec
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	velocity.z = direction.z * speed

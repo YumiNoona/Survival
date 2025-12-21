@@ -1,3 +1,5 @@
+TextureRect
+Button
 VBoxContainer
 HBoxContainer
 Control
@@ -6,9 +8,7 @@ ScrollContainer
 PanelContainer
 MarginContainer
 OptionButton
-TextureRect
 UIButton
 GPUParticles3D
 FlickeringLight
 Label
-AnimationPlayer

@@ -1,0 +1,212 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnutkd4aj7sbc"]
+
+[ext_resource type="Texture2D" uid="uid://b4l7lv5exjl2e" path="res://Assets/JoyStick/Ring.png" id="1_uwwel"]
+[ext_resource type="Texture2D" uid="uid://cquwkmkoq7qoq" path="res://Assets/JoyStick/Knob.png" id="2_3a26y"]
+[ext_resource type="Texture2D" uid="uid://bx74whnxhn4n1" path="res://Assets/Textures/UI/PanelBeige.png" id="3_2dyeh"]
+[ext_resource type="Texture2D" uid="uid://oacxwvpdae3q" path="res://Assets/JoyStick/Dash.png" id="4_233j5"]
+[ext_resource type="Texture2D" uid="uid://bic1h8sdjfb46" path="res://Assets/JoyStick/Swing.png" id="5_fo5ad"]
+[ext_resource type="Texture2D" uid="uid://dmdm0sqgqbstx" path="res://Assets/JoyStick/ConsumAble.png" id="6_2dyeh"]
+[ext_resource type="Texture2D" uid="uid://c3pc5fynl6o3w" path="res://Assets/JoyStick/Pause.png" id="6_7ncds"]
+[ext_resource type="Texture2D" uid="uid://cvyatan44xksm" path="res://Assets/JoyStick/Placement.png" id="7_233j5"]
+[ext_resource type="Script" uid="uid://d3ax1qao5fuqp" path="res://Scripts/UI/JoyStick.gd" id="8_joystick"]
+
+[node name="JoyStick" type="CanvasLayer"]
+script = ExtResource("8_joystick")
+
+[node name="Ring" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = -383.0
+offset_right = 279.0
+offset_bottom = -233.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("1_uwwel")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Knob" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = -313.0
+offset_right = 209.0
+offset_bottom = -233.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+mouse_filter = 2
+texture = ExtResource("2_3a26y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BTN_Move" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 320)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -430.0
+offset_right = 400.0
+offset_bottom = -110.0
+grow_vertical = 0
+
+[node name="BTN_Sprint" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -282.0
+offset_right = -81.0
+offset_bottom = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash
+"
+icon = ExtResource("3_2dyeh")
+icon_alignment = 1
+
+[node name="Sprint" type="TextureRect" parent="BTN_Sprint"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16700001
+anchor_top = 0.23300001
+anchor_right = 0.837
+anchor_bottom = 0.91700006
+offset_left = -5.050001
+offset_top = -8.950001
+offset_right = 4.4499054
+offset_bottom = 88.44998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.005, 0.54)
+mouse_filter = 2
+texture = ExtResource("4_233j5")
+expand_mode = 1
+
+[node name="BTN_Swing" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -460.0
+offset_right = -70.0
+offset_bottom = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash
+"
+icon_alignment = 1
+
+[node name="Swing" type="TextureRect" parent="BTN_Swing"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97200006
+offset_left = 4.5
+offset_top = 6.0
+offset_right = -5.5
+offset_bottom = 109.92
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.005, 0.54)
+mouse_filter = 2
+texture = ExtResource("5_fo5ad")
+expand_mode = 1
+
+[node name="BTN_Consume" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -460.0
+offset_right = -210.0
+offset_bottom = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash
+"
+icon_alignment = 1
+
+[node name="Consume" type="TextureRect" parent="BTN_Consume"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97200006
+offset_left = 18.0
+offset_top = 20.0
+offset_right = -22.0
+offset_bottom = 63.92
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.005, 0.54)
+mouse_filter = 2
+texture = ExtResource("6_2dyeh")
+expand_mode = 1
+
+[node name="BTN_Place" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -460.0
+offset_right = -70.0
+offset_bottom = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash
+"
+icon_alignment = 1
+
+[node name="Place" type="TextureRect" parent="BTN_Place"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97200006
+offset_left = 4.5
+offset_top = 6.0
+offset_right = -5.5
+offset_bottom = 109.92
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.005, 0.54)
+mouse_filter = 2
+texture = ExtResource("7_233j5")
+expand_mode = 1
+
+[node name="BTN_Pause" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 5.0
+offset_right = -120.0
+offset_bottom = 54.999977
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="BTN_Pause"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("6_7ncds")
+expand_mode = 1

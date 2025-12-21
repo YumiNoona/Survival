@@ -39,3 +39,6 @@ res://Scripts/Core/Spawner.gd
 res://Scripts/Config/MissionConfig.gd
 res://Scenes/UI/LevelUpNotification.tscn
 res://Scripts/UI/LevelUpNotification.gd
+res://JoyStick.tscn
+res://Scenes/UI/JoyStick.tscn
+res://Scripts/UI/JoyStick.gd
