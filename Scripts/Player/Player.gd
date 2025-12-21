@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 @export var normal_speed := 3.0
 @export var sprint_speed := 5.0
-@export var walking_energy_change_per_1m := -0.05
-@export var sprint_energy_multiplier := 1.5  # Sprinting consumes 1.5x energy per meter
+@export var walking_energy_change_per_1m := -0.08
+@export var sprint_energy_multiplier := 2.0 
 @export var jump_velocity := 4.0
 @export var gravity := 0.2
 @export var mouse_sensitivity := 0.005
@@ -143,7 +143,7 @@ func _toggle_bulletin(bulletin_key: BulletinConfig.Keys) -> void:
 	
 	# Simple toggle: if bulletin exists in dictionary and is valid, close it; otherwise open it
 	var bulletin_exists = bulletin_controller.bulletins.has(bulletin_key) and \
-	                     is_instance_valid(bulletin_controller.bulletins.get(bulletin_key))
+						 is_instance_valid(bulletin_controller.bulletins.get(bulletin_key))
 	
 	if bulletin_exists:
 		EventSystem.BUL_destroy_bulletin.emit(bulletin_key)

@@ -14,3 +14,4 @@ res://Scripts/Vitality/PlayerStatsContainer.gd
 res://Scripts/Config/EventSystem.gd
 res://Scripts/Inventory/EquippableConsumables.gd
 res://Scripts/Vitality/Cosumables.gd
+res://HEALTH_STAMINA_ANALYSIS.md

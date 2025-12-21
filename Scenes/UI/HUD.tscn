@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://byisrhqlg3hk8"]
+[gd_scene load_steps=14 format=3 uid="uid://byisrhqlg3hk8"]
 
 [ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="1_omqfp"]
 [ext_resource type="PackedScene" uid="uid://chvj1wn5160gv" path="res://Scenes/UI/HotBarSlot.tscn" id="2_qc5w2"]
@@ -9,42 +9,39 @@
 [ext_resource type="Script" uid="uid://n44c57kjkleu" path="res://Scripts/UI/HUDManager.gd" id="7_hud_manager"]
 
 [sub_resource type="Gradient" id="Gradient_1ree7"]
-offsets = PackedFloat32Array(0, 0.38076922, 0.39615384, 0.6, 0.61346155, 1)
-colors = PackedColorArray(1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0.74509805, 0.74509805, 0.74509805, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.45, 0.46, 0.54, 0.55, 1)
+colors = PackedColorArray(1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0.74509805, 0.74509805, 0.74509805, 0, 1, 1, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d2sja"]
 gradient = SubResource("Gradient_1ree7")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 width = 512
 height = 512
-use_hdr = false
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_pydgx"]
-offsets = PackedFloat32Array(0, 0.38076922, 0.39615384, 0.6, 0.61346155, 1)
-colors = PackedColorArray(1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0.74509805, 0.74509805, 0.74509805, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.44117647, 0.46732026, 0.47058824, 0.5522876, 0.5686275, 0.5751634, 1)
+colors = PackedColorArray(1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0.74509805, 0.74509805, 0.74509805, 0, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eebq5"]
 gradient = SubResource("Gradient_pydgx")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 width = 512
 height = 512
-use_hdr = false
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_hunger"]
 offsets = PackedFloat32Array(0, 0.38076922, 0.39615384, 0.6, 0.61346155, 1)
-colors = PackedColorArray(0.8, 0.6, 0.2, 0, 0.8, 0.6, 0.2, 0, 0.8, 0.6, 0.2, 1, 0.8, 0.6, 0.2, 1, 0.74509805, 0.74509805, 0.74509805, 0, 0.8, 0.6, 0.2, 0)
+colors = PackedColorArray(0.8, 0.6, 0.2, 0, 0.8, 0.6, 0.2, 0, 0.050980393, 0.83137256, 1, 1, 0.050980393, 0.83137256, 1, 1, 0.74509805, 0.74509805, 0.74509805, 0, 0.8, 0.6, 0.2, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hunger"]
 gradient = SubResource("Gradient_hunger")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 width = 512
 height = 512
-use_hdr = false
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
 [node name="HUD" type="Control"]
@@ -121,70 +118,71 @@ layout_mode = 2
 
 [node name="PlayerStatsContainer" type="Control" parent="MarginContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-custom_minimum_size = Vector2(240, 240)
 size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("4_ykvyr")
 
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 1
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_minimum_size = Vector2(240, 240)
 step = 0.1
 value = 100.0
 fill_mode = 5
-texture_filter = 0
 nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture2D_d2sja")
 tint_under = Color(0.3254902, 0.3254902, 0.3254902, 1)
 tint_progress = Color(1, 0.2, 0.25882354, 1)
 
 [node name="EnergyBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = 80.0
-offset_bottom = 80.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_minimum_size = Vector2(160, 160)
 step = 0.1
 value = 100.0
 fill_mode = 5
-texture_filter = 0
 nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture2D_eebq5")
 tint_under = Color(0.3254902, 0.3254902, 0.3254902, 1)
 tint_progress = Color(0.5294118, 0.80784315, 0.92156863, 1)
 
 [node name="HungerBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_minimum_size = Vector2(80, 80)
 step = 0.1
 value = 100.0
 fill_mode = 5
-texture_filter = 0
 nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture2D_hunger")
 tint_under = Color(0.3254902, 0.3254902, 0.3254902, 1)
@@ -197,11 +195,14 @@ script = ExtResource("5_timer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/DayTimerUI"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -56.0
+offset_top = -20.0
+offset_right = 19.0
+offset_bottom = 57.0
+grow_horizontal = 0
 theme_override_constants/separation = 4
 
 [node name="DayLabel" type="Label" parent="MarginContainer/DayTimerUI/VBoxContainer"]
