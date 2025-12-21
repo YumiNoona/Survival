@@ -28,6 +28,7 @@ DayTimerManager="*res://Scripts/Core/DayTimerManager.gd"
 PlayerStatsTracker="*res://Scripts/Core/PlayerStatsTracker.gd"
 MissionManager="*res://Scripts/Missions/MissionManager.gd"
 LevelManager="*res://Scripts/Core/LevelManager.gd"
+SaveSystem="*res://Scripts/Core/SaveSystem.gd"
 
 [display]
 

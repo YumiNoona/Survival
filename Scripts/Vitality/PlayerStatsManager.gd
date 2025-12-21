@@ -3,23 +3,20 @@ extends Node
 var MAX_ENERGY = 100.0
 var MAX_HEALTH = 100.0
 var MAX_HUNGER = 100.0
-
 var current_energy = MAX_ENERGY
 var current_health = MAX_HEALTH
 var current_hunger = MAX_HUNGER
-
-# Health regeneration system
-const COMBAT_TIMEOUT: float = 5.0  
-const NATURAL_REGEN_RATE: float = 1.0 / 10.0  
-const COMBAT_REGEN_RATE: float = 1.0 / 5.0  
-
-# Hunger system
-const HUNGER_DECAY_RATE: float = 1.0 / 60.0  
-const HUNGER_TO_HEALTH_DAMAGE: float = 0.5  
-
 var time_since_last_damage: float = 999.0  
 var regeneration_timer: float = 0.0
 var hunger_decay_timer: float = 0.0
+
+
+const COMBAT_TIMEOUT: float = 5.0  
+const NATURAL_REGEN_RATE: float = 1.0 / 10.0  
+const COMBAT_REGEN_RATE: float = 1.0 / 5.0  
+const HUNGER_DECAY_RATE: float = 1.0 / 60.0  
+const HUNGER_TO_HEALTH_DAMAGE: float = 0.5  
+
 
 func _enter_tree() -> void:
 	EventSystem.PLA_change_energy.connect(change_energy)

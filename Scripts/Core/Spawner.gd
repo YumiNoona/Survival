@@ -36,6 +36,3 @@ func spawn_vfx(scene:PackedScene, tform:Transform3D) -> void:
 func spawn_damage_number(damage: float, spawn_position: Vector3) -> void:
 	if damage_number_pool:
 		damage_number_pool.spawn_damage_number(damage, spawn_position)
-	else:
-		# Fallback if pool not found
-		push_warning("DamageNumberPool not found in Spawner!")

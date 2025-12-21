@@ -95,6 +95,4 @@ func show_level_up_notification(level: int) -> void:
 	
 	notif_instance.setup_notification(level)
 	notification_container.add_child(notif_instance)
-	
-	# Play level up sound
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)

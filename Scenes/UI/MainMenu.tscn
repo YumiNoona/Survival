@@ -251,7 +251,7 @@ draw_pass_1 = SubResource("QuadMesh_t8ymk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1828466, 0)
 layers = 3
 light_color = Color(0.7019608, 0.54509807, 0.27058825, 1)
-light_energy = 0.95371056
+light_energy = 0.9039628
 shadow_enabled = true
 script = ExtResource("19_xwq8e")
 metadata/_custom_type_script = "uid://0ecmdypldnys"
@@ -291,10 +291,21 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="BTN_Start" type="Button" parent="MainMenuUI/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 text = "Start"
+script = ExtResource("24_sdupg")
+metadata/_custom_type_script = "uid://br63qumntp3uo"
+
+[node name="BTN_Load" type="Button" parent="MainMenuUI/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Load Game"
 script = ExtResource("24_sdupg")
 metadata/_custom_type_script = "uid://br63qumntp3uo"
 
@@ -323,6 +334,7 @@ script = ExtResource("24_sdupg")
 metadata/_custom_type_script = "uid://br63qumntp3uo"
 
 [connection signal="pressed" from="MainMenuUI/VBoxContainer/BTN_Start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="MainMenuUI/VBoxContainer/BTN_Load" to="." method="_on_btn_load_pressed"]
 [connection signal="pressed" from="MainMenuUI/VBoxContainer/BTN_Settings" to="." method="_on_btn_settings_pressed"]
 [connection signal="pressed" from="MainMenuUI/VBoxContainer/BTN_Credits" to="." method="_on_btn_credits_pressed"]
 [connection signal="pressed" from="MainMenuUI/VBoxContainer/BTN_Quit" to="." method="_on_btn_quit_pressed"]

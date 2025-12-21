@@ -25,3 +25,14 @@ res://Scripts/Skills/SkillResource.gd
 res://Scripts/UI/SkillTree.gd
 res://Scripts/Skills/SkillTreeManager.gd
 res://Scripts/UI/SkillUnlockNotification.gd
+res://Scripts/Inventory/InventoryManager.gd
+res://Scripts/Missions/MissionManager.gd
+res://Scripts/UI/MainMenu.gd
+res://Scenes/Core/Island.tscn
+res://Scripts/Core/Island.gd
+res://Scripts/Core/Main.gd
+res://Scripts/Core/SaveSystem.gd
+res://Scripts/UI/PauseMenu.gd
+res://Scripts/UI/MissionUI.gd
+res://Scenes/UI/MainMenu.tscn
+res://Scripts/Core/Spawner.gd

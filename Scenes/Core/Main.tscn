@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byisrhqlg3hk8" path="res://Scenes/UI/HUD.tscn" id="8_xlfh5"]
 [ext_resource type="Script" uid="uid://dsi8m7vgbjuuc" path="res://Scripts/Config/BulletinController.gd" id="9_kmmkm"]
 [ext_resource type="Script" path="res://Scripts/UI/NotificationManager.gd" id="10_notif"]
+[ext_resource type="Script" path="res://Scripts/Core/Main.gd" id="11_main"]
 
 [sub_resource type="Animation" id="Animation_t7cte"]
 resource_name = "Loading"
@@ -62,6 +63,7 @@ _data = {
 
 [node name="Main" type="Node"]
 process_mode = 3
+script = ExtResource("11_main")
 
 [node name="StageController" type="Node" parent="."]
 script = ExtResource("1_4v5pd")

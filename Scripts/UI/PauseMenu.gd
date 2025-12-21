@@ -53,4 +53,9 @@ func _on_btn_skip_time_pressed() -> void:
 
 
 func _on_btn_quit_pressed() -> void:
+	get_tree().paused = false
+	EventSystem.PLA_unfreeze_player.emit()
+	await get_tree().process_frame
+	SaveSystem.save_game()
+	SaveSystem.save_data = null
 	EventSystem.STA_change_stage.emit(StageConfig.Keys.MainMenu)
