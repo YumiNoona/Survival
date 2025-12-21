@@ -10,6 +10,6 @@ display_name = "Combat Regeneration"
 description = "Slowly regenerate health during combat (1 HP per 5 seconds)"
 icon = ExtResource("2_icon")
 xp_cost = 25
-position = Vector2(600, 400)
+position = Vector2(900, 600)
 prerequisites = Array[String](["combat_battle_hardened"])
 unlock_value = 1

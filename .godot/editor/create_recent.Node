@@ -1,9 +1,9 @@
+VBoxContainer
 HBoxContainer
 Control
 Line2D
 ScrollContainer
 PanelContainer
-VBoxContainer
 MarginContainer
 OptionButton
 TextureRect

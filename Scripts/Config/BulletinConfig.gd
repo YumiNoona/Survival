@@ -7,6 +7,7 @@ enum Keys {
 	PauseMenu,
 	SettingsMenu,
 	SkillTree,
+	MissionMenu,
 }
 
 const BULLETIN_PATHS := {
@@ -16,6 +17,7 @@ const BULLETIN_PATHS := {
 	Keys.PauseMenu : "res://Scenes/UI/PauseMenu.tscn",
 	Keys.SettingsMenu : "res://Scenes/UI/SettingsMenu.tscn",
 	Keys.SkillTree : "res://Scenes/UI/SkillTree.tscn",
+	Keys.MissionMenu : "res://Scenes/UI/MissionMenu.tscn",
 }
 
 static func get_bulletin(key : Keys) -> Bulletin:

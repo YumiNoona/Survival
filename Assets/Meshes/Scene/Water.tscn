@@ -16,6 +16,7 @@ subdivide_depth = 100
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l1oh0"]
 
 [node name="Water" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0349274, -6.1035156e-05, -2.091339)
 mesh = SubResource("PlaneMesh_c1w88")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

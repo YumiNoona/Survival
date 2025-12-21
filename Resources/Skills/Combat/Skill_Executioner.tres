@@ -10,6 +10,6 @@ display_name = "Executioner"
 description = "Deal 50% more damage to enemies below 30% health"
 icon = ExtResource("2_icon")
 xp_cost = 30
-position = Vector2(400, 600)
+position = Vector2(600, 900)
 prerequisites = Array[String](["combat_critical_strikes", "combat_combat_reflexes"])
 unlock_value = 50

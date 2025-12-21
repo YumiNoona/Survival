@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ip8f8pqleq1w"]
+
+[ext_resource type="Script" uid="uid://dfj7x5mntg78b" path="res://Scripts/UI/MissionUI.gd" id="1_mission_ui"]
+
+[node name="MissionUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 370.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_mission_ui")
+
+[node name="MissionContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+theme_override_constants/separation = 10

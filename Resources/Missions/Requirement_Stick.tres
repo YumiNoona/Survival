@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MissionRequirement" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Missions/MissionRequirement.gd" id="1_req"]
+
+[resource]
+script = ExtResource("1_req")
+item_id = 0
+amount = 3

@@ -10,6 +10,7 @@ var active_notifications: Array[SkillUnlockNotification] = []
 
 func _enter_tree() -> void:
 	EventSystem.SKL_skill_unlocked.connect(_on_skill_unlocked)
+	EventSystem.LEV_level_up.connect(_on_level_up)
 
 func _ready() -> void:
 	# Wait a frame for scene to be ready
@@ -81,3 +82,30 @@ func show_skill_unlock_notification(skill_key: String) -> void:
 
 func _on_notification_removed(notif_instance: SkillUnlockNotification) -> void:
 	active_notifications.erase(notif_instance)
+
+func _on_level_up(new_level: int, _old_level: int) -> void:
+	show_level_up_notification(new_level)
+
+func show_level_up_notification(level: int) -> void:
+	if not notification_container:
+		_setup_notification_container()
+	
+	if not notification_container:
+		push_warning("NotificationManager: No notification container available")
+		return
+	
+	var level_up_scene = load("res://Scenes/UI/LevelUpNotification.tscn")
+	if not level_up_scene:
+		push_warning("NotificationManager: Level up notification scene not found")
+		return
+	
+	var notif_instance = level_up_scene.instantiate() as LevelUpNotification
+	if not notif_instance:
+		push_warning("NotificationManager: Failed to instantiate level up notification")
+		return
+	
+	notif_instance.setup_notification(level)
+	notification_container.add_child(notif_instance)
+	
+	# Play level up sound
+	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)

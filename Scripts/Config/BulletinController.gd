@@ -20,7 +20,10 @@ func create_bulletin(bulletin_key:BulletinConfig.Keys, _extra_arg = null) -> voi
 
 func destroy_bulletin(bulletin_key:BulletinConfig.Keys) -> void:
 	if bulletins.has(bulletin_key):
-		bulletins[bulletin_key].queue_free()
+		var bulletin = bulletins[bulletin_key]
+		if is_instance_valid(bulletin):
+			remove_child(bulletin)
+			bulletin.queue_free()
 		bulletins.erase(bulletin_key)
 
 

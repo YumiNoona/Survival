@@ -205,3 +205,23 @@ signal TIM_skip_time
 
 @warning_ignore("unused_signal")
 signal TIM_set_time_speed
+
+#Mission Signal
+@warning_ignore("unused_signal")
+signal MIS_mission_completed
+
+@warning_ignore("unused_signal")
+signal MIS_mission_progress_updated
+
+@warning_ignore("unused_signal")
+signal MIS_item_collected
+
+@warning_ignore("unused_signal")
+signal MIS_item_crafted
+
+#Level Signal
+@warning_ignore("unused_signal")
+signal LEV_level_up
+
+@warning_ignore("unused_signal")
+signal LEV_level_updated

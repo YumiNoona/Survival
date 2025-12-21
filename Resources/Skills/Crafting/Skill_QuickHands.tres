@@ -11,5 +11,5 @@ description = "Crafting is 25% faster"
 icon = ExtResource("2_icon")
 category = 2
 xp_cost = 15
-position = Vector2(400, 200)
+position = Vector2(600, 300)
 unlock_value = 25

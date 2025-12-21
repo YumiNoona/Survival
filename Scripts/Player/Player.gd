@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var normal_speed := 3.0
 @export var sprint_speed := 5.0
 @export var walking_energy_change_per_1m := -0.05
+@export var sprint_energy_multiplier := 1.5  # Sprinting consumes 1.5x energy per meter
 @export var jump_velocity := 4.0
 @export var gravity := 0.2
 @export var mouse_sensitivity := 0.005
@@ -41,7 +42,8 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	EventSystem.XP_award_xp.emit(1000)
+	# XP is now awarded through missions - removed test XP
+	# EventSystem.XP_award_xp.emit(1000)
 	EventSystem.HUD_show_hud.emit()
 
 
@@ -101,11 +103,21 @@ func _on_increase_movement_speed(percentage: int) -> void:
 
 
 func check_walking_energy_change(delta: float) -> void:
-	if velocity.x or velocity.z:
+	var velocity_2d = Vector2(velocity.x, velocity.z)
+	var movement_length = velocity_2d.length()
+	
+	# Only drain energy if actually moving (prevents micro-drain from tiny velocities)
+	if movement_length > 0.1:
+		var energy_rate = walking_energy_change_per_1m
+		
+		# Apply sprint multiplier if sprinting
+		if is_sprinting:
+			energy_rate *= sprint_energy_multiplier
+		
 		EventSystem.PLA_change_energy.emit(
 			delta *
-			walking_energy_change_per_1m *
-			Vector2(velocity.x, velocity.z).length()
+			energy_rate *
+			movement_length
 		)
 
 
@@ -118,6 +130,25 @@ func look_around(relative : Vector2) -> void:
 	rotate_y(-relative.x * mouse_sensitivity)
 	head.rotate_x(-relative.y * mouse_sensitivity)
 	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
+
+
+func _toggle_bulletin(bulletin_key: BulletinConfig.Keys) -> void:
+	# Find BulletinController in the scene tree
+	var bulletin_controller = get_tree().root.find_child("BulletinController", true, false)
+	
+	if not bulletin_controller:
+		# Can't find BulletinController, just try to create (better than doing nothing)
+		EventSystem.BUL_create_bulletin.emit(bulletin_key)
+		return
+	
+	# Simple toggle: if bulletin exists in dictionary and is valid, close it; otherwise open it
+	var bulletin_exists = bulletin_controller.bulletins.has(bulletin_key) and \
+	                     is_instance_valid(bulletin_controller.bulletins.get(bulletin_key))
+	
+	if bulletin_exists:
+		EventSystem.BUL_destroy_bulletin.emit(bulletin_key)
+	else:
+		EventSystem.BUL_create_bulletin.emit(bulletin_key)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -133,4 +164,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 	elif event.is_action_pressed("SkillTree"):
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.SkillTree)
+		_toggle_bulletin(BulletinConfig.Keys.SkillTree)
+	
+	elif event.is_action_pressed("Mission"):
+		_toggle_bulletin(BulletinConfig.Keys.MissionMenu)

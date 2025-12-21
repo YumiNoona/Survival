@@ -38,9 +38,9 @@ func _process(delta: float) -> void:
 		# Subtle pulse for locked lines
 		pulse = sin(animation_progress * TAU) * 0.1 + 0.9
 		animated_color = Color(
-			base_color.r * pulse,
-			base_color.g * pulse,
-			base_color.b * pulse,
+		base_color.r * pulse,
+		base_color.g * pulse,
+		base_color.b * pulse,
 			base_color.a
 		)
 		default_color = animated_color

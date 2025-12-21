@@ -101,9 +101,42 @@ const CONSTRUCTTABLE_SCENE := {
 	Keys.Campfire : "res://Scenes/Interactive/Constructables/ConstructableCampfire.tscn",
 }
 
+# Map item IDs (int) to item resource paths
+# Item IDs correspond to ItemConfig.Keys enum values (0=Stick, 1=Stone, etc.)
+const ITEMS_BY_ID := {
+	# Pickables
+	Keys.Stick : "res://Resources/ItemResources/ItemStick.tres",
+	Keys.Stone : "res://Resources/ItemResources/ItemStone.tres",
+	Keys.Plant : "res://Resources/ItemResources/ItemPlant.tres",
+	Keys.Mushroom : "res://Resources/Cosumables/Cosumable_Mushroom.tres",
+	Keys.Fruit : "res://Resources/Cosumables/Cosumable_Fruit.tres",
+	Keys.Log : "res://Resources/ItemResources/ItemLog.tres",
+	Keys.Coal : "res://Resources/ItemResources/ItemCoal.tres",
+	Keys.Flintstone : "res://Resources/ItemResources/ItemFlintStone.tres",
+	Keys.RawMeat : "res://Resources/ItemResources/ItemRawMeat.tres",
+	Keys.CookedMeat : "res://Resources/Cosumables/Cosumable_CookedMeat.tres",
+	
+	# Craftables/Equippables
+	Keys.Axe : "res://Resources/Weapons/WeaponAxe.tres",
+	Keys.Pickaxe : "res://Resources/Weapons/WeaponPickAxe.tres",
+	Keys.Campfire : "res://Resources/ItemResources/ItemCampFire.tres",
+	Keys.Multitool : "res://Resources/ItemResources/ItemMultitool.tres",
+	Keys.Rope : "res://Resources/ItemResources/ItemRope.tres",
+	Keys.Tinderbox : "res://Resources/ItemResources/ItemTinderBox.tres",
+	Keys.Torch : "res://Resources/Weapons/WeaponTorch.tres",
+	Keys.Tent : "res://Resources/ItemResources/ItemTent.tres",
+	Keys.Raft : "res://Resources/ItemResources/ItemRaft.tres",
+}
+
 
 static func get_item_resource(key : Keys) -> ItemResource:
 	return load(ITEM_RESOURCE_PATHS.get(key))
+
+
+static func get_item_resource_by_id(id: int) -> ItemResource:
+	if ITEMS_BY_ID.has(id):
+		return load(ITEMS_BY_ID.get(id))
+	return null
 
 
 static func get_crafting_resource(key : Keys) -> CraftingResource:

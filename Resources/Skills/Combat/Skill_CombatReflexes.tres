@@ -10,6 +10,6 @@ display_name = "Combat Reflexes"
 description = "Increases attack speed by 15%"
 icon = ExtResource("2_icon")
 xp_cost = 15
-position = Vector2(200, 400)
+position = Vector2(300, 600)
 prerequisites = Array[String](["combat_basic_training"])
 unlock_value = 15

@@ -11,6 +11,6 @@ description = "Jump height increased by 30% and reduced fall damage by 50%"
 icon = ExtResource("2_icon")
 category = 3
 xp_cost = 20
-position = Vector2(200, 400)
+position = Vector2(300, 600)
 prerequisites = Array[String](["exploration_double_jump"])
 unlock_value = 30

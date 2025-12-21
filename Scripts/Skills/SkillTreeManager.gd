@@ -23,7 +23,7 @@ func can_unlock_skill(skill_key: String) -> bool:
 		return false
 	
 	var current_level = get_skill_level(skill_key)
-	
+
 	# Check if skill is already at max level
 	if current_level >= skill.max_level:
 		return false

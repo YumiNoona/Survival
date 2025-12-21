@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Control
 
 
 @onready var energy_bar: TextureProgressBar = $EnergyBar
@@ -15,9 +15,11 @@ func _enter_tree() -> void:
 	signals_connected = true
 
 func energy_updated(max_energy: float, current_energy: float) -> void:
-	energy_bar.max_value = max_energy
-	energy_bar.value = current_energy
+	if energy_bar:
+		energy_bar.max_value = max_energy
+		energy_bar.value = current_energy
 
 func health_updated(max_health: float, current_health: float) -> void:
-	health_bar.max_value = max_health
-	health_bar.value = current_health
+	if health_bar:
+		health_bar.max_value = max_health
+		health_bar.value = current_health

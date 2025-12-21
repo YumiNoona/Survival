@@ -26,6 +26,7 @@ var _updating_lines := false
 func _enter_tree() -> void:
 	EventSystem.XP_xp_updated.connect(_on_xp_updated)
 	EventSystem.SKL_skill_unlocked.connect(_on_skill_unlocked)
+	tree_exiting.connect(_on_tree_exiting)
 
 func _ready() -> void:
 	EventSystem.PLA_freeze_player.emit()
@@ -392,6 +393,11 @@ func _on_skill_unlocked(_skill_key: String) -> void:
 	# Update lines when a skill is unlocked
 	update_line_animations()
 
+
+func _on_tree_exiting() -> void:
+	# Cleanup when bulletin is being destroyed (whether via close() or direct destruction)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EventSystem.PLA_unfreeze_player.emit()
 
 func close() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

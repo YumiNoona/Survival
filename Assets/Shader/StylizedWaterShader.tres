@@ -1,0 +1,138 @@
+[gd_resource type="Shader" format=3 uid="uid://dugxgtyefchm"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled;
+
+uniform vec4 water_color : source_color = vec4(0.15, 0.35, 0.5, 0.9);
+uniform vec4 deep_water_color : source_color = vec4(0.05, 0.15, 0.25, 1.0);
+
+uniform sampler2D noise_tex_a;
+uniform sampler2D noise_tex_b;
+
+// Wave parameters - directional ocean waves
+uniform vec2 wind_direction = vec2(1.0, 0.3);
+uniform float wave_speed = 1.0;
+uniform float wave_scale = 0.02; // Wave size (lower = larger waves)
+uniform float wave_amplitude = 1.5; // Wave height
+
+// Foam parameters
+uniform float foam_scale = 0.08; // Foam noise scale (world space)
+uniform float foam_threshold = 0.65; // Foam appears on wave crests
+uniform float foam_amount = 0.8;
+
+// Visual parameters
+uniform float roughness = 0.15;
+uniform float fresnel_power = 2.0;
+uniform float overall_opacity = 0.9;
+
+// Wave calculation function (used in both vertex and fragment)
+float get_wave_height(vec3 world_pos, float time) {
+    vec2 wind_dir = normalize(wind_direction);
+    float t = time * wave_speed;
+    
+    // Primary wave - large ocean swell
+    float wave1 = sin(dot(world_pos.xz, wind_dir) / wave_scale + t) * wave_amplitude;
+    
+    // Secondary wave - perpendicular for cross-chop
+    vec2 perp_dir = vec2(-wind_dir.y, wind_dir.x);
+    float wave2 = sin(dot(world_pos.xz, perp_dir) / (wave_scale * 1.3) + t * 0.7) * wave_amplitude * 0.5;
+    
+    // Small detail waves - faster moving
+    float wave3 = sin(dot(world_pos.xz, wind_dir) / (wave_scale * 2.5) + t * 1.5) * wave_amplitude * 0.25;
+    
+    return wave1 + wave2 + wave3;
+}
+
+// Wave normal calculation
+vec3 get_wave_normal(vec3 world_pos, float time) {
+    vec2 wind_dir = normalize(wind_direction);
+    float t = time * wave_speed;
+    float scale = wave_scale;
+    
+    // Calculate wave derivatives for normal
+    float wave1_x = cos(dot(world_pos.xz, wind_dir) / scale + t) * (wind_dir.x / scale) * wave_amplitude;
+    float wave1_z = cos(dot(world_pos.xz, wind_dir) / scale + t) * (wind_dir.y / scale) * wave_amplitude;
+    
+    vec2 perp_dir = vec2(-wind_dir.y, wind_dir.x);
+    float perp_scale = scale * 1.3;
+    float wave2_x = cos(dot(world_pos.xz, perp_dir) / perp_scale + t * 0.7) * (perp_dir.x / perp_scale) * wave_amplitude * 0.5;
+    float wave2_z = cos(dot(world_pos.xz, perp_dir) / perp_scale + t * 0.7) * (perp_dir.y / perp_scale) * wave_amplitude * 0.5;
+    
+    float detail_scale = scale * 2.5;
+    float wave3_x = cos(dot(world_pos.xz, wind_dir) / detail_scale + t * 1.5) * (wind_dir.x / detail_scale) * wave_amplitude * 0.25;
+    float wave3_z = cos(dot(world_pos.xz, wind_dir) / detail_scale + t * 1.5) * (wind_dir.y / detail_scale) * wave_amplitude * 0.25;
+    
+    vec3 normal = vec3(
+        -(wave1_x + wave2_x + wave3_x),
+        1.0,
+        -(wave1_z + wave2_z + wave3_z)
+    );
+    
+    return normalize(normal);
+}
+
+void vertex() {
+    vec3 world_pos = VERTEX;
+    float t = TIME;
+    
+    // Apply wave displacement using world position
+    float wave_height = get_wave_height(world_pos, t);
+    world_pos.y += wave_height;
+    
+    // Calculate proper normal from wave function
+    NORMAL = get_wave_normal(world_pos, t);
+    
+    VERTEX = world_pos;
+}
+
+void fragment() {
+    vec3 world_pos = VERTEX;
+    float t = TIME;
+    
+    // Base water color
+    vec3 base_color = water_color.rgb;
+    
+    // Calculate wave height at this fragment (must match vertex)
+    float wave_height = get_wave_height(world_pos, t);
+    
+    // Foam on wave crests - sample noise using world position
+    vec2 foam_pos1 = world_pos.xz * foam_scale;
+    vec2 foam_pos2 = world_pos.xz * foam_scale * 1.7;
+    
+    // Offset noise sampling with time for movement
+    vec2 wind_dir = normalize(wind_direction);
+    foam_pos1 += wind_dir * t * wave_speed * 0.1;
+    foam_pos2 -= wind_dir * t * wave_speed * 0.07;
+    
+    float foam_noise1 = texture(noise_tex_a, foam_pos1).r;
+    float foam_noise2 = texture(noise_tex_b, foam_pos2).r;
+    float foam_pattern = (foam_noise1 * 0.6 + foam_noise2 * 0.4);
+    
+    // Foam appears on wave crests (high points)
+    // Normalize wave height to 0-1 range and combine with noise
+    float normalized_wave = (wave_height / (wave_amplitude * 1.75)) * 0.5 + 0.5;
+    float crest_mask = smoothstep(0.5, 1.0, normalized_wave);
+    
+    // Combine crest position with noise pattern
+    float foam_mask = smoothstep(foam_threshold, 1.0, foam_pattern) * crest_mask * foam_amount;
+    
+    // Fresnel effect - brighter at viewing angle edges
+    vec3 view_dir = normalize(CAMERA_POSITION_WORLD - world_pos);
+    vec3 normal = get_wave_normal(world_pos, t);
+    float fresnel = pow(1.0 - dot(view_dir, normal), fresnel_power);
+    float fresnel_brightness = 1.0 + fresnel * 0.3;
+    
+    // Combine colors
+    vec3 foam_color = vec3(1.0);
+    vec3 final_color = base_color * fresnel_brightness;
+    final_color = mix(final_color, foam_color, foam_mask);
+    
+    ALBEDO = final_color;
+    ALPHA = overall_opacity;
+    EMISSION = foam_color * (foam_mask * 0.15);
+    ROUGHNESS = roughness;
+    METALLIC = 0.0;
+    SPECULAR = 0.9;
+}
+"

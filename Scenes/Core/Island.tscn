@@ -1465,9 +1465,7 @@ constructable_holder = NodePath("../NavigationRegion3D/ConstructableHolder")
 
 [node name="ScatterMushroom" type="Node3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-visible = false
 script = ExtResource("2_ntp2v")
-enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_plfmo")
 Performance/use_chunks = true
@@ -1525,9 +1523,7 @@ shape = SubResource("Resource_6lsbb")
 
 [node name="ScatterStick_Stone_Plants" type="Node3D" parent="Item"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-visible = false
 script = ExtResource("2_ntp2v")
-enabled = false
 render_mode = 1
 modifier_stack = SubResource("Resource_3qces")
 Performance/use_chunks = true

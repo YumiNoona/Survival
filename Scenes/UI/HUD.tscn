@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://byisrhqlg3hk8"]
+[gd_scene load_steps=12 format=3 uid="uid://byisrhqlg3hk8"]
 
 [ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="1_omqfp"]
 [ext_resource type="PackedScene" uid="uid://chvj1wn5160gv" path="res://Scenes/UI/HotBarSlot.tscn" id="2_qc5w2"]
 [ext_resource type="Script" uid="uid://myy1v1wbtquk" path="res://Scripts/Inventory/HotBarUI.gd" id="2_xaom8"]
 [ext_resource type="Script" uid="uid://bm02vdwg4l7x8" path="res://Scripts/Vitality/PlayerStatsContainer.gd" id="4_ykvyr"]
 [ext_resource type="Script" uid="uid://bfnlb8mo0lx4e" path="res://Scripts/UI/DayTimerUI.gd" id="5_timer"]
+[ext_resource type="PackedScene" uid="uid://ip8f8pqleq1w" path="res://Scenes/UI/MissionUI.tscn" id="6_mission"]
+[ext_resource type="Script" uid="uid://n44c57kjkleu" path="res://Scripts/UI/HUDManager.gd" id="7_hud_manager"]
 
 [sub_resource type="Gradient" id="Gradient_1ree7"]
 offsets = PackedFloat32Array(0, 0.38076922, 0.39615384, 0.6, 0.61346155, 1)
@@ -33,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_hud_manager")
 
 [node name="CrossHair" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(8, 8)
@@ -97,16 +100,22 @@ layout_mode = 2
 [node name="HotBarSlot9" parent="MarginContainer/HotBar" instance=ExtResource("2_qc5w2")]
 layout_mode = 2
 
-[node name="PlayerStatsContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="PlayerStatsContainer" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+custom_minimum_size = Vector2(200, 200)
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_constants/separation = 16
 script = ExtResource("4_ykvyr")
 
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2(200, 200)
 step = 0.1
 value = 100.0
 fill_mode = 5
@@ -116,8 +125,19 @@ tint_under = Color(0.3254902, 0.3254902, 0.3254902, 1)
 tint_progress = Color(1, 0.2, 0.25882354, 1)
 
 [node name="EnergyBar" type="TextureProgressBar" parent="MarginContainer/PlayerStatsContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2(120, 120)
 step = 0.1
 value = 100.0
 fill_mode = 5
@@ -127,6 +147,7 @@ tint_under = Color(0.3254902, 0.3254902, 0.3254902, 1)
 tint_progress = Color(0.5294118, 0.80784315, 0.92156863, 1)
 
 [node name="DayTimerUI" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("5_timer")
 
@@ -156,3 +177,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "12:00"
 horizontal_alignment = 2
+
+[node name="MissionUI" parent="MarginContainer" instance=ExtResource("6_mission")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
