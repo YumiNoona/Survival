@@ -36,7 +36,6 @@ func _fade_hud_elements_out() -> void:
 	tween.tween_callback(_hide_elements).set_delay(FADE_TIME)
 
 func _fade_hud_elements_in() -> void:
-	# Make visible first with transparent color
 	if mission_ui:
 		mission_ui.visible = true
 		mission_ui.modulate = TRANSPARENT_COLOR
@@ -46,11 +45,9 @@ func _fade_hud_elements_in() -> void:
 	if player_stats_container:
 		player_stats_container.visible = true
 		player_stats_container.modulate = TRANSPARENT_COLOR
-	
-	# Then fade in
 	var tween = create_tween()
 	tween.set_parallel(true)
-	
+
 	if mission_ui:
 		tween.tween_property(mission_ui, "modulate", VISIBLE_COLOR, FADE_TIME)
 	if day_timer_ui:

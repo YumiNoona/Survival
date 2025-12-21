@@ -18,7 +18,6 @@ func _enter_tree() -> void:
 	EventSystem.TIM_set_time_speed.connect(set_time_speed)
 
 func _ready() -> void:
-	# Defer initial time emission to ensure all nodes are ready
 	call_deferred("_emit_initial_time")
 	last_emitted_minute = int(current_hour * MINUTES_PER_HOUR)
 

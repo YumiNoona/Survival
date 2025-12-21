@@ -14,30 +14,24 @@ func _enter_tree() -> void:
 	signals_connected = true
 
 func _ready() -> void:
-	# Get initial time if DayTimerManager exists
 	if has_node("/root/DayTimerManager"):
 		var hour = DayTimerManager.get_hour()
 		var day = DayTimerManager.get_day()
 		_on_time_updated(hour, day)
 
 func _on_time_updated(hour: float, day: int) -> void:
-	# Check if labels are initialized
 	if not is_node_ready():
 		return
 	
 	if not time_label or not day_label:
 		return
-	
-	# Format time as HH:MM
+
 	var hours = int(hour)
 	var minutes = int((hour - hours) * 60.0)
 	time_label.text = "%02d:%02d" % [hours, minutes]
-	
-	# Update day label
 	day_label.text = "Day %d" % day
 
 func _on_day_changed(day: int) -> void:
-	# Check if label is initialized
 	if not is_node_ready():
 		return
 	

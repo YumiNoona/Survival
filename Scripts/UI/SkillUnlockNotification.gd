@@ -15,7 +15,7 @@ const FADE_TIME: float = 0.3
 var skill_data_set: bool = false
 
 func _ready() -> void:
-	# Create auto-dismiss timer
+
 	auto_dismiss_timer = Timer.new()
 	auto_dismiss_timer.wait_time = DISPLAY_TIME
 	auto_dismiss_timer.one_shot = true
@@ -54,7 +54,6 @@ func _setup_skill_data() -> void:
 	if title_label:
 		title_label.text = "Skill Unlocked!"
 	
-	# Set skill name and description
 	if description_label:
 		var _level = SkillTreeManager.get_skill_level(skill_key)
 		description_label.text = skill_resource.display_name

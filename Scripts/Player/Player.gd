@@ -42,8 +42,6 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	# XP is now awarded through missions - removed test XP
-	# EventSystem.XP_award_xp.emit(1000)
 	EventSystem.HUD_show_hud.emit()
 
 
@@ -105,12 +103,11 @@ func _on_increase_movement_speed(percentage: int) -> void:
 func check_walking_energy_change(delta: float) -> void:
 	var velocity_2d = Vector2(velocity.x, velocity.z)
 	var movement_length = velocity_2d.length()
-	
-	# Only drain energy if actually moving (prevents micro-drain from tiny velocities)
+
+
 	if movement_length > 0.1:
 		var energy_rate = walking_energy_change_per_1m
 		
-		# Apply sprint multiplier if sprinting
 		if is_sprinting:
 			energy_rate *= sprint_energy_multiplier
 		
@@ -133,15 +130,13 @@ func look_around(relative : Vector2) -> void:
 
 
 func _toggle_bulletin(bulletin_key: BulletinConfig.Keys) -> void:
-	# Find BulletinController in the scene tree
 	var bulletin_controller = get_tree().root.find_child("BulletinController", true, false)
 	
 	if not bulletin_controller:
-		# Can't find BulletinController, just try to create (better than doing nothing)
 		EventSystem.BUL_create_bulletin.emit(bulletin_key)
 		return
-	
-	# Simple toggle: if bulletin exists in dictionary and is valid, close it; otherwise open it
+
+
 	var bulletin_exists = bulletin_controller.bulletins.has(bulletin_key) and \
 						 is_instance_valid(bulletin_controller.bulletins.get(bulletin_key))
 	

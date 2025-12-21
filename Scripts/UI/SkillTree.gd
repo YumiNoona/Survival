@@ -45,14 +45,10 @@ func _ready() -> void:
 		crafting_tab.pressed.connect(Callable(self, "_on_crafting_tab_pressed"))
 	if exploration_tab:
 		exploration_tab.pressed.connect(Callable(self, "_on_exploration_tab_pressed"))
-	
-
 	load_skills_for_category(current_category)
-	
-
 	update_xp_display()
-	
-	# Reset canvas scale to ensure proper clicking
+
+
 	if tree_canvas:
 		tree_canvas.scale = Vector2(1.0, 1.0)
 	
@@ -98,7 +94,7 @@ func create_skill_node(skill: SkillResource) -> void:
 
 func draw_connection_lines() -> void:
 	if _updating_lines:
-		return  # Prevent infinite recursion
+		return  
 	
 	for line in connection_line_instances:
 		if is_instance_valid(line):
@@ -120,43 +116,29 @@ func draw_connection_lines() -> void:
 func create_connection_line(from_node: SkillNode, to_node: SkillNode) -> void:
 	# Create animated line
 	var animated_line = AnimatedSkillLine.new()
-	
-	# Get center positions of nodes (nodes are now 180x180)
 	var node_size = Vector2(180, 180)
 	var from_center = from_node.position + node_size / 2.0
 	var to_center = to_node.position + node_size / 2.0
-	
-	# Determine connection direction and adjust connection points
 	var _direction = (to_center - from_center).normalized()
 	var vertical_distance = abs(to_center.y - from_center.y)
 	var horizontal_distance = abs(to_center.x - from_center.x)
-	
-	# Declare connection points
 	var from_pos: Vector2
 	var to_pos: Vector2
 	
-	# Calculate connection points centered on button edges
+
 	if vertical_distance > horizontal_distance:
-		# Vertical connection - connect from bottom center to top center
 		from_pos = from_node.position + Vector2(node_size.x / 2.0, node_size.y)
 		to_pos = to_node.position + Vector2(node_size.x / 2.0, 0)
 	else:
-		# Horizontal connection - connect from side center to side center
 		if to_center.x > from_center.x:
-			# From right center to left center
 			from_pos = from_node.position + Vector2(node_size.x, node_size.y / 2.0)
 			to_pos = to_node.position + Vector2(0, node_size.y / 2.0)
 		else:
-			# From left center to right center
 			from_pos = from_node.position + Vector2(0, node_size.y / 2.0)
 			to_pos = to_node.position + Vector2(node_size.x, node_size.y / 2.0)
-	
-	# Check if both nodes are unlocked to determine line color
 	var from_unlocked = SkillTreeManager.is_skill_unlocked(from_node.skill_key)
 	var to_unlocked = SkillTreeManager.is_skill_unlocked(to_node.skill_key)
-	
 	animated_line.setup_line(from_pos, to_pos, from_unlocked and to_unlocked)
-	
 	connection_lines.add_child(animated_line)
 	connection_line_instances.append(animated_line)
 
@@ -171,7 +153,6 @@ func _on_skill_clicked(skill_key: String) -> void:
 		return
 
 	if SkillTreeManager.try_unlock_skill(skill_key):
-		# Play unlock animation on the skill node
 		var skill_node = skill_node_instances.get(skill_key)
 		if skill_node:
 			skill_node.play_unlock_animation()
@@ -179,7 +160,6 @@ func _on_skill_clicked(skill_key: String) -> void:
 		
 		update_all_skill_states()
 		update_xp_display()
-		# Update lines after unlocking
 		update_line_animations()
 	else:
 		EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.UIClick)
@@ -193,16 +173,13 @@ func _on_skill_hovered(skill_key: String) -> void:
 	var next_level = current_level + 1
 	var can_upgrade = SkillTreeManager.can_unlock_skill(skill_key)
 	var is_unlocked = current_level > 0
-	
-	# Title with category and level
 	var category_name = _get_category_name(skill.category)
 	description_title.text = "[%s] %s" % [category_name, skill.display_name]
 	if skill.max_level > 1:
 		description_title.text += " (Level %d/%d)" % [current_level, skill.max_level]
 	
 	var desc = ""
-	
-	# Status indicator
+
 	if current_level >= skill.max_level:
 		desc += "✓ MAX LEVEL\n"
 	elif is_unlocked:
@@ -214,7 +191,7 @@ func _on_skill_hovered(skill_key: String) -> void:
 	
 	desc += "\n" + skill.description
 	
-	# Show all level effects if multi-level skill
+	
 	if skill.max_level > 1:
 		desc += "\n\n━━━ All Levels ━━━"
 		for level in range(1, skill.max_level + 1):
@@ -227,7 +204,7 @@ func _on_skill_hovered(skill_key: String) -> void:
 				level_marker = " [UNLOCKED]"
 			desc += "\nLevel %d: %s (%d XP)%s" % [level, _format_skill_effect(skill, level_value), level_xp, level_marker]
 	
-	# XP Information
+
 	desc += "\n\n━━━ Cost ━━━"
 	if can_upgrade:
 		var xp_cost = SkillTreeManager.get_xp_cost_for_level(skill, next_level)
@@ -245,14 +222,14 @@ func _on_skill_hovered(skill_key: String) -> void:
 			if XPManager.available_xp < xp_cost:
 				desc += "\n✗ Insufficient XP (Need %d, have %d)" % [xp_cost, XPManager.available_xp]
 	
-	# Total XP invested (if unlocked)
+
 	if is_unlocked:
 		var total_xp_invested = 0
 		for level in range(1, current_level + 1):
 			total_xp_invested += SkillTreeManager.get_xp_cost_for_level(skill, level)
 		desc += "\nTotal Invested: %d XP" % total_xp_invested
 	
-	# Show stats preview (before/after)
+
 	if has_node("/root/PlayerStatsTracker") and can_upgrade:
 		var stats_tracker = get_node("/root/PlayerStatsTracker")
 		var current_stats = stats_tracker.get_current_stats()
@@ -263,7 +240,7 @@ func _on_skill_hovered(skill_key: String) -> void:
 			desc += "\n\n━━━ Stats Preview ━━━"
 			desc += stats_changes
 	
-	# Prerequisites with detailed status
+
 	if skill.prerequisites.size() > 0:
 		desc += "\n\n━━━ Prerequisites ━━━"
 		var all_prereqs_met = true
@@ -279,7 +256,7 @@ func _on_skill_hovered(skill_key: String) -> void:
 		if not all_prereqs_met and current_level == 0:
 			desc += "\n\n✗ Missing prerequisites required to unlock"
 	
-	# Lock reason if can't unlock
+
 	if not can_upgrade and current_level == 0:
 		var lock_reasons = []
 		if skill.prerequisites.size() > 0:
@@ -316,36 +293,36 @@ func _get_category_name(category: SkillResource.SkillCategory) -> String:
 func _get_stats_changes(current: Dictionary, future: Dictionary, _skill: SkillResource) -> String:
 	var changes = ""
 	
-	# Health
+
 	if future["max_health"] != current["max_health"]:
 		var change = future["max_health"] - current["max_health"]
 		changes += "\nHealth: %.0f → %.0f (+%.0f)" % [current["max_health"], future["max_health"], change]
 	
-	# Energy
+
 	if future["max_energy"] != current["max_energy"]:
 		var change = future["max_energy"] - current["max_energy"]
 		changes += "\nEnergy: %.0f → %.0f (+%.0f)" % [current["max_energy"], future["max_energy"], change]
 	
-	# Movement Speed
+
 	if abs(future["movement_speed_modifier"] - current["movement_speed_modifier"]) > 0.001:
 		var current_percent = (current["movement_speed_modifier"] - 1.0) * 100.0
 		var future_percent = (future["movement_speed_modifier"] - 1.0) * 100.0
 		var change = future_percent - current_percent
 		changes += "\nSpeed: +%.0f%% → +%.0f%% (+%.0f%%)" % [current_percent, future_percent, change]
 	
-	# Attack Damage
+
 	if abs(future["attack_damage_modifier"] - current["attack_damage_modifier"]) > 0.001:
 		var current_percent = (current["attack_damage_modifier"] - 1.0) * 100.0
 		var future_percent = (future["attack_damage_modifier"] - 1.0) * 100.0
 		var change = future_percent - current_percent
 		changes += "\nDamage: +%.0f%% → +%.0f%% (+%.0f%%)" % [current_percent, future_percent, change]
 	
-	# Inventory Slots
+
 	if future["inventory_slots"] != current["inventory_slots"]:
 		var change = future["inventory_slots"] - current["inventory_slots"]
 		changes += "\nInventory: %d → %d slots (+%d)" % [current["inventory_slots"], future["inventory_slots"], change]
-	
-	# Double Jump
+
+
 	if future["has_double_jump"] and not current["has_double_jump"]:
 		changes += "\nDouble Jump: ✗ → ✓"
 	
@@ -372,12 +349,9 @@ func update_all_skill_states() -> void:
 
 func update_line_animations() -> void:
 	if _updating_lines:
-		return  # Prevent infinite recursion
+		return  
 	_updating_lines = true
-	
-	# Re-draw lines to update their unlock status
 	draw_connection_lines()
-	
 	_updating_lines = false
 
 func update_xp_display() -> void:
@@ -390,12 +364,10 @@ func _on_xp_updated(_available: int, _total: int) -> void:
 func _on_skill_unlocked(_skill_key: String) -> void:
 	update_all_skill_states()
 	update_xp_display()
-	# Update lines when a skill is unlocked
 	update_line_animations()
 
 
 func _on_tree_exiting() -> void:
-	# Cleanup when bulletin is being destroyed (whether via close() or direct destruction)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	EventSystem.PLA_unfreeze_player.emit()
 

@@ -59,13 +59,8 @@ func _drop_data(_at_position: Vector2, old_slot: Variant) -> void:
 		old_slot.cooked_food_taken.emit()
 	
 	else:
-		# Get the index in the parent container (which should match inventory array index)
 		var old_index = old_slot.get_index()
 		var new_index = get_index()
-		
-		# Safety check: make sure indices are valid
-		# For inventory slots, get_index() returns the position in GridContainer
-		# This should match the inventory array index
 		EventSystem.INV_switch_to_item_indexes.emit(
 			old_index,
 			old_slot is HotbarSlot,

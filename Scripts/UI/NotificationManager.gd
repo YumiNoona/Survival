@@ -1,7 +1,5 @@
 extends Node
 
-# Manages skill unlock notifications
-# Adds notifications to the UI layer
 
 @onready var notification_container: VBoxContainer
 
@@ -13,24 +11,21 @@ func _enter_tree() -> void:
 	EventSystem.LEV_level_up.connect(_on_level_up)
 
 func _ready() -> void:
-	# Wait a frame for scene to be ready
 	await get_tree().process_frame
 	_setup_notification_container()
 
 func _setup_notification_container() -> void:
-	# Get UI CanvasLayer (NotificationManager is a child of it)
 	var ui_layer = get_parent()
 	if not ui_layer or not ui_layer is CanvasLayer:
 		push_warning("NotificationManager: Could not find UI CanvasLayer parent")
 		return
-	
-	# Check if container already exists
+
+
 	var existing = ui_layer.get_node_or_null("NotificationContainer")
 	if existing:
 		notification_container = existing as VBoxContainer
 		return
-	
-	# Create notification container
+
 	notification_container = VBoxContainer.new()
 	notification_container.name = "NotificationContainer"
 	notification_container.set_anchors_preset(Control.PRESET_TOP_LEFT)
@@ -44,11 +39,10 @@ func _setup_notification_container() -> void:
 	ui_layer.add_child(notification_container)
 
 func _on_skill_unlocked(skill_key: String) -> void:
-	# Only show notification if skill tree is not open (to avoid spam)
 	if has_node("/root/BulletinController"):
 		var bulletin_controller = get_node("/root/BulletinController")
 		if bulletin_controller.bulletins.has(BulletinConfig.Keys.SkillTree):
-			return  # Skill tree is open, don't show notification
+			return 
 	
 	show_skill_unlock_notification(skill_key)
 
@@ -64,7 +58,6 @@ func show_skill_unlock_notification(skill_key: String) -> void:
 		push_warning("NotificationManager: Notification scene not loaded")
 		return
 	
-	# Create notification
 	var notif_instance = notification_scene.instantiate() as SkillUnlockNotification
 	if not notif_instance:
 		push_warning("NotificationManager: Failed to instantiate notification")
@@ -73,11 +66,7 @@ func show_skill_unlock_notification(skill_key: String) -> void:
 	notif_instance.setup_notification(skill_key)
 	notification_container.add_child(notif_instance)
 	active_notifications.append(notif_instance)
-	
-	# Remove from active list when notification is freed
 	notif_instance.tree_exiting.connect(_on_notification_removed.bind(notif_instance))
-	
-	# Play notification sound
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)
 
 func _on_notification_removed(notif_instance: SkillUnlockNotification) -> void:

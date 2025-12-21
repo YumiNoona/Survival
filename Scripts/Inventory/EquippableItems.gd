@@ -10,8 +10,6 @@ func _ready() -> void:
 		for child in mesh_holder.get_children():
 			if child is VisualInstance3D:
 				child.layers = 2
-	
-	# Set initial position from Swing animation's first keyframe
 	call_deferred("_set_initial_position_from_animation")
 
 func _set_initial_position_from_animation() -> void:
@@ -24,8 +22,7 @@ func _set_initial_position_from_animation() -> void:
 	var swing_animation = animation_player.get_animation("Swing")
 	if not swing_animation:
 		return
-	
-	# Find the mesh child node (could be "Axe", "Mushroom", etc.)
+
 	var mesh_child: Node3D = null
 	for child in mesh.get_children():
 		if child is Node3D:
@@ -34,8 +31,7 @@ func _set_initial_position_from_animation() -> void:
 	
 	if not mesh_child:
 		return
-	
-	# Find position and rotation tracks for the mesh
+
 	var position_track_idx = -1
 	var rotation_track_idx = -1
 	var mesh_path = "Mesh/" + mesh_child.name + ":"
@@ -47,7 +43,7 @@ func _set_initial_position_from_animation() -> void:
 		elif str(track_path).contains(mesh_path + "rotation"):
 			rotation_track_idx = i
 	
-	# Apply position from first keyframe
+
 	if position_track_idx >= 0:
 		var key_count = swing_animation.track_get_key_count(position_track_idx)
 		if key_count > 0:
@@ -55,7 +51,7 @@ func _set_initial_position_from_animation() -> void:
 			if first_position is Vector3:
 				mesh_child.position = first_position
 	
-	# Apply rotation from first keyframe
+
 	if rotation_track_idx >= 0:
 		var key_count = swing_animation.track_get_key_count(rotation_track_idx)
 		if key_count > 0:

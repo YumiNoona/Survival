@@ -31,6 +31,6 @@ enum UnlockType {
 @export var unlock_type: UnlockType = UnlockType.CUSTOM
 @export var unlock_value: int = 0  
 @export var unlock_data: String = "" 
-@export var max_level: int = 1  # Maximum level this skill can reach (1 = single unlock, >1 = upgradable)
-@export var xp_cost_per_level: int = 0  # Additional XP cost per level (0 = use base cost, >0 = base + (level * this))
-@export var value_per_level: int = 0  # Additional value per level (0 = same value each level, >0 = base + (level * this)) 
+@export var max_level: int = 1  
+@export var xp_cost_per_level: int = 0  
+@export var value_per_level: int = 0  

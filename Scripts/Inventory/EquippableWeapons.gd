@@ -24,7 +24,7 @@ func check_hit() -> void:
 	var ray_query_params := PhysicsRayQueryParameters3D.new()
 	ray_query_params.collide_with_areas = true
 	ray_query_params.collide_with_bodies = false
-	ray_query_params.collision_mask = 8  # hitbox
+	ray_query_params.collision_mask = 8 
 
 	ray_query_params.from = global_position
 	ray_query_params.to = hit_check_marker.global_position
@@ -36,18 +36,12 @@ func check_hit() -> void:
 		var hit_position = result.get("position", Vector3.ZERO)
 		
 		if collider:
-			# Apply damage modifier
 			var original_damage = weapon_resource.damage
 			var actual_damage = original_damage * damage_modifier
 			weapon_resource.damage = actual_damage
 			collider.take_hit(weapon_resource)
-			weapon_resource.damage = original_damage  # Restore original damage
-			
-			# Spawn floating damage number
+			weapon_resource.damage = original_damage 
 			EventSystem.SPA_spawn_damage_number.emit(actual_damage, hit_position)
-			
-			# Spawn hit particles - collider is a HitBox which has hit_particles_key property
-			# Access the exported property directly
 			var particles_key = collider.hit_particles_key
 			EventSystem.SPA_spawn_vfx.emit(VFXConfig.get_vfx(particles_key), Transform3D(Basis(), hit_position))
 

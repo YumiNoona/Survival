@@ -1,20 +1,17 @@
 extends Node
 
-# Level Manager - Tracks player level based on total XP
-# Similar to Palworld's leveling system
 
 var current_level: int = 1
 var total_xp: int = 0
 var xp_for_next_level: int = 0
 
-const BASE_XP_REQUIRED: int = 100  # XP needed for level 2
-const XP_MULTIPLIER: float = 1.5   # Each level requires 1.5x more XP
+const BASE_XP_REQUIRED: int = 100 
+const XP_MULTIPLIER: float = 1.5   
 
 func _enter_tree() -> void:
 	EventSystem.XP_xp_updated.connect(_on_xp_updated)
 
 func _ready() -> void:
-	# Initialize from XPManager
 	call_deferred("_initialize_from_xp_manager")
 
 func _initialize_from_xp_manager() -> void:
@@ -27,8 +24,8 @@ func _on_xp_updated(_available: int, total: int) -> void:
 	var old_level = current_level
 	total_xp = total
 	_update_level()
-	
-	# Check if level increased
+
+
 	if current_level > old_level:
 		EventSystem.LEV_level_up.emit(current_level, old_level)
 
@@ -36,8 +33,6 @@ func _update_level() -> void:
 	var level = 1
 	var xp_needed = BASE_XP_REQUIRED
 	var xp_accumulated = 0
-	
-	# Calculate level based on total XP
 	while xp_accumulated + xp_needed <= total_xp:
 		xp_accumulated += xp_needed
 		level += 1

@@ -24,20 +24,20 @@ func _ready() -> void:
 	_update_initial_stats()
 
 func _update_initial_stats() -> void:
-	# Get initial stats from PlayerStatsManager
-	if has_node("/root/PlayerStatsManager"):
-		var stats_manager = get_node("/root/PlayerStatsManager")
-		current_max_health = stats_manager.MAX_HEALTH
-		current_max_energy = stats_manager.MAX_ENERGY
-	
-	# Get initial inventory size
-	if has_node("/root/InventoryManager"):
-		var inv_manager = get_node("/root/InventoryManager")
-		current_inventory_slots = inv_manager.current_inventory_size
-	
-	# Get initial movement speed modifier from Player
+	# Get initial stats from PlayerStatsManager (accessed via Player node)
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
+		var stats_manager = player.get_node_or_null("Managers/PlayerStatsManager")
+		if stats_manager:
+			current_max_health = stats_manager.MAX_HEALTH
+			current_max_energy = stats_manager.MAX_ENERGY
+		
+		# Get initial inventory size (also via Player node)
+		var inv_manager = player.get_node_or_null("Managers/InventoryManager")
+		if inv_manager:
+			current_inventory_slots = inv_manager.current_inventory_size
+		
+		# Get initial movement speed modifier from Player
 		current_movement_speed_modifier = player.speed_modifier
 		has_double_jump = player.can_double_jump
 	

@@ -101,8 +101,6 @@ const CONSTRUCTTABLE_SCENE := {
 	Keys.Campfire : "res://Scenes/Interactive/Constructables/ConstructableCampfire.tscn",
 }
 
-# Map item IDs (int) to item resource paths
-# Item IDs correspond to ItemConfig.Keys enum values (0=Stick, 1=Stone, etc.)
 const ITEMS_BY_ID := {
 	# Pickables
 	Keys.Stick : "res://Resources/ItemResources/ItemStick.tres",

@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const ANIM_BLEND_TIME := 0.2
 const GRAVITY := 2.0
 
@@ -50,15 +49,15 @@ var state := States.Idle
 @export var vision_fov := 80.0
 @export var attack_audio_key := SFXConfig.Keys.WolfAttack
 @export var attack_animation_name := "Attack_Headbutt"
-@export var use_back_attack_kick := true  # If true, use Attack_Kick when player is behind
-@export var back_attack_angle := 90.0  # Angle in degrees (90 = directly behind, 180 = full rear arc)
+@export var use_back_attack_kick := true  
+@export var back_attack_angle := 90.0 
 @export var idle_animations:Array[String] = []
 @export var hurt_animations:Array[String] = []
 
 
 var player_in_vision_range := false
-@onready var health := max_health
 var hit_count := 0
+@onready var health := max_health
 
 
 func _ready() -> void:
@@ -272,7 +271,6 @@ func set_state(new_state : States) -> void:
 			main_collision_shape.disabled = true
 			animation_player.play("Death", ANIM_BLEND_TIME)
 			spawn_meat()
-			# Award XP for killing animal (example: 10-20 XP based on difficulty)
 			EventSystem.XP_award_xp.emit(15)
 			set_physics_process(false)
 			disappear_after_death_timer.start()
@@ -314,31 +312,20 @@ func is_player_behind() -> bool:
 		return false
 	
 	var direction_to_player := global_position.direction_to(player.global_position)
-	var forward := -global_transform.basis.z  # Animal's forward direction
+	var forward := -global_transform.basis.z
 	forward.y = 0
 	direction_to_player.y = 0
-	
-	# Normalize both vectors
 	forward = forward.normalized()
 	direction_to_player = direction_to_player.normalized()
-	
-	# Calculate angle between forward and direction to player
-	# Dot product gives us the cosine of the angle
 	var dot_product = forward.dot(direction_to_player)
 	var angle = rad_to_deg(acos(clamp(dot_product, -1.0, 1.0)))
-	
-	# If angle is greater than the threshold, player is behind
-	# 0° = directly in front, 90° = directly to side, 180° = directly behind
 	return angle >= back_attack_angle
 
 
 func get_attack_animation() -> String:
-	# Check if we should use kick animation when player is behind
 	if use_back_attack_kick and is_player_behind():
 		if animation_player.has_animation("Attack_Kick"):
 			return "Attack_Kick"
-	
-	# Default to the configured attack animation
 	return attack_animation_name
 
 
@@ -346,7 +333,6 @@ func spawn_meat() -> void:
 	var meat_scene := ItemConfig.get_pickuppable_item(ItemConfig.Keys.RawMeat)
 	
 	for i in range(meat_drop_count):
-		# Add slight random offset to each meat spawn so they don't all stack
 		var offset := Vector3(
 			randf_range(-0.3, 0.3),
 			0.0,
