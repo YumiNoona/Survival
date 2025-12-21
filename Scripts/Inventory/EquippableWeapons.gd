@@ -38,9 +38,13 @@ func check_hit() -> void:
 		if collider:
 			# Apply damage modifier
 			var original_damage = weapon_resource.damage
-			weapon_resource.damage = original_damage * damage_modifier
+			var actual_damage = original_damage * damage_modifier
+			weapon_resource.damage = actual_damage
 			collider.take_hit(weapon_resource)
 			weapon_resource.damage = original_damage  # Restore original damage
+			
+			# Spawn floating damage number
+			EventSystem.SPA_spawn_damage_number.emit(actual_damage, hit_position)
 			
 			# Spawn hit particles - collider is a HitBox which has hit_particles_key property
 			# Access the exported property directly

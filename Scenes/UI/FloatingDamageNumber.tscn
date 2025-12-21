@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8k2m3n4p5q6r"]
+
+[ext_resource type="Script" path="res://Scripts/UI/FloatingDamageNumber.gd" id="1_damage"]
+
+[node name="FloatingDamageNumber" type="Node3D"]
+script = ExtResource("1_damage")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+billboard = 2
+pixel_size = 0.006
+text = "0"
+font_size = 32
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+modulate = Color(1, 0.2, 0.2, 1)

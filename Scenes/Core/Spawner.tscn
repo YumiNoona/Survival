@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0h6828bygyk2"]
+[gd_scene load_steps=3 format=3 uid="uid://d0h6828bygyk2"]
 
 [ext_resource type="Script" uid="uid://c5bs5j4uwlipi" path="res://Scripts/Core/Spawner.gd" id="1_kj3xf"]
+[ext_resource type="Script" path="res://Scripts/UI/DamageNumberPool.gd" id="2_pool"]
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_kj3xf")
@@ -8,3 +9,8 @@ script = ExtResource("1_kj3xf")
 [node name="Items" type="Node3D" parent="."]
 
 [node name="ConstructableHolder" type="Node3D" parent="."]
+
+[node name="DamageNumberPool" type="Node" parent="." groups=["DamageNumberPool"]]
+script = ExtResource("2_pool")
+pool_size = 50
+pre_warm = true

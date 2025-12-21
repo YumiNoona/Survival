@@ -97,6 +97,9 @@ signal SPA_spawn_scene
 @warning_ignore("unused_signal")
 signal SPA_spawn_vfx
 
+@warning_ignore("unused_signal")
+signal SPA_spawn_damage_number(damage: float, position: Vector3)
+
 #SFX/Music Signal
 @warning_ignore("unused_signal")
 signal SFX_play_sfx

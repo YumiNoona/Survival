@@ -15,3 +15,8 @@ res://Scripts/Config/EventSystem.gd
 res://Scripts/Inventory/EquippableConsumables.gd
 res://Scripts/Vitality/Cosumables.gd
 res://HEALTH_STAMINA_ANALYSIS.md
+res://Scripts/Animals/Animals.gd
+res://Scripts/Core/Spawner.gd
+res://Scripts/Inventory/EquippableWeapons.gd
+res://Scripts/UI/FloatingDamageNumber.gd
+res://Scripts/UI/DamageNumberPool.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://bl3eklpd4adx7"]
+[gd_scene load_steps=205 format=3 uid="uid://bl3eklpd4adx7"]
 
 [ext_resource type="Script" uid="uid://t0ibkouq3lqr" path="res://Scripts/UI/Stage.gd" id="1_0vcje"]
 [ext_resource type="PackedScene" uid="uid://bu67pp3j1wo0d" path="res://Assets/Meshes/Scene/Terrain.tscn" id="1_fmejh"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cjq2x3ftfuiuk" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="12_vwwq4"]
 [ext_resource type="PackedScene" uid="uid://c5milc3d4uwe8" path="res://Assets/Meshes/Scene/Water.tscn" id="13_0vcje"]
 [ext_resource type="Script" uid="uid://c5bs5j4uwlipi" path="res://Scripts/Core/Spawner.gd" id="14_0vcje"]
+[ext_resource type="Script" path="res://Scripts/UI/DamageNumberPool.gd" id="15_pool"]
 [ext_resource type="PackedScene" uid="uid://crff7tqvdq" path="res://Scenes/Player/Player.tscn" id="15_vwwq4"]
 [ext_resource type="Script" uid="uid://lrl8myr07x0j" path="res://Scripts/Core/DayNightCycle.gd" id="16_6lrvk"]
 
@@ -1460,6 +1461,11 @@ script = ExtResource("14_0vcje")
 constructable_holder = NodePath("../NavigationRegion3D/ConstructableHolder")
 
 [node name="Items" type="Node3D" parent="Spawner"]
+
+[node name="DamageNumberPool" type="Node" parent="Spawner" groups=["DamageNumberPool"]]
+script = ExtResource("15_pool")
+pool_size = 50
+pre_warm = true
 
 [node name="Item" type="Node3D" parent="."]
 
