@@ -64,6 +64,12 @@ signal PLA_change_health
 signal PLA_health_updated
 
 @warning_ignore("unused_signal")
+signal PLA_change_hunger
+
+@warning_ignore("unused_signal")
+signal PLA_hunger_updated
+
+@warning_ignore("unused_signal")
 signal PLA_player_sleep
 
 #Equip Signal

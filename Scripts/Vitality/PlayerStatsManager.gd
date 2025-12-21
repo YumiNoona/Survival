@@ -2,27 +2,42 @@ extends Node
 
 var MAX_ENERGY = 100.0
 var MAX_HEALTH = 100.0
+var MAX_HUNGER = 100.0
 
 var current_energy = MAX_ENERGY
 var current_health = MAX_HEALTH
+var current_hunger = MAX_HUNGER
 
 # Health regeneration system
 const COMBAT_TIMEOUT: float = 5.0  # Seconds after taking damage before considered "out of combat"
 const NATURAL_REGEN_RATE: float = 1.0 / 10.0  # 1 HP per 10 seconds
 const COMBAT_REGEN_RATE: float = 1.0 / 5.0  # 1 HP per 5 seconds
 
+# Hunger system
+const HUNGER_DECAY_RATE: float = 1.0 / 60.0  # 1 hunger per 60 seconds (1 minute)
+const HUNGER_TO_HEALTH_DAMAGE: float = 0.5  # When hunger is 0, damage health by this per second
+
 var time_since_last_damage: float = 999.0  # Start as "not in combat"
 var regeneration_timer: float = 0.0
+var hunger_decay_timer: float = 0.0
 
 func _enter_tree() -> void:
 	EventSystem.PLA_change_energy.connect(change_energy)
 	EventSystem.PLA_change_health.connect(change_health)
+	EventSystem.PLA_change_hunger.connect(change_hunger)
 	EventSystem.PLA_increase_max_health.connect(_on_increase_max_health)
 	EventSystem.PLA_increase_max_energy.connect(_on_increase_max_energy)
 
 func _process(delta: float) -> void:
 	# Update combat timer
 	time_since_last_damage += delta
+	
+	# Process hunger decay
+	_process_hunger_decay(delta)
+	
+	# If hunger is 0, damage health over time
+	if current_hunger <= 0 and current_health > 0:
+		change_health(-HUNGER_TO_HEALTH_DAMAGE * delta)
 	
 	# Only regenerate if health is below max
 	if current_health < MAX_HEALTH:
@@ -99,3 +114,19 @@ func _on_increase_max_energy(amount: int) -> void:
 	MAX_ENERGY += amount
 	current_energy += amount  # Also increase current energy
 	EventSystem.PLA_energy_updated.emit(MAX_ENERGY, current_energy)
+
+func _process_hunger_decay(delta: float) -> void:
+	# Hunger decreases over time
+	hunger_decay_timer += delta * HUNGER_DECAY_RATE
+	
+	if hunger_decay_timer >= 1.0:
+		var decay_amount = floor(hunger_decay_timer)
+		hunger_decay_timer -= decay_amount
+		change_hunger(-decay_amount)
+
+func change_hunger(hunger_change: float) -> void:
+	current_hunger = clampf(current_hunger + hunger_change, 0, MAX_HUNGER)
+	EventSystem.PLA_hunger_updated.emit(MAX_HUNGER, current_hunger)
+	
+	# If hunger reaches 0, start damaging health continuously
+	# Note: This is handled in _process to ensure consistent timing

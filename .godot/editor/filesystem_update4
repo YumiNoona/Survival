@@ -11,3 +11,6 @@ res://Scripts/UI/HUDManager.gd
 res://Scripts/Player/Player.gd
 res://Scripts/Vitality/PlayerStatsManager.gd
 res://Scripts/Vitality/PlayerStatsContainer.gd
+res://Scripts/Config/EventSystem.gd
+res://Scripts/Inventory/EquippableConsumables.gd
+res://Scripts/Vitality/Cosumables.gd

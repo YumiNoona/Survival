@@ -6,7 +6,7 @@ const VISIBLE_COLOR = Color(1, 1, 1, 1)
 
 @onready var mission_ui: Control = $MarginContainer/MissionUI
 @onready var day_timer_ui: Control = $MarginContainer/DayTimerUI
-@onready var player_stats_container: VBoxContainer = $MarginContainer/PlayerStatsContainer
+@onready var player_stats_container: Control = $MarginContainer/PlayerStatsContainer
 
 func _ready() -> void:
 	EventSystem.BUL_create_bulletin.connect(_on_bulletin_created)

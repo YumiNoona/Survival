@@ -6,6 +6,7 @@ var consumable_item_resource: ConsumableResource
 func consume() -> void:
 	EventSystem.PLA_change_health.emit(consumable_item_resource.health_change)
 	EventSystem.PLA_change_energy.emit(consumable_item_resource.energy_change)
+	EventSystem.PLA_change_hunger.emit(consumable_item_resource.hunger_change)
 	EventSystem.EQU_delete_equipped_item.emit()
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Eat)
 
