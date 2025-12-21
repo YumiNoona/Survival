@@ -15,8 +15,6 @@ func setup_notification(new_level: int) -> void:
 func _ready() -> void:
 	if animation_player:
 		animation_player.play("level_up")
-	
-	# Auto-dismiss after 4 seconds
 	var timer = get_tree().create_timer(4.0)
 	timer.timeout.connect(_on_auto_dismiss)
 

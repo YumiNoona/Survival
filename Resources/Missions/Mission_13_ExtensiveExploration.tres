@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=5 format=3 uid="uid://mission13"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="2_req"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Log.tres" id="3_log"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Plant.tres" id="4_plant"]
+
+[sub_resource type="Resource" id="SubResource_log"]
+script = ExtResource("2_req")
+item_id = 5
+amount = 10
+
+[sub_resource type="Resource" id="SubResource_plant"]
+script = ExtResource("2_req")
+item_id = 2
+amount = 7
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_13_extensive_exploration"
+mission_name = "Extensive Exploration"
+mission_description = "Thoroughly explore the island. Gather 10 Heavy Logs and 7 Big Long Plants to build up your resource stockpile."
+xp_reward = 50
+mission_level = 13
+prerequisite_missions = Array[String](["mission_12_craft_tinderbox"])
+required_items = Array[ExtResource("2_req")]([SubResource("SubResource_log"), SubResource("SubResource_plant")])

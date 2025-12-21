@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=3 format=3 uid="uid://mission10"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="1_yecny"]
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_10_craft_rope"
+mission_name = "Make Rope"
+mission_description = "Craft Tangled Rope from plants. This essential material is needed for advanced structures and equipment."
+mission_type = 1
+xp_reward = 30
+mission_level = 10
+prerequisite_missions = Array[String](["mission_09_craft_multitool"])
+required_craft_item = 14

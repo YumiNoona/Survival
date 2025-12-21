@@ -17,8 +17,9 @@ func _initialize_missions() -> void:
 
 func _update_all_missions() -> void:
 	for child in mission_container.get_children():
+		mission_container.remove_child(child)
 		child.queue_free()
-
+	
 	for mission_key in MissionManager.active_missions.keys():
 		var mission = MissionManager.active_missions[mission_key]
 		_create_mission_panel(mission, mission_key)
@@ -44,7 +45,7 @@ func _create_mission_panel(mission: MissionResource, mission_key: String) -> voi
 	margin.add_theme_constant_override("margin_left", 12)
 	margin.add_theme_constant_override("margin_top", 12)
 	margin.add_theme_constant_override("margin_right", 12)
-	margin.add_theme_constant_override("margin_bottom", 12)
+	margin.add_theme_constant_override("margin_bottom", 16)
 	panel.name = mission_key
 	panel.custom_minimum_size = Vector2(350, 0)
 	panel.add_theme_stylebox_override("panel", style)
@@ -52,18 +53,40 @@ func _create_mission_panel(mission: MissionResource, mission_key: String) -> voi
 	margin.add_child(vbox)
 	vbox.name = "Content"
 	vbox.add_theme_constant_override("separation", 8)
-	vbox.add_child(name_label)
-	vbox.add_child(desc_label)
-	vbox.add_child(objectives_vbox)
+	
+	var name_panel = PanelContainer.new()
+	var name_style = StyleBoxFlat.new()
+	name_style.bg_color = Color(0.2, 0.35, 0.5, 0.8)
+	name_style.corner_radius_top_left = 4
+	name_style.corner_radius_top_right = 4
+	name_style.corner_radius_bottom_left = 4
+	name_style.corner_radius_bottom_right = 4
+	name_panel.add_theme_stylebox_override("panel", name_style)
+	
+	var name_margin = MarginContainer.new()
+	name_margin.add_theme_constant_override("margin_left", 6)
+	name_margin.add_theme_constant_override("margin_top", 4)
+	name_margin.add_theme_constant_override("margin_right", 6)
+	name_margin.add_theme_constant_override("margin_bottom", 4)
+	name_label.clip_contents = false
 	name_label.text = mission.mission_name
 	name_label.add_theme_font_size_override("font_size", 18)
 	name_label.add_theme_color_override("font_color", Color(1, 1, 1, 1))
+	name_margin.add_child(name_label)
+	name_panel.add_child(name_margin)
+	vbox.add_child(name_panel)
+	
+	desc_label.clip_contents = false
 	desc_label.text = mission.mission_description
 	desc_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc_label.add_theme_font_size_override("font_size", 12)
 	desc_label.add_theme_color_override("font_color", Color(0.85, 0.85, 0.85, 1))
+	vbox.add_child(desc_label)
+	
 	objectives_vbox.name = "ObjectivesContainer"
 	objectives_vbox.add_theme_constant_override("separation", 4)
+	objectives_vbox.add_theme_constant_override("margin_top", 2)
+	vbox.add_child(objectives_vbox)
 	mission_container.add_child(panel)
 	_update_objectives(mission, mission_key, objectives_vbox)
 
@@ -95,6 +118,7 @@ func _update_objectives(mission: MissionResource, mission_key: String, objective
 					var item_name = item_res.display_name
 					
 					var obj_label = Label.new()
+					obj_label.clip_contents = false
 					if is_completed or current >= required:
 						obj_label.text = "%s (%d/%d) ✓" % [item_name, required, required]
 						obj_label.add_theme_color_override("font_color", Color(0.6, 1, 0.6, 1))
@@ -112,6 +136,7 @@ func _update_objectives(mission: MissionResource, mission_key: String, objective
 			var current = 1 if crafted else 0
 			
 			var obj_label = Label.new()
+			obj_label.clip_contents = false
 			if is_completed or crafted:
 				obj_label.text = "Craft %s (%d/1) ✓" % [item_name, current]
 				obj_label.add_theme_color_override("font_color", Color(0.6, 1, 0.6, 1))
@@ -128,6 +153,7 @@ func _update_objectives(mission: MissionResource, mission_key: String, objective
 			var required = progress.get("required", mission.required_kills)
 			
 			var obj_label = Label.new()
+			obj_label.clip_contents = false
 			if is_completed:
 				obj_label.text = "Kill %d enemies (%d/%d) ✓" % [required, required, required]
 				obj_label.add_theme_color_override("font_color", Color(0.6, 1, 0.6, 1))
@@ -145,6 +171,7 @@ func _update_objectives(mission: MissionResource, mission_key: String, objective
 			var current = 1 if built else 0
 			
 			var obj_label = Label.new()
+			obj_label.clip_contents = false
 			if is_completed or built:
 				obj_label.text = "Build %s (%d/1) ✓" % [structure_name, current]
 				obj_label.add_theme_color_override("font_color", Color(0.6, 1, 0.6, 1))
@@ -176,4 +203,5 @@ func _on_mission_completed(mission_key: String, _mission: MissionResource) -> vo
 	var mission_panel = mission_container.get_node_or_null(mission_key)
 	if mission_panel:
 		mission_panel.queue_free()
+	
 	call_deferred("_update_all_missions")

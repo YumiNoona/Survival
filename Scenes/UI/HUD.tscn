@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byisrhqlg3hk8"]
+[gd_scene load_steps=15 format=3 uid="uid://byisrhqlg3hk8"]
 
 [ext_resource type="Texture2D" uid="uid://c4bs4a3pg2wl7" path="res://Assets/Textures/UI/Circle.png" id="1_omqfp"]
 [ext_resource type="PackedScene" uid="uid://chvj1wn5160gv" path="res://Scenes/UI/HotBarSlot.tscn" id="2_qc5w2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bfnlb8mo0lx4e" path="res://Scripts/UI/DayTimerUI.gd" id="5_timer"]
 [ext_resource type="PackedScene" uid="uid://ip8f8pqleq1w" path="res://Scenes/UI/MissionUI.tscn" id="6_mission"]
 [ext_resource type="Script" uid="uid://n44c57kjkleu" path="res://Scripts/UI/HUDManager.gd" id="7_hud_manager"]
+[ext_resource type="Script" uid="uid://dq2fadpqcl8nj" path="res://Scripts/UI/LevelUI.gd" id="8_level"]
 
 [sub_resource type="Gradient" id="Gradient_1ree7"]
 offsets = PackedFloat32Array(0, 0.45, 0.46, 0.54, 0.55, 1)
@@ -222,6 +223,30 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "12:00"
 horizontal_alignment = 2
+
+[node name="LevelUI" type="Control" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("8_level")
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/LevelUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.40725702, 0.80143285, 0.96683186, 1)
+theme_override_colors/font_shadow_color = Color(0.8156863, 0.94509804, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "Level 1"
 
 [node name="MissionUI" parent="MarginContainer" instance=ExtResource("6_mission")]
 unique_name_in_owner = true

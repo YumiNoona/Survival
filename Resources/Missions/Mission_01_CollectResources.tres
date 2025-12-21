@@ -11,4 +11,5 @@ mission_key = "mission_01_collect_resources"
 mission_name = "Gather Basic Resources"
 mission_description = "Collect 3 Big Long Sticks and 3 Big Stones to get started with crafting."
 xp_reward = 20
+mission_level = 1
 required_items = Array[ExtResource("2_req")]([ExtResource("3_stick"), ExtResource("4_stone")])

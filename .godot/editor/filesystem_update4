@@ -36,3 +36,6 @@ res://Scripts/UI/PauseMenu.gd
 res://Scripts/UI/MissionUI.gd
 res://Scenes/UI/MainMenu.tscn
 res://Scripts/Core/Spawner.gd
+res://Scripts/Config/MissionConfig.gd
+res://Scenes/UI/LevelUpNotification.tscn
+res://Scripts/UI/LevelUpNotification.gd

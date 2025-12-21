@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=3 format=3 uid="uid://mission08"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="1_yecny"]
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_08_craft_pickaxe"
+mission_name = "Craft a Pickaxe"
+mission_description = "Craft a Pickaxe to mine resources more efficiently and gather materials faster."
+mission_type = 1
+xp_reward = 35
+mission_level = 8
+prerequisite_missions = Array[String](["mission_07_mine_resources"])
+required_craft_item = 11

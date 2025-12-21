@@ -28,6 +28,12 @@ func update_craft_button_disables(inventory:Array) -> void:
 		var crafting_blueprint := ItemConfig.get_crafting_resource(craft_button.item_key)
 		var disable_button := false
 		
+		if craft_button.item_key == ItemConfig.Keys.Raft:
+			if LevelManager:
+				var level = LevelManager.get_level()
+				if level < 20:
+					disable_button = true
+		
 		if crafting_blueprint.needs_multitool and not ItemConfig.Keys.Multitool in inventory:
 			disable_button = true
 		
@@ -61,6 +67,12 @@ func show_crafting_info(item_key:ItemConfig.Keys) -> void:
 	
 	if blueprint.needs_tinderbox:
 		item_extra_info.text += "\nTinderbox"
+	
+	if item_key == ItemConfig.Keys.Raft:
+		if LevelManager:
+			var level = LevelManager.get_level()
+			if level < 20:
+				item_extra_info.text += "\nRequires Level 20"
 
 
 func hide_crafting_info() -> void:
@@ -72,6 +84,12 @@ func hide_crafting_info() -> void:
 
 
 func craft_button_pressed(item_key:ItemConfig.Keys) -> void:
+	if item_key == ItemConfig.Keys.Raft:
+		if LevelManager:
+			var level = LevelManager.get_level()
+			if level < 20:
+				return
+	
 	EventSystem.INV_delete_crafting_item.emit(ItemConfig.get_crafting_resource(item_key).costs)
 	EventSystem.INV_add_item.emit(item_key)
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)

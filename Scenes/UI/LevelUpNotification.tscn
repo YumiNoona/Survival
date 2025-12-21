@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://bp08uxusvsqc2"]
 
-[ext_resource type="Script" path="res://Scripts/UI/LevelUpNotification.gd" id="1_levelup"]
+[ext_resource type="Script" uid="uid://tmmfsydxquok" path="res://Scripts/UI/LevelUpNotification.gd" id="1_levelup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_1"]
 bg_color = Color(0.15, 0.1, 0.2, 0.95)
@@ -13,6 +13,22 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="Animation" id="Animation_fade_out"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_level_up"]
 resource_name = "level_up"
@@ -42,112 +58,62 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_fade_out"]
-resource_name = "fade_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
 _data = {
-"fade_out": SubResource("Animation_fade_out"),
-"level_up": SubResource("Animation_level_up")
+&"fade_out": SubResource("Animation_fade_out"),
+&"level_up": SubResource("Animation_level_up")
 }
 
 [node name="LevelUpNotification" type="Control"]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -100.0
+offset_top = 60.0
 offset_right = 200.0
-offset_bottom = 100.0
+offset_bottom = 160.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_levelup")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.2
+anchor_right = 0.87500006
+anchor_bottom = 1.2
+offset_right = -3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBox_1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+[node name="LevelLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -50.0
-offset_right = 150.0
-offset_bottom = 50.0
+offset_left = -103.0
+offset_top = -23.5
+offset_right = 103.0
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="LevelLabel" type="Label" parent="Background/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9490196, 0.2, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
-text = "LEVEL 2!"
+theme_override_font_sizes/font_size = 34
+text = "One Level Up!!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SubLabel" type="Label" parent="Background/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "You've Grown Stronger!"
-horizontal_alignment = 1
-
-[node name="Particles" type="GPUParticles2D" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-emitting = false
-amount = 50
-lifetime = 2.0
-one_shot = true
-explosiveness = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_1")
+&"": SubResource("AnimationLibrary_1")
 }
-autoplay = ""

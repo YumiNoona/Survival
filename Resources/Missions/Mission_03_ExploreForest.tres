@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=4 format=3 uid="uid://mission03"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="2_req"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Plant.tres" id="3_plant"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Log.tres" id="4_log"]
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_03_explore_forest"
+mission_name = "Explore the Forest"
+mission_description = "Venture deeper into the forest. Collect 5 Big Long Plants and 3 Heavy Logs to expand your crafting capabilities."
+xp_reward = 25
+mission_level = 3
+prerequisite_missions = Array[String](["mission_02_craft_weapon"])
+required_items = Array[ExtResource("2_req")]([ExtResource("3_plant"), ExtResource("4_log")])

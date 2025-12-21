@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=4 format=3 uid="uid://mission07"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="2_req"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Coal.tres" id="3_coal"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Flintstone.tres" id="4_flint"]
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_07_mine_resources"
+mission_name = "Mine Deep Resources"
+mission_description = "Explore rocky areas and mine 5 Black Stones and 3 Gold Stones. These rare materials are crucial for advanced crafting."
+xp_reward = 40
+mission_level = 7
+prerequisite_missions = Array[String](["mission_06_gather_food"])
+required_items = Array[ExtResource("2_req")]([ExtResource("3_coal"), ExtResource("4_flint")])

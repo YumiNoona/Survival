@@ -76,13 +76,6 @@ func _on_level_up(new_level: int, _old_level: int) -> void:
 	show_level_up_notification(new_level)
 
 func show_level_up_notification(level: int) -> void:
-	if not notification_container:
-		_setup_notification_container()
-	
-	if not notification_container:
-		push_warning("NotificationManager: No notification container available")
-		return
-	
 	var level_up_scene = load("res://Scenes/UI/LevelUpNotification.tscn")
 	if not level_up_scene:
 		push_warning("NotificationManager: Level up notification scene not found")
@@ -94,5 +87,17 @@ func show_level_up_notification(level: int) -> void:
 		return
 	
 	notif_instance.setup_notification(level)
-	notification_container.add_child(notif_instance)
+	
+	var ui_layer = get_parent()
+	if ui_layer and ui_layer is CanvasLayer:
+		var hud = ui_layer.get_node_or_null("HUD/HUD")
+		if hud:
+			hud.add_child(notif_instance)
+		else:
+			ui_layer.add_child(notif_instance)
+	else:
+		push_warning("NotificationManager: Could not find UI layer for level up notification")
+		notif_instance.queue_free()
+		return
+	
 	EventSystem.SFX_play_sfx.emit(SFXConfig.Keys.Craft)

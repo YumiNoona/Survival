@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=3 format=3 uid="uid://mission11"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="1_yecny"]
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_11_craft_tent"
+mission_name = "Build a Shelter"
+mission_description = "Craft a Tent to provide shelter from the elements. A proper base is crucial for long-term survival."
+mission_type = 1
+xp_reward = 45
+mission_level = 11
+prerequisite_missions = Array[String](["mission_10_craft_rope"])
+required_craft_item = 17

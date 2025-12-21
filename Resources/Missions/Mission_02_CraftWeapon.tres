@@ -10,6 +10,6 @@ mission_name = "Craft Your First Weapon"
 mission_description = "Craft an Axe to defend yourself and gather resources more efficiently."
 mission_type = 1
 xp_reward = 30
-required_craft_item = 16
+required_craft_item = 10
 mission_level = 2
 prerequisite_missions = Array[String](["mission_01_collect_resources"])

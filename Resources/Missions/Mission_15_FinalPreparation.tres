@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MissionResource" load_steps=5 format=3 uid="uid://mission15"]
+
+[ext_resource type="Script" uid="uid://jtj18leggu0p" path="res://Scripts/Missions/MissionResource.gd" id="1_mission"]
+[ext_resource type="Script" uid="uid://c2snv6ixtlw28" path="res://Scripts/Missions/MissionRequirement.gd" id="2_req"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Stick.tres" id="3_stick"]
+[ext_resource type="Resource" path="res://Resources/Missions/Requirement_Stone.tres" id="4_stone"]
+
+[sub_resource type="Resource" id="SubResource_stick"]
+script = ExtResource("2_req")
+item_id = 0
+amount = 10
+
+[sub_resource type="Resource" id="SubResource_stone"]
+script = ExtResource("2_req")
+item_id = 1
+amount = 10
+
+[resource]
+script = ExtResource("1_mission")
+mission_key = "mission_15_final_preparation"
+mission_name = "Final Preparation"
+mission_description = "Gather the final resources needed: 10 Big Long Sticks and 10 Big Stones. You're almost ready to build your escape vessel."
+xp_reward = 60
+mission_level = 15
+prerequisite_missions = Array[String](["mission_14_resource_stockpile"])
+required_items = Array[ExtResource("2_req")]([SubResource("SubResource_stick"), SubResource("SubResource_stone")])

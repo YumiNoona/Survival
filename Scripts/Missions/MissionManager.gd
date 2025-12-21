@@ -119,8 +119,8 @@ func _complete_mission(mission_key: String) -> void:
 	completed_missions.append(mission_key)
 	active_missions.erase(mission_key)
 	mission_progress.erase(mission_key)
-	EventSystem.MIS_mission_completed.emit(mission_key, mission)
 	_check_for_new_missions()
+	EventSystem.MIS_mission_completed.emit(mission_key, mission)
 
 func _check_for_new_missions() -> void:
 	var missions = MissionConfig.get_all_missions()
