@@ -6,20 +6,19 @@ extends CanvasLayer
 @onready var btn_use: Button = $BTN_Use
 @onready var btn_pause: Button = $BTN_Pause
 
-const FORCE_JOYSTICK = true
+const FORCE_JOYSTICK = false
 
-var debug_show_cursor := true
+var debug_show_cursor := false
 
 var joystick_active := false
 var joystick_center := Vector2.ZERO
 var joystick_radius := 75.0
 var joystick_vector := Vector2.ZERO
-var touch_index := -1
 var knob_center_position := Vector2.ZERO
 
-var camera_drag_active := false
-var camera_drag_index := -1
-var last_touch_position := Vector2.ZERO
+var joystick_touch_index := -1
+var camera_touch_index := -1
+
 var camera_sensitivity := 0.005
 
 var player: Node3D = null
@@ -37,8 +36,9 @@ func _ready() -> void:
 	knob_center_position = ring.position + (ring_scaled_size - knob_scaled_size) / 2.0
 	knob.position = knob_center_position
 	
-	btn_move.button_down.connect(_on_move_button_down)
-	btn_move.button_up.connect(_on_move_button_up)
+	ring.mouse_filter = Control.MOUSE_FILTER_STOP
+	knob.mouse_filter = Control.MOUSE_FILTER_STOP
+	btn_move.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	EventSystem.HUD_show_hud.connect(_on_hud_shown)
 	EventSystem.HUD_hide_hud.connect(_on_hud_hidden)
@@ -64,42 +64,27 @@ func _on_hud_hidden() -> void:
 	visible = false
 	joystick_active = false
 	joystick_vector = Vector2.ZERO
-	camera_drag_active = false
-
-
-func _on_move_button_down() -> void:
-	if touch_index >= 0:
-		return
-	touch_index = 0
-	joystick_active = true
-	var ring_scaled_size = ring.size * ring.scale
-	joystick_center = ring.position + ring_scaled_size * 0.5
-
-func _on_move_button_up() -> void:
-	joystick_active = false
-	joystick_vector = Vector2.ZERO
-	knob.position = knob_center_position
-	touch_index = -1
+	joystick_touch_index = -1
+	camera_touch_index = -1
 
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
-
-	if event is InputEventMouseButton:
-		var mouse_event = event as InputEventMouseButton
-		var is_actual_mobile = OS.get_name() in ["Android", "iOS"]
+	
+	if event is InputEventScreenTouch:
+		var touch_event = event as InputEventScreenTouch
+		var move_rect = btn_move.get_global_rect()
 		
-		if not is_actual_mobile and mouse_event.button_index == MOUSE_BUTTON_LEFT:
-			if mouse_event.pressed:
-				var move_rect = btn_move.get_global_rect()
-				if move_rect.has_point(mouse_event.position) and touch_index < 0:
-					touch_index = 999
+		if touch_event.pressed:
+			if move_rect.has_point(touch_event.position):
+				if joystick_touch_index < 0:
+					joystick_touch_index = touch_event.index
 					joystick_active = true
-					camera_drag_active = false
-					camera_drag_index = -1
+					camera_touch_index = -1
+					
 					var ring_scaled_size = ring.size * ring.scale
 					var center_global = ring.global_position + ring_scaled_size * 0.5
-					var relative = mouse_event.position - center_global
+					var relative = touch_event.position - center_global
 					joystick_center = ring.position + ring_scaled_size * 0.5
 					var distance = relative.length()
 					if distance > joystick_radius:
@@ -107,83 +92,23 @@ func _input(event: InputEvent) -> void:
 					knob.position = knob_center_position + relative
 					joystick_vector = relative / joystick_radius
 					get_viewport().set_input_as_handled()
-				elif touch_index < 0 and camera_drag_index < 0 and not move_rect.has_point(mouse_event.position):
-					camera_drag_index = 999
-					camera_drag_active = true
-					last_touch_position = mouse_event.position
 			else:
-				if touch_index == 999:
-					joystick_active = false
-					joystick_vector = Vector2.ZERO
-					knob.position = knob_center_position
-					touch_index = -1
-				elif camera_drag_index == 999:
-					camera_drag_active = false
-					camera_drag_index = -1
-	
-	if event is InputEventScreenTouch:
-		var touch_event = event as InputEventScreenTouch
-		
-		if touch_event.pressed:
-			var move_rect = btn_move.get_global_rect()
-			if move_rect.has_point(touch_event.position) and touch_index < 0:
-				touch_index = touch_event.index
-				joystick_active = true
-				camera_drag_active = false
-				camera_drag_index = -1
-				var ring_scaled_size = ring.size * ring.scale
-				var center_global = ring.global_position + ring_scaled_size * 0.5
-				var relative = touch_event.position - center_global
-				joystick_center = ring.position + ring_scaled_size * 0.5
-				var distance = relative.length()
-				if distance > joystick_radius:
-					relative = relative.normalized() * joystick_radius
-				knob.position = knob_center_position + relative
-				joystick_vector = relative / joystick_radius
-				get_viewport().set_input_as_handled()
-			elif touch_index < 0 and camera_drag_index < 0 and not move_rect.has_point(touch_event.position):
-				camera_drag_index = touch_event.index
-				camera_drag_active = true
-				last_touch_position = touch_event.position
+				if camera_touch_index < 0 and joystick_touch_index != touch_event.index:
+					camera_touch_index = touch_event.index
 		else:
-			if touch_index == touch_event.index:
+			if joystick_touch_index == touch_event.index:
 				joystick_active = false
 				joystick_vector = Vector2.ZERO
 				knob.position = knob_center_position
-				touch_index = -1
-			elif camera_drag_index == touch_event.index:
-				camera_drag_active = false
-				camera_drag_index = -1
-	
-	elif event is InputEventMouseMotion:
-		var is_actual_mobile = OS.get_name() in ["Android", "iOS"]
-		if not is_actual_mobile and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			var mouse_event = event as InputEventMouseMotion
-			
-			if joystick_active and touch_index == 999:
-				var ring_scaled_size = ring.size * ring.scale
-				var center_global = ring.global_position + ring_scaled_size * 0.5
-				var relative = mouse_event.position - center_global
-				var distance = relative.length()
-				
-				if distance > joystick_radius:
-					relative = relative.normalized() * joystick_radius
-				
-				knob.position = knob_center_position + relative
-				joystick_vector = relative / joystick_radius
+				joystick_touch_index = -1
 				get_viewport().set_input_as_handled()
-			
-			elif camera_drag_active and camera_drag_index == 999 and not joystick_active:
-				var move_rect = btn_move.get_global_rect()
-				if not move_rect.has_point(mouse_event.position):
-					var delta = mouse_event.relative
-					if player:
-						player.look_around(delta * camera_sensitivity)
+			elif camera_touch_index == touch_event.index:
+				camera_touch_index = -1
 	
 	elif event is InputEventScreenDrag:
 		var drag_event = event as InputEventScreenDrag
 		
-		if joystick_active and touch_index == drag_event.index:
+		if joystick_touch_index == drag_event.index:
 			var ring_scaled_size = ring.size * ring.scale
 			var center_global = ring.global_position + ring_scaled_size * 0.5
 			var relative = drag_event.position - center_global
@@ -196,12 +121,69 @@ func _input(event: InputEvent) -> void:
 			joystick_vector = relative / joystick_radius
 			get_viewport().set_input_as_handled()
 		
-		elif camera_drag_active and camera_drag_index == drag_event.index and not joystick_active:
-			var move_rect = btn_move.get_global_rect()
-			if not move_rect.has_point(drag_event.position):
-				var delta = drag_event.relative
-				if player:
-					player.look_around(delta * camera_sensitivity)
+		elif camera_touch_index == drag_event.index:
+			var delta = drag_event.relative
+			if player:
+				player.look_around(delta * camera_sensitivity)
+	
+	var is_actual_mobile = OS.get_name() in ["Android", "iOS"]
+	if not is_actual_mobile:
+		if event is InputEventMouseButton:
+			var mouse_event = event as InputEventMouseButton
+			if mouse_event.button_index == MOUSE_BUTTON_LEFT:
+				var move_rect = btn_move.get_global_rect()
+				
+				if mouse_event.pressed:
+					if move_rect.has_point(mouse_event.position):
+						if joystick_touch_index < 0:
+							joystick_touch_index = 999
+							joystick_active = true
+							camera_touch_index = -1
+							
+							var ring_scaled_size = ring.size * ring.scale
+							var center_global = ring.global_position + ring_scaled_size * 0.5
+							var relative = mouse_event.position - center_global
+							joystick_center = ring.position + ring_scaled_size * 0.5
+							var distance = relative.length()
+							if distance > joystick_radius:
+								relative = relative.normalized() * joystick_radius
+							knob.position = knob_center_position + relative
+							joystick_vector = relative / joystick_radius
+							get_viewport().set_input_as_handled()
+					else:
+						if camera_touch_index < 0 and joystick_touch_index != 999:
+							camera_touch_index = 999
+				else:
+					if joystick_touch_index == 999:
+						joystick_active = false
+						joystick_vector = Vector2.ZERO
+						knob.position = knob_center_position
+						joystick_touch_index = -1
+						get_viewport().set_input_as_handled()
+					elif camera_touch_index == 999:
+						camera_touch_index = -1
+		
+		elif event is InputEventMouseMotion:
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				var mouse_event = event as InputEventMouseMotion
+				
+				if joystick_touch_index == 999:
+					var ring_scaled_size = ring.size * ring.scale
+					var center_global = ring.global_position + ring_scaled_size * 0.5
+					var relative = mouse_event.position - center_global
+					var distance = relative.length()
+					
+					if distance > joystick_radius:
+						relative = relative.normalized() * joystick_radius
+					
+					knob.position = knob_center_position + relative
+					joystick_vector = relative / joystick_radius
+					get_viewport().set_input_as_handled()
+				
+				elif camera_touch_index == 999:
+					var delta = mouse_event.relative
+					if player:
+						player.look_around(delta * camera_sensitivity)
 
 static var joystick_input: Vector2 = Vector2.ZERO
 

@@ -1,7 +1,7 @@
 extends NavigationRegion3D
 
 var bake_timer: Timer
-var is_baking := false
+var baking_in_progress := false
 
 func _enter_tree() -> void:
 	EventSystem.GAM_update_navmesh.connect(_on_update_navmesh_requested)
@@ -13,7 +13,7 @@ func _enter_tree() -> void:
 	add_child(bake_timer)
 
 func _on_update_navmesh_requested() -> void:
-	if is_baking:
+	if baking_in_progress:
 		return
 	
 	if bake_timer.is_stopped():
@@ -26,8 +26,8 @@ func _perform_bake() -> void:
 	if not is_inside_tree():
 		return
 	
-	is_baking = true
+	baking_in_progress = true
 	await get_tree().process_frame
 	bake_navigation_mesh()
 	await get_tree().process_frame
-	is_baking = false
+	baking_in_progress = false

@@ -1,7 +1,5 @@
 res://addons/proton_scatter/icons/loading/m_loading.tres::b535a1f8ea72eac259e1381964418d68::1765660923::res://.godot/exported/133200997/export-b87370025e5d56557fe9cc2e99b5e06c-m_loading.res
 res://addons/proton_scatter/icons/loading/t_loading.tres::f168244c70607ea6b0c941b634e0d617::1765660923::res://.godot/exported/133200997/export-aba65a50c37262182d5f8d47fa4c8e9f-t_loading.res
-res://addons/proton_scatter/presets/grass.tscn::403537ed03bbb7da6dbc0f463b7551b2::1765660924::res://.godot/exported/133200997/export-37beacf73bcb24a79832716ed7b5d36f-grass.scn
-res://addons/proton_scatter/presets/scatter_default.tscn::96638fa0424311eaffa452f82d9ec5be::1766420618::res://.godot/exported/133200997/export-e098242f54d198fccb548584d01a4166-scatter_default.scn
 res://addons/proton_scatter/src/cache/inspector_plugin/cache_panel.tscn::577a1446312dd698cbc3eb7ea7a2120c::1765660924::res://.godot/exported/133200997/export-8e1d5a60d5b5501841c348e2ae84a412-cache_panel.scn
 res://addons/proton_scatter/src/documentation/documentation.tscn::2e6de41b8a8239e4577a0d41ceaab184::1765660924::res://.godot/exported/133200997/export-f1734dc3adcc3fc76fd2ae8da46f3470-documentation.scn
 res://addons/proton_scatter/src/documentation/panel.tscn::111ff85745618d45193d3cb9bfbd8618::1765660924::res://.godot/exported/133200997/export-a7523f767cce4c21d890daff989939c3-panel.scn
@@ -70,8 +68,8 @@ res://Assets/Meshes/Scene/Torch.tscn::51ebf59697d5fb73363335ed2dfdfb4a::17655267
 res://Assets/Meshes/Scene/Tree.tscn::1d93501119be48d6ce1a6dc7783850cb::1765526701::res://.godot/exported/133200997/export-596379ff7f4ca59f29cb8eadfc81c0a0-Tree.scn
 res://Assets/Meshes/Scene/TreeStump.tscn::aad313ff007c78d2b0cef8357db0c1a6::1765526701::res://.godot/exported/133200997/export-2bfe97ae0a3a7638ac67cbb556b1708f-TreeStump.scn
 res://Assets/Meshes/Scene/Water.tscn::f1469d73e0b06f19297f31b51d89585f::1766272041::res://.godot/exported/133200997/export-279f5f4cf81d6416c5460ccb2b8073f7-Water.scn
-res://Assets/Shader/StylizedWaterShader.tres::034448bc8e5e5ff5802f4f0a1a826663::1766414287::res://.godot/exported/133200997/export-0525dcb8545a4b6b0624bd6a731fd221-StylizedWaterShader.res
-res://Assets/Shader/WaterShader.tres::5ae5db1c1e7a81303f8194be334810f3::1766414287::res://.godot/exported/133200997/export-18c4c2818543c30c49b3c07d3e861d61-WaterShader.res
+res://Assets/Shader/StylizedWaterShader.tres::034448bc8e5e5ff5802f4f0a1a826663::1766421416::res://.godot/exported/133200997/export-0525dcb8545a4b6b0624bd6a731fd221-StylizedWaterShader.res
+res://Assets/Shader/WaterShader.tres::5ae5db1c1e7a81303f8194be334810f3::1766421416::res://.godot/exported/133200997/export-18c4c2818543c30c49b3c07d3e861d61-WaterShader.res
 res://Assets/Textures/UI/minimal_theme.tres::6fcfe8184ee53ace552445a7e85a0cf4::1765526701::res://.godot/exported/133200997/export-2e41f3886a84c288be53bff0c1dcb891-minimal_theme.res
 res://Resources/Cooking/MeatRecipe.tres::d51bfd6ce70d24cd6a79201e00023067::1765653980::res://.godot/exported/133200997/export-a063a04b55777f75031552ec3413bbe4-MeatRecipe.res
 res://Resources/Cosumables/Cosumable_CookedMeat.tres::52d962a1d2432c101fb4f546ad431669::1765541428::res://.godot/exported/133200997/export-79a2f4b703055027df9679dd64c1fa27-Cosumable_CookedMeat.res
@@ -207,7 +205,7 @@ res://Scenes/UI/HotBarSlot.tscn::77ca5ed6b99b9fb8f1a2954c36d95f4d::1765526701::r
 res://Scenes/UI/HUD.tscn::d0a8cb1fd47800237727088a520b0f87::1766355049::res://.godot/exported/133200997/export-ec117413731bb4f9ca63cac906dfc2c9-HUD.scn
 res://Scenes/UI/InteractionPrompt.tscn::aacecfc9b194b0f6d07faff090ca32fc::1765526701::res://.godot/exported/133200997/export-a21d79c74831bea0a7650c14d87b0367-InteractionPrompt.scn
 res://Scenes/UI/InventorySlots.tscn::60a6a2d054a90387f75fc2e793bfb65b::1765526701::res://.godot/exported/133200997/export-65c686733c4d136a085870bacdd6ec05-InventorySlots.scn
-res://Scenes/UI/JoyStick.tscn::af0f4621cef087f0d79833dcabe95086::1766420374::res://.godot/exported/133200997/export-9c332db63e7506cfb6a2de919c9cd8d4-JoyStick.scn
+res://Scenes/UI/JoyStick.tscn::45079c2b9abe47c0b09871e65f1eb0fb::1766430353::res://.godot/exported/133200997/export-9c332db63e7506cfb6a2de919c9cd8d4-JoyStick.scn
 res://Scenes/UI/LevelUpNotification.tscn::6d3773d35b19a690adaf83fe0d4de8c7::1766355042::res://.godot/exported/133200997/export-f38e2136ca35a6d5d2590b7d0697b5d1-LevelUpNotification.scn
 res://Scenes/UI/MainMenu.tscn::f428eb951365abfb69e8b684ab7d522b::1766351302::res://.godot/exported/133200997/export-3b5eaf638982ae9f4ae9049c9462496f-MainMenu.scn
 res://Scenes/UI/MissionMenu.tscn::31e22798a3c2aa84a02c2802534372c4::1766262255::res://.godot/exported/133200997/export-47081d7b667113ffa60103e40164a1ee-MissionMenu.scn
