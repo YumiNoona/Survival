@@ -134,11 +134,11 @@ func look_around(relative : Vector2) -> void:
 	head.rotation_degrees.x = clampf(head.rotation_degrees.x, -90, 90)
 
 
-func _toggle_bulletin(bulletin_key: BulletinConfig.Keys) -> void:
+func _toggle_bulletin(bulletin_key: BulletinConfig.Keys, extra_arg = null) -> void:
 	var bulletin_controller = get_tree().root.find_child("BulletinController", true, false)
 	
 	if not bulletin_controller:
-		EventSystem.BUL_create_bulletin.emit(bulletin_key)
+		EventSystem.BUL_create_bulletin.emit(bulletin_key, extra_arg)
 		return
 
 
@@ -148,16 +148,28 @@ func _toggle_bulletin(bulletin_key: BulletinConfig.Keys) -> void:
 	if bulletin_exists:
 		EventSystem.BUL_destroy_bulletin.emit(bulletin_key)
 	else:
-		EventSystem.BUL_create_bulletin.emit(bulletin_key)
+		EventSystem.BUL_create_bulletin.emit(bulletin_key, extra_arg)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+		var bulletin_controller = get_tree().root.find_child("BulletinController", true, false)
+		if not bulletin_controller:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+			return
+		
+		var bulletin_exists = bulletin_controller.bulletins.has(BulletinConfig.Keys.PauseMenu) and \
+							 is_instance_valid(bulletin_controller.bulletins.get(BulletinConfig.Keys.PauseMenu))
+		
+		if bulletin_exists:
+			EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.PauseMenu)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.PauseMenu)
 
 	elif event.is_action_pressed("Inventory"):
-		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu, null)
+		_toggle_bulletin(BulletinConfig.Keys.CraftingMenu, null)
 
 	elif event.is_action_pressed("ItemHotKeys"):
 		EventSystem.EQU_hotkey_pressed.emit(int(event.as_text()))
