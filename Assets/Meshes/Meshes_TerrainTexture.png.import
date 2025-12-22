@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceehw286bl12l"
 path.s3tc="res://.godot/imported/Meshes_TerrainTexture.png-80f034a0ddb7fff5382aa49d1fc19429.s3tc.ctex"
+path.etc2="res://.godot/imported/Meshes_TerrainTexture.png-80f034a0ddb7fff5382aa49d1fc19429.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Meshes/Meshes_TerrainTexture.png"
-dest_files=["res://.godot/imported/Meshes_TerrainTexture.png-80f034a0ddb7fff5382aa49d1fc19429.s3tc.ctex"]
+dest_files=["res://.godot/imported/Meshes_TerrainTexture.png-80f034a0ddb7fff5382aa49d1fc19429.s3tc.ctex", "res://.godot/imported/Meshes_TerrainTexture.png-80f034a0ddb7fff5382aa49d1fc19429.etc2.ctex"]
 
 [params]
 

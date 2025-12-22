@@ -182,6 +182,14 @@ func should_show_slot(slot: InventorySlot, filter_type: int) -> bool:
 	return true
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Inventory"):
+		if not event.is_echo() and is_inside_tree():
+			EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.CraftingMenu)
+			var viewport = get_viewport()
+			if viewport:
+				viewport.set_input_as_handled()
+
 func close() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.CraftingMenu)

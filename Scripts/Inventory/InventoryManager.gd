@@ -23,6 +23,12 @@ func _ready() -> void:
 	hotbar.resize(HOTBAR_SIZE)
 	current_inventory_size = INVENTORY_SIZE
 
+	inventory[0] = ItemConfig.Keys.Axe
+	inventory[1] = ItemConfig.Keys.Pickaxe
+	inventory[2] = ItemConfig.Keys.Tent
+	inventory[3] = ItemConfig.Keys.Campfire
+	inventory[4] = ItemConfig.Keys.CookedMeat
+	inventory[5] = ItemConfig.Keys.Raft
 
 func send_inventory() -> void:
 	EventSystem.INV_inventory_updated.emit(inventory)

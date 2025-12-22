@@ -1,6 +1,7 @@
-res://Scripts/UI/JoyStick.gd
-res://Scenes/Core/Main.tscn
+res://Scenes/UI/JoyStick.tscn
 res://Assets/Shader/WaterShader.tres
 res://Assets/Shader/StylizedWaterShader.tres
-res://Scenes/UI/JoyStick.tscn
-res://Scripts/Player/Player.gd
+res://Scripts/UI/JoyStick.gd
+res://Scripts/Inventory/InventoryManager.gd
+res://Scripts/Core/NavRegion.gd
+res://Scripts/Core/Spawner.gd

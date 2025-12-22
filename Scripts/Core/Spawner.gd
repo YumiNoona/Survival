@@ -17,6 +17,7 @@ func spawn_scene(scene:PackedScene, tform:Transform3D, is_constructable := false
 	
 	if is_constructable:
 		constructable_holder.add_child(object)
+		await get_tree().process_frame
 		EventSystem.GAM_update_navmesh.emit()
 	
 	else:
