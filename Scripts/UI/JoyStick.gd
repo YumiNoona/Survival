@@ -56,9 +56,10 @@ func _on_hud_shown() -> void:
 	knob_center_position = ring.position + (ring_scaled_size - knob_scaled_size) / 2.0
 	knob.position = knob_center_position
 	var is_actual_mobile = OS.get_name() in ["Android", "iOS"]
+	var _is_mobile = is_actual_mobile or FORCE_JOYSTICK
 	if debug_show_cursor and not is_actual_mobile:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	visible = true
+	visible = _is_mobile
 
 func _on_hud_hidden() -> void:
 	visible = false

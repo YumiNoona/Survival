@@ -18,3 +18,5 @@ res://Resources/Weapons/WeaponAxe.tres
 res://Resources/Cosumables/Cosumable_CookedMeat.tres
 res://Resources/Cosumables/Cosumable_Fruit.tres
 res://Resources/Cosumables/Cosumable_Mushroom.tres
+res://Scenes/UI/JoyStick.tscn
+res://Scripts/UI/JoyStick.gd

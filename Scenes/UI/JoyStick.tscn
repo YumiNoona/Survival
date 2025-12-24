@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d1o6yxkmwuxp4" path="res://Assets/JoyStick/Use.png" id="9_fo5ad"]
 
 [node name="JoyStick" type="CanvasLayer"]
+visible = false
 script = ExtResource("8_joystick")
 
 [node name="Ring" type="TextureRect" parent="."]

@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1766575673
-export_presets.cfg::TextFile::-1::1766435087::0::1::::<><><>0<>0<><>::
+::res://::1766576784
+export_presets.cfg::TextFile::-1::1766576784::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::8717567901586472411::1765526701::1765526759::1::::<><><>0<>0<>2e738c059232d9a7085351a5aacd018f<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 Music.tres::AudioBusLayout::5194330047503155347::1765743939::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1765526701::0::1::::<><><>0<>0<><>::
@@ -250,7 +250,7 @@ Pause.png::CompressedTexture2D::6769269963663337806::1766355406::1766355478::1::
 Ring.png::CompressedTexture2D::4446569041539508734::1765468252::1766355203::1::::<><><>0<>0<>0e1d5a97738c729e6e7fe3a38a635662<>res://.godot/imported/Ring.png-aef4dd9f4ee1144c829135ff88df8a62.ctex::
 Skills.png::CompressedTexture2D::5918228187142609466::1766416687::1766416690::1::::<><><>0<>0<>89aa5fb2907e2dd4c76b7b0151000fa7<>res://.godot/imported/Skills.png-e780273628c59712bc8e77df8b586938.ctex::
 Use.png::CompressedTexture2D::9014999584114995063::1766421373::1766421373::1::::<><><>0<>0<>58c6f1df6ba9ca30cc145b1b5d4b6c25<>res://.godot/imported/Use.png-f96405683821902894c970fbad303341.ctex::
-::res://Assets/Meshes/::1766576022
+::res://Assets/Meshes/::1766576127
 Alpaca.gltf::PackedScene::7031816852097167069::1765900739::1765900783::1::::<><><>0<>0<>63542d0af67390080314e9067085bb81<>res://.godot/imported/Alpaca.gltf-ed9a43a4746b8912d5a119453ad16e5c.scn::
 Cow.gltf::PackedScene::4521001972781294576::1765526701::1765526762::1::::<><><>0<>0<>4c1a7ea5a7faa0cc7b28c5eaa4afd73f<>res://.godot/imported/Cow.gltf-d966f69a7c144da63c522a0eaffac1fe.scn::
 Donkey.gltf::PackedScene::3760425002516185796::1765900739::1765900783::1::::<><><>0<>0<>b132d4581f90b10c00bd08ab0dd84254<>res://.godot/imported/Donkey.gltf-fecd8bf84436b952ff8d4ad467b83486.scn::
@@ -261,23 +261,19 @@ Grass.glb::PackedScene::249877211408366336::1765526701::1765526763::1::::<><><>0
 Horse.gltf::PackedScene::6770390811258631672::1765900739::1765900784::1::::<><><>0<>0<>8796c0ce10ff8f4e10e5e4a012cc3610<>res://.godot/imported/Horse.gltf-b6afbd14a8049fd5192837e8252d90db.scn::
 Meshes.glb::PackedScene::4746333623000993074::1765526701::1765526763::1::::<><><>0<>0<>811071b402825259dd5a1b2970c7b8d6<>res://.godot/imported/Meshes.glb-a1529d81b5f5dbc9e5af6f129942b4d0.scn::uid://ceehw286bl12l::::res://Assets/Meshes/Meshes_TerrainTexture.png
 Plants.glb::PackedScene::3277416769333832678::1765900422::1765900422::1::::<><><>0<>0<>abe60bd1a26ce628a47fb4fca2c98928<>res://.godot/imported/Plants.glb-440eb5f82d577bbc55269ebceee00eb8.scn::
-SleepingBag_sleepingbag_closed_metallic-sleepingbag_closed_roughness.png::CompressedTexture2D::3927132412363552117::1766576023::1766576024::1::::<><><>0<>0<>bfe204bc03cb78c08603c21129e78898<>res://.godot/imported/SleepingBag_sleepingbag_closed_metallic-sleepingbag_closed_roughness.png-111e9289c7b62f584e27435c6adc335a.s3tc.ctex<*>res://.godot/imported/SleepingBag_sleepingbag_closed_metallic-sleepingbag_closed_roughness.png-111e9289c7b62f584e27435c6adc335a.etc2.ctex::
-SleepingBag_sleepingbag_closed_albedo.png::CompressedTexture2D::4013598518963470652::1766576023::1766576024::1::::<><><>0<>0<>9bf96e309697d4510d754b6d633b4b20<>res://.godot/imported/SleepingBag_sleepingbag_closed_albedo.png-7e9a462f00adb1fef837a68f19ffeaeb.s3tc.ctex<*>res://.godot/imported/SleepingBag_sleepingbag_closed_albedo.png-7e9a462f00adb1fef837a68f19ffeaeb.etc2.ctex::
-SleepingBag_sleepingbag_closed_normal.png::CompressedTexture2D::1226562813375217562::1766576022::1766576024::1::::<><><>0<>0<>d7c0460c49137fa4327de0854dfa6d42<>res://.godot/imported/SleepingBag_sleepingbag_closed_normal.png-eb559368717a57b8bd968dd5fc40f819.s3tc.ctex<*>res://.godot/imported/SleepingBag_sleepingbag_closed_normal.png-eb559368717a57b8bd968dd5fc40f819.etc2.ctex::
 Shark.glb::PackedScene::7149766979847801394::1765901716::1765901772::1::::<><><>0<>0<>29f297ad37c81f1bc53e6c9e067c0b25<>res://.godot/imported/Shark.glb-3eb692da0ec2f8081671d4135b15c851.scn::
-SleepingBag.glb::PackedScene::1019570678123916465::1766576022::1766576024::1::::<><><>0<>0<>6dcc264108ad1d19b3188c9f94594790<>res://.godot/imported/SleepingBag.glb-64979a9c8b34b7569b08856716bb73ec.scn::uid://bxghm7xg8p5b1::::res://Assets/Meshes/SleepingBag_sleepingbag_closed_albedo.png<>uid://bv7lkdob4wkmv::::res://Assets/Meshes/SleepingBag_sleepingbag_closed_metallic-sleepingbag_closed_roughness.png<>uid://rqfks0lpo2fe::::res://Assets/Meshes/SleepingBag_sleepingbag_closed_normal.png
 Snake.glb::PackedScene::198890519159674179::1765900740::1765900784::1::::<><><>0<>0<>acb87bd748c2ff499c0dc92d57b1b68e<>res://.godot/imported/Snake.glb-d2e24013af6c531923661a0a2f9e81a9.scn::
 Spider.glb::PackedScene::781636654121973835::1765900740::1765900784::1::::<><><>0<>0<>5b4f83641479df15e7b515cd347f5240<>res://.godot/imported/Spider.glb-e4d2eabad093de98f1ce7161541b9d22.scn::
 Stag.gltf::PackedScene::5691700651533755521::1765900739::1765900784::1::::<><><>0<>0<>a60276557e5c7ad6d8102ba05c07f3b7<>res://.godot/imported/Stag.gltf-9cd7f34c7dd255ce171c7d83421c579b.scn::
 Whale.glb::PackedScene::5777042077229406499::1765901716::1765901772::1::::<><><>0<>0<>e895204dfa5b5ba8e1a535bc7b750caf<>res://.godot/imported/Whale.glb-674dc2686d0bd9bc2d6201d25e5a5795.scn::
 Wolf.gltf::PackedScene::3136629194073821331::1765526701::1765526764::1::::<><><>0<>0<>a70e81093f0e426cc3dec1a8b85839ff<>res://.godot/imported/Wolf.gltf-92da4d741f2b36703d26976d0689980e.scn::
-::res://Assets/Meshes/Scene/::1766272041
+::res://Assets/Meshes/Scene/::1766578079
 Apple.tscn::PackedScene::906798434022148809::1765900627::0::1::::<><><>0<>0<><>::
 Axe.tscn::PackedScene::5159532991148378767::1765526701::0::1::::<><><>0<>0<><>::
 Campfire.tscn::PackedScene::3864901427805144455::1765526701::0::1::::<><><>0<>0<><>::
 Coal.tscn::PackedScene::8963472800547336547::1765526701::0::1::::<><><>0<>0<><>::
 CoalBoulder.tscn::PackedScene::1911170916780402456::1765526701::0::1::::<><><>0<>0<><>::
-CookedMeat.tscn::PackedScene::854691792122697734::1765526701::0::1::::<><><>0<>0<><>::
+CookedMeat.tscn::PackedScene::854691792122697734::1766578079::0::1::::<><><>0<>0<><>::
 Flintstone.tscn::PackedScene::1976903382414598447::1765526701::0::1::::<><><>0<>0<><>::
 FlintstoneBoulder.tscn::PackedScene::4281548851626747670::1765526701::0::1::::<><><>0<>0<><>::
 Fruit.tscn::PackedScene::9008456314731302283::1765526701::0::1::::<><><>0<>0<><>::
@@ -340,24 +336,24 @@ Stone.png::CompressedTexture2D::1752873518784661043::1765526701::1765526759::1::
 Tent.png::CompressedTexture2D::6477151351936968726::1765526701::1765526759::1::::<><><>0<>0<>028a58e6713fc4f684a1f20868b9df4b<>res://.godot/imported/Tent.png-c1d200f354aa6de19da3e2154380dfc9.ctex::
 TinderBox.png::CompressedTexture2D::6680884708566543852::1765526701::1765526759::1::::<><><>0<>0<>670f7024720f471ea3ca9b3c02948ff9<>res://.godot/imported/TinderBox.png-56fc4f94b10524933934d74031dea6b5.ctex::
 Torch.png::CompressedTexture2D::297062632436722062::1765526701::1765526759::1::::<><><>0<>0<>280258617550b8767e69917266e63ed1<>res://.godot/imported/Torch.png-af1ab0a6fe75720f6960a28678fc9ec8.ctex::
-::res://Assets/Textures/Skills/::1766001348
-Basic Training.png::CompressedTexture2D::7347734972773919241::1766001348::1766001348::1::::<><><>0<>0<>3a4cf02b4f9f6b287ba51bafd92dd2a2<>res://.godot/imported/Basic Training.png-d80c9cfde87a07e0618c564b00a53a86.ctex::
-Battle Hardened.png::CompressedTexture2D::8479763533543988039::1766001348::1766001348::1::::<><><>0<>0<>db1a960f9ac136c3594663c522294f72<>res://.godot/imported/Battle Hardened.png-e5434f590c2c7aaabf361b0445e753a2.ctex::
-Combat Reflexes.png::CompressedTexture2D::1918472538659112662::1766001348::1766001348::1::::<><><>0<>0<>39c9023dfb3ed05bc87c2016f5eb421f<>res://.godot/imported/Combat Reflexes.png-bd22d0fb49a147160ef720078e4f9241.ctex::
-Combat Regeneration.png::CompressedTexture2D::1027091023769151235::1766001348::1766001348::1::::<><><>0<>0<>295fd2d6ac048cd873b734486414508d<>res://.godot/imported/Combat Regeneration.png-28d87d4fe018d3e58d9f9c7d5f9112e6.ctex::
-Critical Strikes.png::CompressedTexture2D::1615724105651210069::1766001348::1766001348::1::::<><><>0<>0<>6a8bcdffac05ab53e24b80d4f90fefe1<>res://.godot/imported/Critical Strikes.png-497ef3f5195e12c98f76a7cbf0782308.ctex::
-Double Jump.png::CompressedTexture2D::4230995801483104694::1766000419::1766000893::1::::<><><>0<>0<>35615400f55a3ae2f0a542743bd6dc5e<>res://.godot/imported/Double Jump.png-4840d017d4bbfc65cb81896fb47ab350.ctex::
-Efficient Crafting.png::CompressedTexture2D::4632662756571291257::1766001348::1766001348::1::::<><><>0<>0<>ff9c041546e45cee3bd435734c556804<>res://.godot/imported/Efficient Crafting.png-49ed4af997dad3d42179e18b2694de61.ctex::
-Endurance Training.png::CompressedTexture2D::9069387877601429740::1766001348::1766001348::1::::<><><>0<>0<>4adf1bbc7a7852dc3722b3454123a7a7<>res://.godot/imported/Endurance Training.png-52c6b59c41f4adb7a307b571ce1a3270.ctex::
-Enhanced Sprint.png::CompressedTexture2D::6023205635088300023::1766000419::1766000889::1::::<><><>0<>0<>a636e860dc7464d7c4d137e8e4e026ef<>res://.godot/imported/Enhanced Sprint.png-cf42e2323ee406a6a2ba69bae9bec47a.ctex::
-Executioner.png::CompressedTexture2D::3315437698428960025::1766001348::1766001348::1::::<><><>0<>0<>e8422b0200eb3e1d482e55cb8e7df274<>res://.godot/imported/Executioner.png-c9cccee8a1305378a3b49efe09a3b745.ctex::
-Extra Pockets.png::CompressedTexture2D::5970918543255254964::1766001348::1766001348::1::::<><><>0<>0<>dfdba66ba62b8cd4df95cc20d794c22d<>res://.godot/imported/Extra Pockets.png-11b24cb4fff64de7842605ce95d7f3a0.ctex::
-Mountain Goat.png::CompressedTexture2D::7501069061242711612::1766001348::1766001348::1::::<><><>0<>0<>f13edb3a41f44156588df49319b666f7<>res://.godot/imported/Mountain Goat.png-ced96f549ed1ebf25dcc59b8056555e5.ctex::
-Natural Regeneration.png::CompressedTexture2D::6316457425794937727::1766001348::1766001348::1::::<><><>0<>0<>1619895c3b75dbcf75a37b87ee62d328<>res://.godot/imported/Natural Regeneration.png-5a28646a4f2445ccc7e4e71c14610580.ctex::
-Pack Mule.png::CompressedTexture2D::3163289531834313732::1766001348::1766001348::1::::<><><>0<>0<>b71db977373571088a2d3b46cfe04c0d<>res://.godot/imported/Pack Mule.png-25d2d2db39a62924e877de1c94670f78.ctex::
-Quick Hands.png::CompressedTexture2D::2675468754589244186::1766001348::1766001348::1::::<><><>0<>0<>9f82ff0361df9724ad684176606c5eaa<>res://.godot/imported/Quick Hands.png-108f85678516f1edd43d1410ab009bca.ctex::
-Swift Feet.png::CompressedTexture2D::1724547344108203314::1766000419::1766000865::1::::<><><>0<>0<>40369dbf452ca5bd0545c76b3ae3fcca<>res://.godot/imported/Swift Feet.png-ea3c0eb222167cdc247ab1e03acca15b.ctex::
-Vitality Boost.png::CompressedTexture2D::7940150373801211529::1766001348::1766001348::1::::<><><>0<>0<>e14ecb0655d60942bbf7a721c3a4256e<>res://.godot/imported/Vitality Boost.png-49c97daf8b75d964ca4db6820b1ab93e.ctex::
+::res://Assets/Textures/Skills/::1766582352
+Basic Training.png::CompressedTexture2D::1953931733249927159::1766582352::1766582354::1::::<><><>0<>0<>707d738412480e77a42d98cb06914880<>res://.godot/imported/Basic Training.png-d80c9cfde87a07e0618c564b00a53a86.ctex::
+Battle Hardened.png::CompressedTexture2D::2718037817535639825::1766582352::1766582354::1::::<><><>0<>0<>8772e751272f90f47c0febdb31453567<>res://.godot/imported/Battle Hardened.png-e5434f590c2c7aaabf361b0445e753a2.ctex::
+Combat Reflexes.png::CompressedTexture2D::9209822453020854125::1766582352::1766582354::1::::<><><>0<>0<>df6c320a6684f483e5b6f613d1b05d9b<>res://.godot/imported/Combat Reflexes.png-bd22d0fb49a147160ef720078e4f9241.ctex::
+Combat Regeneration.png::CompressedTexture2D::8071187414900409456::1766582352::1766582354::1::::<><><>0<>0<>0c555ec48a08064f241d83db5e11f7db<>res://.godot/imported/Combat Regeneration.png-28d87d4fe018d3e58d9f9c7d5f9112e6.ctex::
+Critical Strikes.png::CompressedTexture2D::8685785356457643728::1766582352::1766582354::1::::<><><>0<>0<>051be60712da6c407882cf6921e1f089<>res://.godot/imported/Critical Strikes.png-497ef3f5195e12c98f76a7cbf0782308.ctex::
+Double Jump.png::CompressedTexture2D::5942945109086471248::1766582352::1766582354::1::::<><><>0<>0<>7c48013165b75552fba3c13f7bb5f3d7<>res://.godot/imported/Double Jump.png-4840d017d4bbfc65cb81896fb47ab350.ctex::
+Efficient Crafting.png::CompressedTexture2D::1594348805599427182::1766582352::1766582354::1::::<><><>0<>0<>0d97bfbd9db035952da6a1a2cd5e46de<>res://.godot/imported/Efficient Crafting.png-49ed4af997dad3d42179e18b2694de61.ctex::
+Endurance Training.png::CompressedTexture2D::6542315822978292982::1766582352::1766582354::1::::<><><>0<>0<>ead0a776d9bd597c74d2a6919e27b2c2<>res://.godot/imported/Endurance Training.png-52c6b59c41f4adb7a307b571ce1a3270.ctex::
+Enhanced Sprint.png::CompressedTexture2D::3500254857302230355::1766582352::1766582353::1::::<><><>0<>0<>16223505f9da705d335918432f645e9f<>res://.godot/imported/Enhanced Sprint.png-cf42e2323ee406a6a2ba69bae9bec47a.ctex::
+Executioner.png::CompressedTexture2D::8910060504467946412::1766582352::1766582353::1::::<><><>0<>0<>bc4d4e980e7a7baf50ab88be1744d728<>res://.godot/imported/Executioner.png-c9cccee8a1305378a3b49efe09a3b745.ctex::
+Extra Pockets.png::CompressedTexture2D::1880976814310835255::1766582352::1766582353::1::::<><><>0<>0<>7ea1c26de328b02a9bb5468cc4fe7334<>res://.godot/imported/Extra Pockets.png-11b24cb4fff64de7842605ce95d7f3a0.ctex::
+Mountain Goat.png::CompressedTexture2D::8910287333718541219::1766582352::1766582353::1::::<><><>0<>0<>b918431c02a7e1760ec074f197cbbcfa<>res://.godot/imported/Mountain Goat.png-ced96f549ed1ebf25dcc59b8056555e5.ctex::
+Natural Regeneration.png::CompressedTexture2D::5979518854884058849::1766582352::1766582353::1::::<><><>0<>0<>949b7d1673ba5a92204302684c83dff5<>res://.godot/imported/Natural Regeneration.png-5a28646a4f2445ccc7e4e71c14610580.ctex::
+Pack Mule.png::CompressedTexture2D::3968064603000650290::1766582352::1766582353::1::::<><><>0<>0<>8fd09547f577436b46ddc722f1c8726f<>res://.godot/imported/Pack Mule.png-25d2d2db39a62924e877de1c94670f78.ctex::
+Quick Hands.png::CompressedTexture2D::5669888880024900858::1766582352::1766582353::1::::<><><>0<>0<>53d1449ef50e5417bbacb3fd64bf9064<>res://.godot/imported/Quick Hands.png-108f85678516f1edd43d1410ab009bca.ctex::
+Swift Feet.png::CompressedTexture2D::2574479520916031137::1766582352::1766582353::1::::<><><>0<>0<>01ea745462c070ae87fb4f88b76b76a4<>res://.godot/imported/Swift Feet.png-ea3c0eb222167cdc247ab1e03acca15b.ctex::
+Vitality Boost.png::CompressedTexture2D::1053413294832359423::1766582352::1766582353::1::::<><><>0<>0<>af9a7e423d288040f0eaccf799a6fc46<>res://.godot/imported/Vitality Boost.png-49c97daf8b75d964ca4db6820b1ab93e.ctex::
 ::res://Assets/Textures/UI/::1766420407
 CheckFalse.png::CompressedTexture2D::3781968192497087446::1765526701::1765526759::1::::<><><>0<>0<>99f1e79fadf5ead0078391a208ade626<>res://.godot/imported/CheckFalse.png-13ad9a7061cfb5dd433f4a25a4f5e212.ctex::
 CheckTrue.png::CompressedTexture2D::81720005232328087::1765526701::1765526759::1::::<><><>0<>0<>9dfb92b6eb909a086383b5a661bd2d4c<>res://.godot/imported/CheckTrue.png-2fc3122ed379e7603bc6b6fb11aaa2f1.ctex::
@@ -372,59 +368,59 @@ PanelSetBrown.png::CompressedTexture2D::800139826488103844::1765526701::17664204
 Square.png::CompressedTexture2D::7136129820869578945::1765526701::1766420407::1::::<><><>0<>0<>6328def7846e53cbfeec73ee02762f81<>res://.godot/imported/Square.png-65207872492e01eb5a198472674e98d4.s3tc.ctex<*>res://.godot/imported/Square.png-65207872492e01eb5a198472674e98d4.etc2.ctex::
 TerrainTexture.png::CompressedTexture2D::1747164296540927970::1765526701::1766420407::1::::<><><>0<>0<>82ec63e5f75caa6f46fa39586c7dc77d<>res://.godot/imported/TerrainTexture.png-39473ca60779231e0c97a26f7f2ab625.s3tc.ctex<*>res://.godot/imported/TerrainTexture.png-39473ca60779231e0c97a26f7f2ab625.etc2.ctex::
 ::res://Resources/::1766226678
-::res://Resources/Cooking/::1765653980
-MeatRecipe.tres::Resource/CookingRecipeResource::147049995249738034::1765653980::0::1::::<><><>0<>0<><>::uid://cgqhq1hk7agt::::res://Scripts/Cooking/CookingRecipeResource.gd<>uid://mgawcgdsd7wc::::res://Assets/Meshes/Scene/CookedMeat.tscn<>uid://burxkic2wwcea::::res://Assets/Meshes/Scene/RawMeat.tscn
-::res://Resources/Cosumables/::1765541428
-Cosumable_CookedMeat.tres::Resource/ConsumableResource::7779265022039041769::1765541428::0::1::::<><><>0<>0<><>::uid://bicl3lusl8pdl::::res://Assets/Textures/ItemIcons/CookedMeat.png<>uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd
-Cosumable_Fruit.tres::Resource/ConsumableResource::1441301767392002523::1765541226::0::1::::<><><>0<>0<><>::uid://5kkri8u8q65t::::res://Assets/Textures/ItemIcons/Fruit.png<>uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd
-Cosumable_Mushroom.tres::Resource/ConsumableResource::757026488446644036::1765540993::0::1::::<><><>0<>0<><>::uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd<>uid://c7lqw5r8i22qk::::res://Assets/Textures/ItemIcons/Mushroom.png
-::res://Resources/Craftable/::1765660019
-Axe.tres::Resource/CraftingResource::3830129388206538419::1765660019::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
-Campfire.tres::Resource/CraftingResource::1289713266357983868::1765660019::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
-MultiTool.tres::Resource/CraftingResource::8250936485937991552::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
+::res://Resources/Cooking/::1766577742
+MeatRecipe.tres::Resource/CookingRecipeResource::147049995249738034::1766577742::0::1::::<><><>0<>0<><>::uid://cgqhq1hk7agt::::res://Scripts/Cooking/CookingRecipeResource.gd<>uid://mgawcgdsd7wc::::res://Assets/Meshes/Scene/CookedMeat.tscn<>uid://burxkic2wwcea::::res://Assets/Meshes/Scene/RawMeat.tscn
+::res://Resources/Cosumables/::1766578079
+Cosumable_CookedMeat.tres::Resource/ConsumableResource::7779265022039041769::1766578079::0::1::::<><><>0<>0<><>::uid://bicl3lusl8pdl::::res://Assets/Textures/ItemIcons/CookedMeat.png<>uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd
+Cosumable_Fruit.tres::Resource/ConsumableResource::1441301767392002523::1766578079::0::1::::<><><>0<>0<><>::uid://5kkri8u8q65t::::res://Assets/Textures/ItemIcons/Fruit.png<>uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd
+Cosumable_Mushroom.tres::Resource/ConsumableResource::757026488446644036::1766578079::0::1::::<><><>0<>0<><>::uid://daoxhtf04r7s6::::res://Scripts/Vitality/Cosumables.gd<>uid://c7lqw5r8i22qk::::res://Assets/Textures/ItemIcons/Mushroom.png
+::res://Resources/Craftable/::1766577742
+Axe.tres::Resource/CraftingResource::3830129388206538419::1766577742::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
+Campfire.tres::Resource/CraftingResource::1289713266357983868::1766577742::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
+MultiTool.tres::Resource/CraftingResource::8250936485937991552::1766577742::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 PickAxe.tres::Resource/CraftingResource::928447059178889::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 Raft.tres::Resource/CraftingResource::5059651840798734634::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 Rope.tres::Resource/CraftingResource::285135875492156102::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 Tent.tres::Resource/CraftingResource::7809424415275100449::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 TinderBox.tres::Resource/CraftingResource::6171061908477735625::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
 Torch.tres::Resource/CraftingResource::4843364548022042764::1765657921::0::1::::<><><>0<>0<><>::uid://dht3tg25pcuyg::::res://Scripts/Crafting/CraftingCost.gd<>uid://bikteyweyi84e::::res://Scripts/Crafting/CraftingResource.gd
-::res://Resources/HittAbleObjects/::1765659285
-CoalBoulder_Attributes.tres::Resource/HittableObjectAttributes::7308124118061660045::1765620705::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
-FlinStone_Attributes.tres::Resource/HittableObjectAttributes::684881205601772779::1765659285::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
-Tree_Attributes.tres::Resource/HittableObjectAttributes::3513142061760516389::1765536921::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
-::res://Resources/ItemResources/::1765653136
-ItemCampFire.tres::Resource/ItemResource::5321577111571443627::1765648263::0::1::::<><><>0<>0<><>::uid://cxhn0e2k5ijph::::res://Assets/Textures/ItemIcons/Campfire.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemCoal.tres::Resource/ItemResource::6964736233378306378::1765536915::0::1::::<><><>0<>0<><>::uid://bod62nahhmdvn::::res://Assets/Textures/ItemIcons/Coal.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemFlintStone.tres::Resource/ItemResource::8985736782028797121::1765536915::0::1::::<><><>0<>0<><>::uid://dfo5sx8e03qqe::::res://Assets/Textures/ItemIcons/Flintstone.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemLog.tres::Resource/ItemResource::6310500109900099484::1765536915::0::1::::<><><>0<>0<><>::uid://c7wwvbyk8jyiw::::res://Assets/Textures/ItemIcons/Log.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemMultitool.tres::Resource/ItemResource::8526796148903715183::1765536915::0::1::::<><><>0<>0<><>::uid://bqqxmnrkqkwoo::::res://Assets/Textures/ItemIcons/MultiTool.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemPlant.tres::Resource/ItemResource::8386706020048757061::1765536915::0::1::::<><><>0<>0<><>::uid://cfhnqbm4tw4ks::::res://Assets/Textures/ItemIcons/Plant.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemRaft.tres::Resource/ItemResource::7457163335363601187::1765541712::0::1::::<><><>0<>0<><>::uid://ckxlarwysmuyf::::res://Assets/Textures/ItemIcons/Raft.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemRawMeat.tres::Resource/ItemResource::5082693184823997090::1765653136::0::1::::<><><>0<>0<><>::uid://cdh5lcygbma1::::res://Resources/Cooking/MeatRecipe.tres<>uid://dqkd2n3wa7mm0::::res://Assets/Textures/ItemIcons/RawMeat.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemRope.tres::Resource/ItemResource::818778465114464765::1765536915::0::1::::<><><>0<>0<><>::uid://b4lcpb7eqrkeb::::res://Assets/Textures/ItemIcons/Rope.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemStick.tres::Resource/ItemResource::2840687844541661283::1765536915::0::1::::<><><>0<>0<><>::uid://duda5gfn8b4ad::::res://Assets/Textures/ItemIcons/Stick.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemStone.tres::Resource/ItemResource::1353901392940739430::1765536915::0::1::::<><><>0<>0<><>::uid://y8dtn2ajdcnj::::res://Assets/Textures/ItemIcons/Stone.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemTent.tres::Resource/ItemResource::6936765400484287790::1765647491::0::1::::<><><>0<>0<><>::uid://cyjt0ble7olby::::res://Assets/Textures/ItemIcons/Tent.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
-ItemTinderBox.tres::Resource/ItemResource::8335827156528667763::1765536915::0::1::::<><><>0<>0<><>::uid://c2gjgvqwr7cl5::::res://Assets/Textures/ItemIcons/TinderBox.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+::res://Resources/HittAbleObjects/::1766577935
+CoalBoulder_Attributes.tres::Resource/HittableObjectAttributes::7308124118061660045::1766577935::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
+FlinStone_Attributes.tres::Resource/HittableObjectAttributes::684881205601772779::1766577935::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
+Tree_Attributes.tres::Resource/HittableObjectAttributes::3513142061760516389::1766577935::0::1::::<><><>0<>0<><>::uid://6ihsf3vavy55::::res://Scripts/Core/HittableObjectAttributes.gd
+::res://Resources/ItemResources/::1766577935
+ItemCampFire.tres::Resource/ItemResource::5321577111571443627::1766577935::0::1::::<><><>0<>0<><>::uid://cxhn0e2k5ijph::::res://Assets/Textures/ItemIcons/Campfire.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemCoal.tres::Resource/ItemResource::6964736233378306378::1766577935::0::1::::<><><>0<>0<><>::uid://bod62nahhmdvn::::res://Assets/Textures/ItemIcons/Coal.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemFlintStone.tres::Resource/ItemResource::8985736782028797121::1766577843::0::1::::<><><>0<>0<><>::uid://dfo5sx8e03qqe::::res://Assets/Textures/ItemIcons/Flintstone.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemLog.tres::Resource/ItemResource::6310500109900099484::1766577843::0::1::::<><><>0<>0<><>::uid://c7wwvbyk8jyiw::::res://Assets/Textures/ItemIcons/Log.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemMultitool.tres::Resource/ItemResource::8526796148903715183::1766577843::0::1::::<><><>0<>0<><>::uid://bqqxmnrkqkwoo::::res://Assets/Textures/ItemIcons/MultiTool.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemPlant.tres::Resource/ItemResource::8386706020048757061::1766577843::0::1::::<><><>0<>0<><>::uid://cfhnqbm4tw4ks::::res://Assets/Textures/ItemIcons/Plant.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemRaft.tres::Resource/ItemResource::7457163335363601187::1766577843::0::1::::<><><>0<>0<><>::uid://ckxlarwysmuyf::::res://Assets/Textures/ItemIcons/Raft.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemRawMeat.tres::Resource/ItemResource::5082693184823997090::1766577843::0::1::::<><><>0<>0<><>::uid://cdh5lcygbma1::::res://Resources/Cooking/MeatRecipe.tres<>uid://dqkd2n3wa7mm0::::res://Assets/Textures/ItemIcons/RawMeat.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemRope.tres::Resource/ItemResource::818778465114464765::1766577843::0::1::::<><><>0<>0<><>::uid://b4lcpb7eqrkeb::::res://Assets/Textures/ItemIcons/Rope.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemStick.tres::Resource/ItemResource::2840687844541661283::1766577843::0::1::::<><><>0<>0<><>::uid://duda5gfn8b4ad::::res://Assets/Textures/ItemIcons/Stick.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemStone.tres::Resource/ItemResource::1353901392940739430::1766577843::0::1::::<><><>0<>0<><>::uid://y8dtn2ajdcnj::::res://Assets/Textures/ItemIcons/Stone.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemTent.tres::Resource/ItemResource::6936765400484287790::1766577843::0::1::::<><><>0<>0<><>::uid://cyjt0ble7olby::::res://Assets/Textures/ItemIcons/Tent.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
+ItemTinderBox.tres::Resource/ItemResource::8335827156528667763::1766577843::0::1::::<><><>0<>0<><>::uid://c2gjgvqwr7cl5::::res://Assets/Textures/ItemIcons/TinderBox.png<>uid://bxgb22kriqp0u::::res://Scripts/Core/ItemResources.gd
 ::res://Resources/Material/::1765646569
 M_ConstructableInValid.tres::StandardMaterial3D::1821598949078784993::1765646569::0::1::::<><><>0<>0<><>::
 M_ConstructableValid.tres::StandardMaterial3D::5491686994026911474::1765646522::0::1::::<><><>0<>0<><>::
 ::res://Resources/Missions/::1766352829
-Mission_01_CollectResources.tres::Resource/MissionResource::5508493988541922610::1766352483::0::1::::<><><>0<>0<><>::uid://jtj18leggu0p::::res://Scripts/Missions/MissionResource.gd<>uid://c2snv6ixtlw28::::res://Scripts/Missions/MissionRequirement.gd<>res://Resources/Missions/Requirement_Stick.tres<>res://Resources/Missions/Requirement_Stone.tres
+Mission_01_CollectResources.tres::Resource/MissionResource::5508493988541922610::1766578183::0::1::::<><><>0<>0<><>::uid://jtj18leggu0p::::res://Scripts/Missions/MissionResource.gd<>uid://c2snv6ixtlw28::::res://Scripts/Missions/MissionRequirement.gd<>res://Resources/Missions/Requirement_Stick.tres<>res://Resources/Missions/Requirement_Stone.tres
 Mission_02_CraftWeapon.tres::Resource/MissionResource::956586352528477111::1766352598::0::1::::<><><>0<>0<><>::uid://jtj18leggu0p::::res://Scripts/Missions/MissionResource.gd<>uid://c2snv6ixtlw28::::res://Scripts/Missions/MissionRequirement.gd
-Mission_03_ExploreForest.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
+Mission_03_ExploreForest.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
 Mission_04_CraftTorch.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
 Mission_05_CraftCampfire.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_06_GatherFood.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_07_MineResources.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
+Mission_06_GatherFood.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
+Mission_07_MineResources.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
 Mission_08_CraftPickaxe.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
 Mission_09_CraftMultitool.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_10_CraftRope.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
+Mission_10_CraftRope.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
 Mission_11_CraftTent.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_12_CraftTinderbox.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_13_ExtensiveExploration.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_14_ResourceStockpile.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
-Mission_15_FinalPreparation.tres::Resource/MissionResource::-1::1766352829::0::1::::<><><>0<>0<><>::
+Mission_12_CraftTinderbox.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
+Mission_13_ExtensiveExploration.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
+Mission_14_ResourceStockpile.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
+Mission_15_FinalPreparation.tres::Resource/MissionResource::-1::1766578178::0::1::::<><><>0<>0<><>::
 Requirement_Coal.tres::Resource/MissionRequirement::-1::1766352407::0::1::::<><><>0<>0<><>::
 Requirement_Flintstone.tres::Resource/MissionRequirement::-1::1766352407::0::1::::<><><>0<>0<><>::
 Requirement_Log.tres::Resource/MissionRequirement::-1::1766352405::0::1::::<><><>0<>0<><>::
@@ -454,9 +450,9 @@ Skill_ExtraPockets.tres::Resource/SkillResource::-1::1766224005::0::1::::<><><>0
 Skill_NaturalRegeneration.tres::Resource/SkillResource::6207226957358547738::1766224005::0::1::::<><><>0<>0<><>::res://Scripts/Skills/SkillResource.gd<>res://Assets/Textures/Skills/Natural Regeneration.png
 Skill_PackMule.tres::Resource/SkillResource::-1::1766224005::0::1::::<><><>0<>0<><>::res://Scripts/Skills/SkillResource.gd<>res://Assets/Textures/Skills/Pack Mule.png
 Skill_VitalityBoost.tres::Resource/SkillResource::-1::1766224005::0::1::::<><><>0<>0<><>::res://Scripts/Skills/SkillResource.gd<>res://Assets/Textures/Skills/Vitality Boost.png
-::res://Resources/Weapons/::1765648363
-WeaponAxe.tres::Resource/WeaponResource::6527407698588656825::1765541507::0::1::::<><><>0<>0<><>::uid://byes4ehwa6lci::::res://Scripts/Weapons/WeaponResources.gd<>uid://n3brov0cfcuy::::res://Assets/Textures/ItemIcons/Axe.png
-WeaponPickAxe.tres::Resource/WeaponResource::776264435840742813::1765630258::0::1::::<><><>0<>0<><>::uid://bqen6p0etehsr::::res://Assets/Textures/ItemIcons/Pickaxe.png<>uid://byes4ehwa6lci::::res://Scripts/Weapons/WeaponResources.gd
+::res://Resources/Weapons/::1766577982
+WeaponAxe.tres::Resource/WeaponResource::6527407698588656825::1766577981::0::1::::<><><>0<>0<><>::uid://byes4ehwa6lci::::res://Scripts/Weapons/WeaponResources.gd<>uid://n3brov0cfcuy::::res://Assets/Textures/ItemIcons/Axe.png
+WeaponPickAxe.tres::Resource/WeaponResource::776264435840742813::1766577981::0::1::::<><><>0<>0<><>::uid://bqen6p0etehsr::::res://Assets/Textures/ItemIcons/Pickaxe.png<>uid://byes4ehwa6lci::::res://Scripts/Weapons/WeaponResources.gd
 WeaponTorch.tres::Resource/WeaponResource::5085899090416058367::1765648363::0::1::::<><><>0<>0<><>::uid://eh5twl2eiqug::::res://Assets/Textures/ItemIcons/Torch.png<>uid://byes4ehwa6lci::::res://Scripts/Weapons/WeaponResources.gd
 ::res://Scenes/::1765765627
 ::res://Scenes/Animals/::1765995140
@@ -469,8 +465,8 @@ AnimalsFox.tscn::PackedScene::1741454437041222667::1765990746::0::1::::<><><>0<>
 AnimalsHorse.tscn::PackedScene::4039460628121317632::1765994740::0::1::::<><><>0<>0<><>::uid://bfdpirarhjk33::::res://Scenes/Animals/Animals.tscn
 AnimalsStag.tscn::PackedScene::8686994490479334960::1765995140::0::1::::<><><>0<>0<><>::uid://bfdpirarhjk33::::res://Scenes/Animals/Animals.tscn
 AnimalsWolf.tscn::PackedScene::8526984809733098777::1765766453::0::1::::<><><>0<>0<><>::uid://bfdpirarhjk33::::res://Scenes/Animals/Animals.tscn
-::res://Scenes/Core/::1766414778
-Island.tscn::PackedScene::3216561867839227946::1766351456::0::1::::<><><>0<>0<><>::uid://ciwoy82xakvom::::res://Scripts/Core/Island.gd<>uid://bu67pp3j1wo0d::::res://Assets/Meshes/Scene/Terrain.tscn<>uid://cggp7vjysjeit::::res://Scripts/Core/NavRegion.gd<>uid://da8lh368vbt4d::::res://addons/proton_scatter/src/scatter.gd<>uid://jbx2n7nrr034::::res://addons/proton_scatter/src/stack/modifier_stack.gd<>uid://b3qnnfejiqwem::::res://addons/proton_scatter/src/modifiers/base_modifier.gd<>uid://l6gf5a076fg::::res://addons/proton_scatter/src/modifiers/create_inside_random.gd<>uid://ddbsrg61qkvkv::::res://addons/proton_scatter/src/modifiers/project_on_geometry.gd<>uid://nephe26pogve::::res://addons/proton_scatter/src/scatter_item.gd<>uid://dll0jwsbf1q2l::::res://addons/proton_scatter/src/modifiers/randomize_rotation.gd<>uid://kdxaqohommrn::::res://addons/proton_scatter/src/modifiers/relax.gd<>uid://ccrucb1j2fwd5::::res://addons/proton_scatter/src/scatter_shape.gd<>uid://8u22wkom3bkt::::res://addons/proton_scatter/src/shapes/box_shape.gd<>uid://cjq2x3ftfuiuk::::res://addons/proton_scatter/src/modifiers/randomize_transforms.gd<>uid://c5milc3d4uwe8::::res://Assets/Meshes/Scene/Water.tscn<>uid://c5bs5j4uwlipi::::res://Scripts/Core/Spawner.gd<>uid://du4vqsmoftr65::::res://Scripts/UI/DamageNumberPool.gd<>uid://crff7tqvdq::::res://Scenes/Player/Player.tscn<>uid://lrl8myr07x0j::::res://Scripts/Core/DayNightCycle.gd
+::res://Scenes/Core/::1766577370
+Island.tscn::PackedScene::3216561867839227946::1766577370::0::1::::<><><>0<>0<><>::uid://ciwoy82xakvom::::res://Scripts/Core/Island.gd<>uid://bu67pp3j1wo0d::::res://Assets/Meshes/Scene/Terrain.tscn<>uid://cggp7vjysjeit::::res://Scripts/Core/NavRegion.gd<>uid://da8lh368vbt4d::::res://addons/proton_scatter/src/scatter.gd<>uid://jbx2n7nrr034::::res://addons/proton_scatter/src/stack/modifier_stack.gd<>uid://b3qnnfejiqwem::::res://addons/proton_scatter/src/modifiers/base_modifier.gd<>uid://l6gf5a076fg::::res://addons/proton_scatter/src/modifiers/create_inside_random.gd<>uid://ddbsrg61qkvkv::::res://addons/proton_scatter/src/modifiers/project_on_geometry.gd<>uid://nephe26pogve::::res://addons/proton_scatter/src/scatter_item.gd<>uid://dll0jwsbf1q2l::::res://addons/proton_scatter/src/modifiers/randomize_rotation.gd<>uid://kdxaqohommrn::::res://addons/proton_scatter/src/modifiers/relax.gd<>uid://ccrucb1j2fwd5::::res://addons/proton_scatter/src/scatter_shape.gd<>uid://8u22wkom3bkt::::res://addons/proton_scatter/src/shapes/box_shape.gd<>uid://cjq2x3ftfuiuk::::res://addons/proton_scatter/src/modifiers/randomize_transforms.gd<>uid://c5milc3d4uwe8::::res://Assets/Meshes/Scene/Water.tscn<>uid://c5bs5j4uwlipi::::res://Scripts/Core/Spawner.gd<>uid://du4vqsmoftr65::::res://Scripts/UI/DamageNumberPool.gd<>uid://crff7tqvdq::::res://Scenes/Player/Player.tscn<>uid://lrl8myr07x0j::::res://Scripts/Core/DayNightCycle.gd
 Main.tscn::PackedScene::1756979873304968154::1766414778::0::1::::<><><>0<>0<><>::uid://cxelrdqigr1v::::res://Scripts/Config/StageController.gd<>uid://ybri06xlo0ic::::res://Scripts/UI/HUD.gd<>uid://b70qljqd5vc35::::res://Scripts/Core/MusicController.gd<>uid://cgedcfg18cr43::::res://Scripts/Core/SFXController.gd<>uid://dmtwm8yw74sci::::res://Scripts/Core/GameFadeController.gd<>uid://bxau1rrbufv3u::::res://Scripts/UI/SettingController.gd<>uid://byisrhqlg3hk8::::res://Scenes/UI/HUD.tscn<>uid://dsi8m7vgbjuuc::::res://Scripts/Config/BulletinController.gd<>uid://d3b1lsdrmoe0y::::res://Scripts/UI/NotificationManager.gd<>uid://d1qkjd2w5r5bn::::res://Scripts/Core/Main.gd<>uid://cnutkd4aj7sbc::::res://Scenes/UI/JoyStick.tscn
 Spawner.tscn::PackedScene::8930376413469924191::1766327479::0::1::::<><><>0<>0<><>::uid://c5bs5j4uwlipi::::res://Scripts/Core/Spawner.gd<>res://Scripts/UI/DamageNumberPool.gd
 ::res://Scenes/Interactive/::1765661425
@@ -498,13 +494,13 @@ EquippableAxe.tscn::PackedScene::1987219691378465698::1765744719::0::1::::<><><>
 EquippablePickAxe.tscn::PackedScene::394424055152774118::1765744732::0::1::::<><><>0<>0<><>::uid://dodp5f2axadhe::::res://Scenes/Interactive/EquippAble/Weapon/EquippableWeapons.tscn<>uid://ij6s3lvapqml::::res://Assets/Meshes/Scene/Pickaxe.tscn
 EquippableTorch.tscn::PackedScene::5635277317514687422::1765765403::0::1::::<><><>0<>0<><>::uid://dodp5f2axadhe::::res://Scenes/Interactive/EquippAble/Weapon/EquippableWeapons.tscn<>uid://bqfn66fobuk6l::::res://Assets/Audio/SFX/Torch.wav<>uid://0ecmdypldnys::::res://Scripts/Core/FlickerLight.gd<>uid://cd7bpelx1m3xh::::res://Assets/Meshes/Scene/Torch.tscn
 EquippableWeapons.tscn::PackedScene::8149063628339789102::1765526701::0::1::::<><><>0<>0<><>::uid://clf765rhem82w::::res://Scenes/Interactive/EquippAble/EquippableItems.tscn<>uid://csaorlm73jsrs::::res://Scripts/Inventory/EquippableWeapons.gd
-::res://Scenes/Interactive/HittAble/::1765983404
+::res://Scenes/Interactive/HittAble/::1766577583
 FruitBush.tscn::PackedScene::4601766053628408821::1765659853::0::1::::<><><>0<>0<><>::uid://ctf7jpsbm24a6::::res://Assets/Meshes/Scene/FruitBush.tscn<>uid://vax4mrugvjtt::::res://Scenes/Interactive/PickAble/PickAbleFruit.tscn
 HitBox.tscn::PackedScene::1857416334522424110::1765630048::0::1::::<><><>0<>0<><>::uid://by6ek8w6h41q2::::res://Scripts/Core/HitBox.gd
 HittAbleCoalBoulder.tscn::PackedScene::3225443298990442573::1765766453::0::1::::<><><>0<>0<><>::uid://cr1xnwr3hpkbm::::res://Scenes/Interactive/HittAble/HittAbleObjects.tscn<>uid://dced0bnfxkpm0::::res://Resources/HittAbleObjects/CoalBoulder_Attributes.tres<>uid://2h1x84y7g7mq::::res://Assets/Meshes/Scene/CoalBoulder.tscn
 HittAbleFlinStone.tscn::PackedScene::4857145166596065301::1765766453::0::1::::<><><>0<>0<><>::uid://cr1xnwr3hpkbm::::res://Scenes/Interactive/HittAble/HittAbleObjects.tscn<>uid://j005m07nbsh4::::res://Resources/HittAbleObjects/FlinStone_Attributes.tres<>uid://b2aaqps4wnvkg::::res://Assets/Meshes/Scene/FlintstoneBoulder.tscn
 HittAbleObjects.tscn::PackedScene::6021146420050224766::1765536921::0::1::::<><><>0<>0<><>::uid://oo8dswhr4yxv::::res://Scripts/Core/HittAbleObjects.gd<>uid://1p0m1i34eudi::::res://Scenes/Interactive/HittAble/HitBox.tscn
-HittAbleTree.tscn::PackedScene::8835828794113967831::1765983404::0::1::::<><><>0<>0<><>::uid://cr1xnwr3hpkbm::::res://Scenes/Interactive/HittAble/HittAbleObjects.tscn<>uid://cdjw723k2hbs6::::res://Assets/Meshes/Scene/Tree.tscn<>uid://bqb163to5o34l::::res://Resources/HittAbleObjects/Tree_Attributes.tres<>uid://chsntvcl0f75s::::res://Assets/Meshes/Scene/TreeStump.tscn
+HittAbleTree.tscn::PackedScene::8835828794113967831::1766577583::0::1::::<><><>0<>0<><>::uid://cr1xnwr3hpkbm::::res://Scenes/Interactive/HittAble/HittAbleObjects.tscn<>uid://cdjw723k2hbs6::::res://Assets/Meshes/Scene/Tree.tscn<>uid://bqb163to5o34l::::res://Resources/HittAbleObjects/Tree_Attributes.tres<>uid://chsntvcl0f75s::::res://Assets/Meshes/Scene/TreeStump.tscn
 ::res://Scenes/Interactive/PickAble/::1765661435
 PickAble.tscn::PackedScene::4956324567426205315::1765526701::0::1::::<><><>0<>0<><>::uid://djlych3jp7yg4::::res://Scripts/Interactive/PickAble.gd
 PickAbleFruit.tscn::PackedScene::1475414652714990469::1765659610::0::1::::<><><>0<>0<><>::uid://ccu47amu53f20::::res://Scenes/Interactive/PickAble/PickAble.tscn<>uid://d1l07vamgt8h8::::res://Assets/Meshes/Scene/Fruit.tscn
@@ -524,7 +520,7 @@ HitParticlesStone.tscn::PackedScene::2355477883817398087::1765766084::0::1::::<>
 HitParticlesWood.tscn::PackedScene::6877315771857684063::1765766075::0::1::::<><><>0<>0<><>::uid://c4bs4a3pg2wl7::::res://Assets/Textures/UI/Circle.png
 ::res://Scenes/Player/::1765766879
 Player.tscn::PackedScene::152064302666170::1765766879::0::1::::<><><>0<>0<><>::uid://pquq1gcmbrw6::::res://Scripts/Player/Player.gd<>uid://5lfjtwfgpx2r::::res://Scripts/Core/MainCamera.gd<>uid://dec1f4e51fh37::::res://Scripts/Interactive/InteractionRayCast.gd<>uid://beqi1hxgh4y46::::res://Scripts/Inventory/InventoryManager.gd<>uid://bch8dcxfar324::::res://Scripts/Inventory/EquippabelItemHolder.gd<>uid://dodj0lwanf8tu::::res://Scripts/Inventory/EquippedItemManagaer.gd<>uid://mstg7fkij1vc::::res://Scripts/Vitality/PlayerStatsManager.gd<>uid://nv6er540i8dw::::res://Scripts/Player/SleepManager.gd
-::res://Scenes/UI/::1766434531
+::res://Scenes/UI/::1766578306
 CookingMenu.tscn::PackedScene::6549872647978101422::1765660942::0::1::::<><><>0<>0<><>::uid://byhnjma00ehlv::::res://Scenes/UI/PlayerMenuBase.tscn<>uid://17pfsmdbpskn::::res://Scenes/UI/InventorySlots.tscn<>uid://dyfxmlrvderrf::::res://Scripts/Cooking/CookingMenu.gd<>uid://d1jdoh6naapnp::::res://Scripts/Cooking/StartingCookingSlot.gd<>uid://c8w2ar8dq3ktt::::res://Assets/Textures/UI/Square.png<>uid://db75g4jwt68mv::::res://Scripts/Cooking/FinalCookingSlot.gd
 CraftingButton.tscn::PackedScene::938362752138157579::1765536819::0::1::::<><><>0<>0<><>::uid://7que4dlhqyrv::::res://Assets/Textures/UI/PanelBlue.png<>uid://cs1wrpulhaefy::::res://Scripts/Crafting/CraftingButton.gd
 CraftingMenu.tscn::PackedScene::4614567280965675995::1765536819::0::1::::<><><>0<>0<><>::uid://byhnjma00ehlv::::res://Scenes/UI/PlayerMenuBase.tscn<>uid://sfew461hgulk::::res://Scripts/Crafting/CraftingMenu.gd<>uid://nmsxyh3omdhr::::res://Scenes/UI/CraftingButton.tscn
@@ -535,7 +531,7 @@ HotBarSlot.tscn::PackedScene::5308109266259325149::1765526701::0::1::::<><><>0<>
 HUD.tscn::PackedScene::4088591610293774385::1766355049::0::1::::<><><>0<>0<><>::uid://c4bs4a3pg2wl7::::res://Assets/Textures/UI/Circle.png<>uid://chvj1wn5160gv::::res://Scenes/UI/HotBarSlot.tscn<>uid://myy1v1wbtquk::::res://Scripts/Inventory/HotBarUI.gd<>uid://bm02vdwg4l7x8::::res://Scripts/Vitality/PlayerStatsContainer.gd<>uid://bfnlb8mo0lx4e::::res://Scripts/UI/DayTimerUI.gd<>uid://ip8f8pqleq1w::::res://Scenes/UI/MissionUI.tscn<>uid://n44c57kjkleu::::res://Scripts/UI/HUDManager.gd<>uid://dq2fadpqcl8nj::::res://Scripts/UI/LevelUI.gd
 InteractionPrompt.tscn::PackedScene::543175123135427143::1765526701::0::1::::<><><>0<>0<><>::uid://c6f5w6o2ekqt4::::res://Scripts/Interactive/InteractionPrompt.gd
 InventorySlots.tscn::PackedScene::1891890670675985169::1765526701::0::1::::<><><>0<>0<><>::uid://dbf52t3wb6vhx::::res://Assets/Textures/UI/PanelBrown.png<>uid://5dlkrvhnul72::::res://Scripts/Inventory/InventorySlot.gd
-JoyStick.tscn::PackedScene::5727755572946114492::1766434531::0::1::::<><><>0<>0<><>::uid://b4l7lv5exjl2e::::res://Assets/JoyStick/Ring.png<>uid://cquwkmkoq7qoq::::res://Assets/JoyStick/Knob.png<>uid://bx74whnxhn4n1::::res://Assets/Textures/UI/PanelBeige.png<>uid://oacxwvpdae3q::::res://Assets/JoyStick/Dash.png<>uid://c3pc5fynl6o3w::::res://Assets/JoyStick/Pause.png<>uid://bjx74yb62kusb::::res://Assets/JoyStick/Inventory.png<>uid://cqk3ma0bnbmj7::::res://Assets/JoyStick/Skills.png<>uid://dg2o631sw6hbw::::res://Assets/JoyStick/Mission.png<>uid://d3ax1qao5fuqp::::res://Scripts/UI/JoyStick.gd<>uid://d1o6yxkmwuxp4::::res://Assets/JoyStick/Use.png
+JoyStick.tscn::PackedScene::5727755572946114492::1766578306::0::1::::<><><>0<>0<><>::uid://b4l7lv5exjl2e::::res://Assets/JoyStick/Ring.png<>uid://cquwkmkoq7qoq::::res://Assets/JoyStick/Knob.png<>uid://bx74whnxhn4n1::::res://Assets/Textures/UI/PanelBeige.png<>uid://oacxwvpdae3q::::res://Assets/JoyStick/Dash.png<>uid://c3pc5fynl6o3w::::res://Assets/JoyStick/Pause.png<>uid://bjx74yb62kusb::::res://Assets/JoyStick/Inventory.png<>uid://cqk3ma0bnbmj7::::res://Assets/JoyStick/Skills.png<>uid://dg2o631sw6hbw::::res://Assets/JoyStick/Mission.png<>uid://d3ax1qao5fuqp::::res://Scripts/UI/JoyStick.gd<>uid://d1o6yxkmwuxp4::::res://Assets/JoyStick/Use.png
 LevelUpNotification.tscn::PackedScene::3492903398534240831::1766355042::0::1::::<><><>0<>0<><>::uid://tmmfsydxquok::::res://Scripts/UI/LevelUpNotification.gd
 MainMenu.tscn::PackedScene::6094616069660447153::1766351302::0::1::::<><><>0<>0<><>::uid://byxdvhkuhqpw1::::res://Scripts/UI/MainMenu.gd<>uid://bu67pp3j1wo0d::::res://Assets/Meshes/Scene/Terrain.tscn<>uid://b2yts8n02w3px::::res://Assets/Shader/WaterShader.tres<>uid://da8lh368vbt4d::::res://addons/proton_scatter/src/scatter.gd<>uid://jbx2n7nrr034::::res://addons/proton_scatter/src/stack/modifier_stack.gd<>uid://b3qnnfejiqwem::::res://addons/proton_scatter/src/modifiers/base_modifier.gd<>uid://l6gf5a076fg::::res://addons/proton_scatter/src/modifiers/create_inside_random.gd<>uid://ddbsrg61qkvkv::::res://addons/proton_scatter/src/modifiers/project_on_geometry.gd<>uid://dll0jwsbf1q2l::::res://addons/proton_scatter/src/modifiers/randomize_rotation.gd<>uid://kdxaqohommrn::::res://addons/proton_scatter/src/modifiers/relax.gd<>uid://nephe26pogve::::res://addons/proton_scatter/src/scatter_item.gd<>uid://ccrucb1j2fwd5::::res://addons/proton_scatter/src/scatter_shape.gd<>uid://8u22wkom3bkt::::res://addons/proton_scatter/src/shapes/box_shape.gd<>uid://cjq2x3ftfuiuk::::res://addons/proton_scatter/src/modifiers/randomize_transforms.gd<>uid://bpuc66748bdkx::::res://Assets/Meshes/Scene/Tent.tscn<>uid://bvcgmkka5d3ip::::res://Assets/Meshes/Scene/Campfire.tscn<>uid://bwoxcohf027yy::::res://Assets/Audio/SFX/Campfire.wav<>uid://c4bs4a3pg2wl7::::res://Assets/Textures/UI/Circle.png<>uid://bfvk5404fpkyc::::res://Scenes/Animals/AnimalsCow.tscn<>uid://dp4niewyht13w::::res://Scripts/Core/ShakingCamera.gd<>uid://0ecmdypldnys::::res://Scripts/Core/FlickerLight.gd<>uid://dtqsgujkgj0th::::res://Scenes/Animals/AnimalsWolf.tscn<>uid://dcquy3bjwq6j0::::res://Scenes/UI/UITheme.tres<>uid://br63qumntp3uo::::res://Scripts/UI/UIButton.gd
 MissionMenu.tscn::PackedScene::8014892395762213655::1766262255::0::1::::<><><>0<>0<><>::uid://cit3w8ihb4nta::::res://Assets/Textures/UI/Cross.png<>uid://ujt5gyq0085s::::res://Scripts/UI/MissionMenu.gd

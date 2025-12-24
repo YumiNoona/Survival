@@ -425,7 +425,7 @@ ambient_light_sky_contribution = 0.5
 
 [sub_resource type="Resource" id="Resource_tydyu"]
 script = ExtResource("5_vwwq4")
-amount = 50
+amount = 80
 override_global_seed = true
 custom_seed = 5
 restrict_height = true
@@ -457,7 +457,7 @@ size = Vector3(147.22107, 8.305139, 153.6257)
 
 [sub_resource type="Resource" id="Resource_4ddcv"]
 script = ExtResource("5_vwwq4")
-amount = 50
+amount = 80
 override_global_seed = true
 custom_seed = 21
 restrict_height = true
@@ -489,7 +489,7 @@ size = Vector3(147.22107, 8.305139, 153.6257)
 
 [sub_resource type="Resource" id="Resource_2qshq"]
 script = ExtResource("5_vwwq4")
-amount = 50
+amount = 90
 override_global_seed = true
 custom_seed = 22
 restrict_height = true
@@ -1701,7 +1701,7 @@ script = ExtResource("8_gls4n")
 shape = SubResource("Resource_gjb0h")
 
 [node name="ScatterWolf" type="Node3D" parent="Actors/Animals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 78)
 script = ExtResource("2_ntp2v")
 render_mode = 1
 modifier_stack = SubResource("Resource_u2do5")
@@ -1773,7 +1773,7 @@ script = ExtResource("8_gls4n")
 shape = SubResource("Resource_krc0p")
 
 [node name="Player" parent="Actors" instance=ExtResource("15_vwwq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.506783, 0.78870153, 36.38811)
+transform = Transform3D(0.061849866, 0, 0.99808544, 0, 1, 0, -0.99808544, 0, 0.061849866, 51.57113, 0.23293626, 29.345352)
 
 [node name="DayNightCycle" type="AnimationPlayer" parent="."]
 libraries = {
