@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("2_tu4ly")
 item_key = 8
-display_name = "Chewwy Bone"
+display_name = "Raw Meat"
 icon = ExtResource("1_wh32l")
 cooking_recipe = ExtResource("1_tu4ly")
-description = "Risky to eat uncooked but great for cooking."
+description = "Fresh meat from hunted animals. Risky to consume raw, but becomes nutritious cooked meat when prepared over a campfire."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

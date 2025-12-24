@@ -3,11 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bod62nahhmdvn" path="res://Assets/Textures/ItemIcons/Coal.png" id="1_ucucp"]
 [ext_resource type="Script" uid="uid://bxgb22kriqp0u" path="res://Scripts/Core/ItemResources.gd" id="2_ipjfn"]
 
-
 [resource]
 script = ExtResource("2_ipjfn")
 item_key = 6
-display_name = "Black Stone"
+display_name = "Coal"
 icon = ExtResource("1_ucucp")
-description = "Burns hot and long in a campfire."
+description = "Compressed carbon that burns hot and long. Excellent fuel for fires and smelting operations."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

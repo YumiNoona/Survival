@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_6u3c4")
 item_key = 13
-display_name = "Umm "
+display_name = "Multitool"
 icon = ExtResource("1_6u3c4")
-description = "All-purpose survival tool combining knife, saw, and more."
+description = "An all-purpose survival tool combining knife, saw, and various other implements. Required for advanced crafting recipes."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

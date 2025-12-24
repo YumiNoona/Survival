@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_f6msj")
 item_key = 18
-display_name = "Escape"
+display_name = "Raft"
 icon = ExtResource("1_f6msj")
 is_equippable = true
-description = "Makeshift raft for crossing water or escaping the island."
+description = "A makeshift raft constructed from logs and rope. Allows you to cross water bodies and explore new areas. Requires level 20 to craft."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

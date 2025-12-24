@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_4dlyu")
 item_key = 7
-display_name = "Gold Stone"
+display_name = "Flintstone"
 icon = ExtResource("1_fqkwk")
-description = "Sharp-edged stone that throws sparks for fire starting."
+description = "Hard, sharp-edged stone that produces sparks when struck. Essential for starting fires and crafting tools."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

@@ -9,7 +9,7 @@
 script = ExtResource("1_mission")
 mission_key = "mission_07_mine_resources"
 mission_name = "Mine Deep Resources"
-mission_description = "Explore rocky areas and mine 5 Black Stones and 3 Gold Stones. These rare materials are crucial for advanced crafting."
+mission_description = "Explore rocky areas and mine 5 Coal and 3 Flintstone. These rare materials are crucial for advanced crafting."
 xp_reward = 40
 mission_level = 7
 prerequisite_missions = Array[String](["mission_06_gather_food"])

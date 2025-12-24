@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_1e0cd")
 item_key = 1
-display_name = "Big Stone"
+display_name = "Stone"
 icon = ExtResource("1_o0b3h")
-description = "Solid river rock; good for basic tools or blunt weapons."
+description = "A solid, heavy river rock. Can be used as a basic tool, weapon, or construction material for building structures."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

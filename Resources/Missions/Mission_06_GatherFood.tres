@@ -8,7 +8,7 @@
 script = ExtResource("1_mission")
 mission_key = "mission_06_gather_food"
 mission_name = "Hunt for Food"
-mission_description = "Explore the island and hunt animals to collect 3 Chewwy Bones. Food is essential for survival."
+mission_description = "Explore the island and hunt animals to collect 3 Raw Meat. Food is essential for survival."
 xp_reward = 30
 mission_level = 6
 prerequisite_missions = Array[String](["mission_05_craft_campfire"])

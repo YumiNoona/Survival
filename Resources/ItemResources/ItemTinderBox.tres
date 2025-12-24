@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_dp035")
 item_key = 15
-display_name = "Box Of Things"
+display_name = "Tinderbox"
 icon = ExtResource("1_dp035")
-description = "Compact kit with flint and tinder to ignite fires quickly."
+description = "A compact fire-starting kit containing flint and tinder. Required for igniting campfires and other fire-based crafting recipes."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

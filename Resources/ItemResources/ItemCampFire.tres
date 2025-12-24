@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_tg8fd")
 item_key = 12
-display_name = "CampFire"
+display_name = "Campfire"
 icon = ExtResource("1_rhg8p")
 is_equippable = true
-description = "Burns hot and long in a campfire."
+description = "A portable fire pit that provides warmth, light, and a place to cook food. Essential for survival in the wilderness."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

@@ -7,7 +7,7 @@
 script = ExtResource("1_mission")
 mission_key = "mission_10_craft_rope"
 mission_name = "Make Rope"
-mission_description = "Craft Tangled Rope from plants. This essential material is needed for advanced structures and equipment."
+mission_description = "Craft Rope from plants. This essential material is needed for advanced structures and equipment."
 mission_type = 1
 xp_reward = 30
 mission_level = 10

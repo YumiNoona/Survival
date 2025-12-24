@@ -7,9 +7,10 @@
 script = ExtResource("2_2mrnt")
 health_change = 30.0
 energy_change = 10.0
+hunger_change = 10.0
 item_key = 4
-display_name = "Eatable Fruit"
+display_name = "Fruit"
 icon = ExtResource("1_lqqsd")
 is_equippable = true
-description = "Eat me. Im tasty fruit"
+description = "Fresh wild fruit found growing in the wilderness. Provides a small boost to health and energy when consumed."
 metadata/_custom_type_script = "uid://daoxhtf04r7s6"

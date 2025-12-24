@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_f4w8u")
 item_key = 14
-display_name = "Tangled Rope"
+display_name = "Rope"
 icon = ExtResource("1_f4w8u")
-description = "Braided plant fibers used to bind logs or craft gear."
+description = "Braided plant fibers twisted into a strong cord. Essential for binding materials, crafting tools, and constructing structures."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

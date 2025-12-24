@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6ihsf3vavy55" path="res://Scripts/Core/HittableObjectAttributes.gd" id="1_qfl5g"]
 
-
 [resource]
 script = ExtResource("1_qfl5g")
+max_health = 80
 metadata/_custom_type_script = "uid://6ihsf3vavy55"

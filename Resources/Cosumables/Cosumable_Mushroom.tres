@@ -7,9 +7,10 @@
 script = ExtResource("1_oid8o")
 health_change = -20.0
 energy_change = 10.0
+hunger_change = 40.0
 item_key = 3
-display_name = "Eatable Mushroom"
+display_name = "Mushroom"
 icon = ExtResource("1_r2cd6")
 is_equippable = true
-description = "Eat me. Im tasty"
+description = "A wild mushroom found in the forest. Consuming it provides energy but may cause harm - use with caution."
 metadata/_custom_type_script = "uid://daoxhtf04r7s6"

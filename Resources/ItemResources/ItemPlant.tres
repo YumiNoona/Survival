@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_x3s8g")
 item_key = 2
-display_name = "Big Long Plant"
+display_name = "Plant Fiber"
 icon = ExtResource("1_b4imf")
-description = "Fibrous wild plant used for crafting ropes and simple wraps."
+description = "Fibrous wild plant material. Can be processed into rope or used for crafting simple items and bandages."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

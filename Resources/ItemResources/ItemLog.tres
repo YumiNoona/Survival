@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_epse5")
 item_key = 5
-display_name = "Heavy log"
+display_name = "Log"
 icon = ExtResource("1_4acrt")
-description = "Fuel for fires or raw material for shelters."
+description = "A thick, heavy log from a felled tree. Used as fuel for fires or as raw material for building structures and crafting."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

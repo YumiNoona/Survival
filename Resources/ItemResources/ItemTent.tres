@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_l0ybr")
 item_key = 17
-display_name = "No Sun Kisses"
+display_name = "Tent"
 icon = ExtResource("1_l0ybr")
 is_equippable = true
-description = "Welcome to the Hood"
+description = "A portable shelter made from logs and plant materials. Provides protection from the elements and a safe place to rest."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

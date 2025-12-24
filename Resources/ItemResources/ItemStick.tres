@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_f01qb")
-display_name = "Big Long Stick"
+display_name = "Stick"
 icon = ExtResource("1_bywgq")
-description = "Light branch, perfect for kindling or quick tools."
+description = "A sturdy branch from a tree. Lightweight and versatile, perfect for kindling fires or crafting basic tools and weapons."
 metadata/_custom_type_script = "uid://bxgb22kriqp0u"

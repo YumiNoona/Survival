@@ -9,7 +9,7 @@
 script = ExtResource("1_mission")
 mission_key = "mission_03_explore_forest"
 mission_name = "Explore the Forest"
-mission_description = "Venture deeper into the forest. Collect 5 Big Long Plants and 3 Heavy Logs to expand your crafting capabilities."
+mission_description = "Venture deeper into the forest. Collect 5 Plant Fiber and 3 Logs to expand your crafting capabilities."
 xp_reward = 25
 mission_level = 3
 prerequisite_missions = Array[String](["mission_02_craft_weapon"])

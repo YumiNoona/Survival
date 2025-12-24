@@ -5,10 +5,12 @@
 
 [resource]
 script = ExtResource("1_4ih3h")
+damage = 30.0
 attack_range = 1.5
+energy_change_per_use = -1.5
 item_key = 10
 display_name = "Axe"
 icon = ExtResource("1_yia0j")
 is_equippable = true
-description = "DescriptionSturdy axe for chopping trees and defending yourself."
+description = "Sturdy Axe for chopping trees and defending yourself."
 metadata/_custom_type_script = "uid://byes4ehwa6lci"

@@ -1,11 +1,12 @@
 E:/
+res://
+F:/Godot/Survival
 res://Assets/Shader
 res://Resources/Skills
 res://Scenes/UI
 res://Scenes/Animals
 res://Assets/Meshes/Scene/Animals
 res://Assets/Meshes/Scene
-res://
 res://Scripts/UI
 res://Scenes/Particles
 res://Scripts/Core
@@ -19,5 +20,3 @@ res://Scripts/Cooking
 res://Scripts/Vitality
 res://Scenes/Interactive/Cooking
 res://Resources/Cooking
-res://Scenes/Interactive/Constructables
-res://Resources/Material

@@ -7,7 +7,7 @@
 script = ExtResource("1_mission")
 mission_key = "mission_12_craft_tinderbox"
 mission_name = "Fire Starter Kit"
-mission_description = "Craft a Box Of Things to easily start fires. Essential for cooking and staying warm."
+mission_description = "Craft a Tinderbox to easily start fires. Essential for cooking and staying warm."
 mission_type = 1
 xp_reward = 35
 mission_level = 12

@@ -7,9 +7,10 @@
 script = ExtResource("2_x403r")
 health_change = 70.0
 energy_change = 50.0
+hunger_change = 40.0
 item_key = 9
-display_name = "Eatable Meat"
+display_name = "Cooked Meat"
 icon = ExtResource("1_r5vea")
 is_equippable = true
-description = "Nutritious meat."
+description = "Properly cooked meat that restores health and energy. A valuable source of nutrition for survival in the wilderness."
 metadata/_custom_type_script = "uid://daoxhtf04r7s6"
